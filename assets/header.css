@@ -22,7 +22,9 @@
 /* 運営会社のページだけ：ロゴは BIA（2026-11。廣瀬さんの決定）。枠も影も付けず、ロゴだけがついてくる。
    スクロールしたら少し小さく（#hashtag のロゴと同じ 48px → 40px の割合） */
 .hd-bia{display:inline-flex;align-items:center}
-.hd-bia img{display:block;width:120px;height:auto;transition:width var(--hd-speed) ease,filter var(--hd-speed) ease}
+.hd-bia img{display:block;width:120px;height:auto;transition:width var(--hd-speed) ease,filter var(--hd-speed) ease,opacity var(--hd-speed) ease}
+/* 見出しの文字に重なっている間だけ、ロゴをうすく（site.js が html に .hd-on-head を付ける。2026-11 の試し） */
+.hd-on-head .hd-bia img{opacity:.15}
 /* 紺のフッターの上にいる間だけロゴを白に（枠は付けない。site.js が html に .hd-on-dark を付ける） */
 .hd-on-dark .hd-bia img{filter:brightness(0) invert(1)}
 .hd-scrolled .hd-bia img{width:100px}
