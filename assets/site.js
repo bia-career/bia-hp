@@ -31,7 +31,8 @@
     if (bia && foot) {
       var l = bia.getBoundingClientRect(), f = foot.getBoundingClientRect(), mid = l.top + l.height / 2;
       root.classList.toggle('hd-on-dark', f.top <= mid && f.bottom >= mid);
-      root.classList.toggle('hd-on-head', onHead(l));
+      // 一番上（スクロールしていないとき）はうすくしない。スクロールし始めてから重なりを見る
+      root.classList.toggle('hd-on-head', window.scrollY > 4 && onHead(l));
     }
   }
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }
