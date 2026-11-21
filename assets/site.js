@@ -22,3 +22,39 @@
     t.addEventListener('click', function () { t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true'); });
   });
 })();
+
+// 6. スクロールで出てくる動き（見出し・カード）。1 回出たら終わり。動きを減らす設定なら何もしない
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var els = document.querySelectorAll('.sec-head, .card, .faq details, .typing-card, .policy');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight) return; // はじめから見えているものは隠さない
+    el.classList.add('rv'); io.observe(el);
+  });
+  document.documentElement.classList.add('js-reveal');
+})();
+
+// 4. 浮かぶ「#」：スクロールに合わせてゆっくり上下（最大 40px）。動きを減らす設定なら止める
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var fls = document.querySelectorAll('.fl[data-speed]');
+  if (!fls.length) return;
+  var ticking = false;
+  function update() {
+    var vh = window.innerHeight;
+    fls.forEach(function (el) {
+      var box = el.parentElement.getBoundingClientRect();
+      var d = (box.top + box.height / 2 - vh / 2) * parseFloat(el.dataset.speed);
+      d = Math.max(-40, Math.min(40, d));
+      el.style.transform = 'translate3d(0,' + d.toFixed(1) + 'px,0)';
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+})();

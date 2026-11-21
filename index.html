@@ -26,7 +26,6 @@
 </head>
 <body>
 
-<div class="top">
 <img class="wave" src="/assets/wave.webp" alt="" width="1800" height="379">
 <header>
   <div class="wrap">
@@ -54,7 +53,7 @@
 
   <div class="wrap">
     <div style="flex:999 1 520px;min-width:0">
-      <h1># の先は、<br>あなたが決める。</h1>
+      <h1><span class="g-hash">#</span> の先は、<br>あなたが決める。</h1>
       <p class="lead">キャリア設計から始める、新卒・20代のための転職支援サービス</p>
       <p class="body">求人を紹介する前に、まずあなたのハッシュタグを一緒に作ります。大事にしたい転職の軸と、ワクワクする未来を言葉にして、そこに合う会社を選びます。</p>
       <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:12px">
@@ -65,7 +64,8 @@
         <span class="chip">相談無料</span><span class="chip">オンライン面談</span><span class="chip">求人のご紹介</span>
       </div>
     </div>
-    <div style="flex:1 1 420px;min-width:0">
+    <div class="float-wrap" style="flex:1 1 420px;min-width:0">
+      <div class="floats" aria-hidden="true"><span class="fl" style="width:96px;right:-28px;top:-64px" data-speed=".1"><img src="/assets/hash-grad.svg" alt="" width="96" height="96"></span><span class="fl tag pc" style="left:-8px;top:-58px" data-speed="-.06">#3年後にリーダー</span><span class="fl pc" style="width:44px;left:-52px;bottom:-34px" data-speed="-.12"><img src="/assets/hash-grad.svg" alt="" width="44" height="44"></span><span class="fl tag" style="right:8px;bottom:-60px" data-speed=".07">#地元で働く</span><span class="fl pc" style="width:30px;right:-56px;top:46%" data-speed="-.08"><img src="/assets/hash-grad.svg" alt="" width="30" height="30"></span></div>
       <div class="typing-card">
         <p style="margin:0 0 18px;font-size:13px;font-weight:700;color:var(--muted)">面談で生まれるハッシュタグ（例）</p>
         <div class="typing" aria-label="ハッシュタグの例">
@@ -79,11 +79,10 @@
     </div>
   </div>
 </div>
-</div>
 
 <section id="about">
   <div class="wrap">
-    <div class="sec-head"><h2>ハッシュタグとは</h2><span class="en">ABOUT</span></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">ABOUT</p><h2>ハッシュタグとは</h2><a class="circle-link" href="/about.html" aria-label="ハッシュタグとはのページへ"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div style="display:flex;flex-wrap:wrap;gap:40px">
       <p style="flex:999 1 520px;margin:0;font-size:17px;color:var(--sub)">ハッシュタグは、求人を紹介するだけの転職支援ではありません。面談であなたの「#」――大事にしたい転職の軸と、ワクワクする未来――を一緒に言葉にし、そこからキャリアを設計します。# の先に何を書くかは、あなたが決める。私たちは、その言葉が本当になる会社選びを最後まで支えます。</p>
       <div style="flex:1 1 300px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start">
@@ -94,9 +93,10 @@
   </div>
 </section>
 
-<section id="flow" class="alt">
-  <div class="wrap">
-    <div class="sec-head"><h2>支援の流れ</h2><span class="en">FLOW</span></div>
+<section id="flow">
+  <div class="band">
+  <div class="wrap" style="padding-top:88px;padding-bottom:88px">
+    <div class="sec-head"><p class="en-big" aria-hidden="true">FLOW</p><h2>支援の流れ</h2></div>
     <ol class="grid g4" style="list-style:none;margin:0;padding:0">
       <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 01</p><div class="step-img"><img src="/assets/flow2.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を見つける</h3><p style="margin:0;font-size:14px;color:var(--sub)">キャリア面談で、転職の軸と描きたい未来を言葉にします。</p></li>
       <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 02</p><div class="step-img"><img src="/assets/flow3.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># に合う会社を選ぶ</h3><p style="margin:0;font-size:14px;color:var(--sub)">あなたのハッシュタグに合う求人だけをご紹介します。</p></li>
@@ -104,25 +104,26 @@
       <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 04</p><div class="step-img"><img src="/assets/flow4.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># の先へ</h3><p style="margin:0;font-size:14px;color:var(--sub)">内定・条件の確認から入社後まで支えます。</p></li>
     </ol>
   </div>
+  </div>
 </section>
 
 <section id="jobs">
   <div class="wrap">
-    <div class="sec-head" style="justify-content:space-between"><div style="display:flex;gap:20px;align-items:baseline"><h2>新着の求人</h2><span class="en">JOBS</span></div><a href="/jobs.html" style="font-weight:700">求人をすべて見る →</a></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">JOBS</p><h2>新着の求人</h2><a class="circle-link" href="/jobs.html" aria-label="新着の求人のページへ"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="grid g3" id="new-jobs"></div>
   </div>
 </section>
 
 <section id="points" >
   <div class="wrap">
-    <div class="sec-head"><h2>6 つのポイント</h2><span class="en">POINT</span></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">POINT</p><h2>6 つのポイント</h2><a class="circle-link" href="/about.html#points" aria-label="6 つのポイントのページへ"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <ul class="grid g3" style="list-style:none;margin:0;padding:0"><li class="card line point"><img src="/assets/pt1.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 1</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">マンツーマンで全力サポート</h3></div></li><li class="card line point"><img src="/assets/pt2.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 2</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">転職先のピックアップ</h3></div></li><li class="card line point"><img src="/assets/pt3.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 3</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">何度でも相談可能</h3></div></li><li class="card line point"><img src="/assets/pt4.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 4</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">書類添削・面接対策</h3></div></li><li class="card line point"><img src="/assets/pt5.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 5</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">企業との交渉（給与等）</h3></div></li><li class="card line point"><img src="/assets/pt6.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 6</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">即日対応可能</h3></div></li></ul>
   </div>
 </section>
 
 <section id="faq" class="alt">
   <div class="wrap">
-    <div class="sec-head"><h2>よくある質問</h2><span class="en">FAQ</span></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">FAQ</p><h2>よくある質問</h2><a class="circle-link" href="/faq.html" aria-label="よくある質問のページへ"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div class="faq">
       <details><summary>相談にお金はかかりますか？</summary><p>相談は無料です。</p></details>
       <details><summary>オンラインで相談できますか？</summary><p>オンラインで 60 分の面談です。空いている日時を選ぶだけで予約できます。</p></details>
@@ -134,13 +135,14 @@
       <details><summary>どんな地域の求人がありますか？</summary><p>全国の求人をご紹介しています。面談はオンラインなので、お住まいの地域を問いません。</p></details>
       <details><summary>紹介された求人は必ず受けないといけませんか？</summary><p>いいえ。応募するかはご自身で決められます。</p></details>
     </div>
+    <p style="margin:20px 0 0"><a href="/faq.html" class="more-link" style="font-weight:700">よくある質問をもっと見る →</a></p>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap" style="text-align:center">
-    <h2 style="margin:0;font-size:30px;font-weight:900">まずは、あなたの # を一緒に。</h2>
-    <p style="margin:10px 0 26px;color:var(--sub)">オンラインで 60 分。空いている日時を選ぶだけで予約できます。相談は無料です。</p>
+    <div class="sec-head center"><p class="en-big" aria-hidden="true">CONTACT</p><h2>まずは、あなたの <span class="g-hash">#</span> を一緒に。</h2></div>
+    <p style="margin:0 0 26px;color:var(--sub)">オンラインで 60 分。空いている日時を選ぶだけで予約できます。相談は無料です。</p>
     <a class="btn btn-main" href="#">無料でキャリア相談する</a>
   </div>
 </section>

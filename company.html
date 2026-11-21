@@ -83,6 +83,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--caret-on-white);out
   dl.co dt{border-bottom:0;padding-bottom:4px}
   dl.co dd{padding-top:0}
 }
+
+/* 2 回目の直し：地の色・大きな英字の見出し・出てくる動き（assets/site.css と同じ決まり） */
+body{background:#F4F6F8}
+.alt{background:transparent}
+.sec-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-bottom:40px}
+.sec-head .en-big{margin:0;font-family:Poppins,sans-serif;font-weight:600;font-size:64px;line-height:1;letter-spacing:-.5px;color:var(--navy)}
+.sec-head h2{margin:0;font-size:16px;font-weight:700;letter-spacing:1px;color:var(--navy)}
+.js-reveal .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.js-reveal .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.js-reveal .rv{opacity:1;transform:none;transition:none}}
+@media (max-width:860px){.sec-head .en-big{font-size:40px}.sec-head{margin-bottom:28px}}
 </style>
 </head>
 <body>
@@ -103,14 +114,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--caret-on-white);out
 <main>
 <section id="vision">
   <div class="wrap">
-    <div class="sec-head"><h2>ビジョン</h2><span class="en">VISION</span></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">VISION</p><h2>ビジョン</h2></div>
     <p class="vision">“ 若者のポテンシャルを解放する ”</p>
     <p class="body">私たちは、若者が持つ無限の可能性に光を当て、それを解放することを使命としています。各々が持つユニークな才能やスキルを見出し、育て、そして適切な場所に彼らを導くことで、彼ら自身も社会もより良い未来を築くことができると信じています。私たちの役割は、単に仕事を紹介すること以上に、若者一人ひとりがその真の力を理解し、活かせるよう支援することです。このビジョンに向かって、私たちは情熱を持って取り組んでまいります。</p>
   </div>
 </section>
 <section id="service" class="alt">
   <div class="wrap">
-    <div class="sec-head"><h2>事業内容</h2><span class="en">SERVICE</span></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">SERVICE</p><h2>事業内容</h2></div>
     <div class="grid">
       <a class="card" href="/"><h3>ハッシュタグ（新卒・20代の転職支援）</h3><p>新卒・第二新卒・既卒・フリーターの方に、オーダーメイド型の就業サポートを行います。</p><span class="more">ハッシュタグを見る →</span></a>
       <a class="card" href="/corp.html"><h3>採用コンサルティング（企業の方へ）</h3><p>企業向けに、オーダーメイド型の採用コンサルティングを行います。母集団形成から選考フェーズまで支援します。</p><span class="more">企業の方へ →</span></a>
@@ -119,7 +130,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--caret-on-white);out
 </section>
 <section id="company">
   <div class="wrap">
-    <div class="sec-head"><h2>会社概要</h2><span class="en">COMPANY</span></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">COMPANY</p><h2>会社概要</h2></div>
     <dl class="co">
       <dt>企業名</dt><dd>株式会社ビア</dd>
       <dt>代表者名</dt><dd>大塚 一樹</dd>
@@ -150,5 +161,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--caret-on-white);out
 <script>
 (function(){var b=document.querySelector(".menu-btn"),n=document.getElementById("bnav");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o)})})();
 </script>
+<script src="/assets/site.js"></script>
 </body>
 </html>
