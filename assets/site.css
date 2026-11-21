@@ -261,21 +261,24 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 .fl-art img{display:block;width:100%;height:100%}
 .fl-bub{position:absolute;height:auto;overflow:visible}
 .fl-bub .fl-caret,.fl-bub .fl-h2,.fl-bub .fl-sp{transform-box:fill-box;transform-origin:50% 50%}
-.fl-01 .fl-bub{left:76%;top:7%;width:23%}
-.fl-02 .fl-bub{left:35%;top:5%;width:31%}
-.fl-03 .fl-bub{left:70%;top:11%;width:23%}
-.fl-04 .fl-bub{left:56%;top:5%;width:23%}
+/* 大きさは絵の幅の 27.6%（02 は 37.2%）。2026-11 に 1.2 倍にした */
+.fl-01 .fl-bub{left:74%;top:1%;width:27.6%}
+.fl-02 .fl-bub{left:31.4%;top:3%;width:37.2%}
+.fl-03 .fl-bub{left:68%;top:8%;width:27.6%}
+.fl-04 .fl-bub{left:51%;top:1%;width:27.6%}
 .is-playing .fl-bub{transform-origin:0% 100%;animation:fl-pop 4s ease-in-out infinite backwards}
 .is-playing .fl-caret{animation:fl-caret 4s step-end infinite backwards}
 .is-playing.fl-02 .fl-h2{animation:fl-h2 4s ease-out infinite backwards}
 .is-playing.fl-03 .fl-bub{transform-origin:50% 100%;animation-name:fl-rise}
 .is-playing.fl-04 .fl-sp{animation:fl-sp 4s ease-in-out infinite backwards}
-/* 4 枚が同時に動かないように 0.6 秒ずつずらす */
-.is-playing.fl-02 .fl-bub,.is-playing.fl-02 .fl-bub *{animation-delay:.6s}
-.is-playing.fl-03 .fl-bub,.is-playing.fl-03 .fl-bub *{animation-delay:1.2s}
-.is-playing.fl-04 .fl-bub,.is-playing.fl-04 .fl-bub *{animation-delay:1.8s}
-.is-playing.fl-04 .fl-sp2{animation-delay:2.1s}
-.is-playing.fl-04 .fl-sp3{animation-delay:2.4s}
+/* 画面に入った瞬間は、吹き出しが出たまま（いったん消えない）。くり返しの途中（全部が見えている所）から始める。
+   始める所を 1 枚ずつ変えて、4 枚が同時に動かないようにする（マイナスの delay＝その分だけ進んだ所から始まる） */
+.is-playing.fl-01 .fl-bub,.is-playing.fl-01 .fl-bub *{animation-delay:-1.2s}
+.is-playing.fl-02 .fl-bub,.is-playing.fl-02 .fl-bub *{animation-delay:-1.8s}
+.is-playing.fl-03 .fl-bub,.is-playing.fl-03 .fl-bub *{animation-delay:-1.4s}
+.is-playing.fl-04 .fl-bub,.is-playing.fl-04 .fl-bub *{animation-delay:-2.2s}
+.is-playing.fl-04 .fl-sp2{animation-delay:-1.9s}
+.is-playing.fl-04 .fl-sp3{animation-delay:-1.6s}
 /* 01・02・04：ぽんと出る → カーソルが点滅 → 消える */
 @keyframes fl-pop{0%{transform:scale(0);opacity:0}8%{transform:scale(1.12);opacity:1}13%{transform:scale(1)}78%{transform:scale(1);opacity:1}88%,100%{transform:scale(.6);opacity:0}}
 @keyframes fl-caret{0%{opacity:0}13%{opacity:1}25%{opacity:0}37%{opacity:1}49%{opacity:0}61%{opacity:1}78%{opacity:0}}
