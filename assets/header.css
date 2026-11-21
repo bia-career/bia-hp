@@ -2,12 +2,12 @@
    - ロゴとメニューは画面に固定（position: fixed）。白い帯は敷かず、ロゴとメニューの丸長方形だけが浮く
    - 一番上では今までの見た目のまま。スクロールしたら html に .hd-scrolled が付き、ロゴの下の 1 行を消す・ロゴを小さく・影を付ける
    - .hd は場所を取るだけの箱（中身は .hd-bar が固定で出す）。高さは前のヘッダーと同じ */
-:root{--hd-navy:#1D262E;--hd-current:#0093E9;--hd-shadow:0 4px 16px rgba(29,38,46,.12);--hd-top-shadow:0 6px 24px rgba(30,80,160,.15);--hd-speed:.2s}
+:root{--hd-navy:#1D262E;--hd-current:#0072B8;--hd-shadow:0 4px 16px rgba(29,38,46,.12);--hd-top-shadow:0 6px 24px rgba(30,80,160,.15);--hd-speed:.2s}
 .hd{position:relative;z-index:40;height:105px}
 .hd-bar{position:fixed;top:0;left:0;right:0;z-index:40;pointer-events:none}
 .hd-in{max-width:1200px;margin:0 auto;padding:14px 24px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
 .hd-brand{display:flex;flex-direction:column;align-items:flex-start}
-.hd-logo,.hd-nav,.hd-menu{pointer-events:auto}
+.hd-logo,.hd-bia,.hd-nav,.hd-menu{pointer-events:auto}
 
 /* ロゴ（#hashtag） */
 .hd-logo{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--hd-navy);color:#fff;text-decoration:none;
@@ -18,6 +18,13 @@
 .hd-desc{margin:6px 0 0 6px;max-height:24px;overflow:hidden;font-size:12px;font-weight:700;letter-spacing:1px;line-height:1.8;color:var(--hd-navy);white-space:nowrap;
   transition:opacity var(--hd-speed) ease,max-height var(--hd-speed) ease,margin var(--hd-speed) ease}
 .hd-desc span{font-family:Poppins,sans-serif;font-weight:400;color:#3D4B57}
+
+/* 運営会社のページだけ：ロゴは BIA（2026-11。廣瀬さんの決定）。一番上は前と同じく波の上にロゴだけ。
+   スクロールしたら白い丸長方形に入れて小さくし、影を付ける（下の文字と重なって読めなくならないように） */
+.hd-bia{display:inline-flex;align-items:center;border-radius:16px;transition:padding var(--hd-speed) ease,background var(--hd-speed) ease,box-shadow var(--hd-speed) ease}
+.hd-bia img{display:block;width:120px;height:auto;transition:width var(--hd-speed) ease}
+.hd-scrolled .hd-bia{padding:6px 14px;background:#fff;box-shadow:var(--hd-shadow)}
+.hd-scrolled .hd-bia img{width:84px}
 
 /* パソコンのメニュー（白い丸長方形） */
 .hd-nav{display:flex;flex-wrap:nowrap;align-items:center;gap:4px;margin-top:10px;padding:6px 6px 6px 14px;background:#fff;border-radius:999px;box-shadow:var(--hd-top-shadow);
@@ -76,6 +83,9 @@
   .hd-scrolled .hd-logo .name{font-size:15px}
   .hd-scrolled .hd-logo .caret{height:15px}
   .hd-scrolled .hd-in{padding-top:10px}
+  .hd-bia img{width:92px}
+  .hd-scrolled .hd-bia{padding:4px 12px}
+  .hd-scrolled .hd-bia img{width:72px}
   .hd-menu{display:grid;place-items:center;flex:none;width:44px;height:44px;padding:0;border:0;border-radius:999px;background:#fff;box-shadow:var(--hd-top-shadow);cursor:pointer;transition:box-shadow var(--hd-speed) ease}
   .hd-scrolled .hd-menu{box-shadow:var(--hd-shadow)}
   .hd-menu span,.hd-menu span::before,.hd-menu span::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--hd-navy);position:relative}
@@ -104,7 +114,7 @@
 
 /* 動きを減らす設定：消える・小さくなる動きをなくす（すぐ切り替える） */
 @media (prefers-reduced-motion:reduce){
-  .hd-logo,.hd-logo .hash,.hd-logo .name,.hd-logo .caret,.hd-desc,.hd-nav,.hd-menu,.hd-arw{transition:none}
+  .hd-logo,.hd-logo .hash,.hd-logo .name,.hd-logo .caret,.hd-bia,.hd-bia img,.hd-desc,.hd-nav,.hd-menu,.hd-arw{transition:none}
 }
 
 /* フッターのメニュー：ヘッダーと同じまとまり */
