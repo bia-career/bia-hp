@@ -137,3 +137,21 @@
     a.href = base + (base.indexOf('?') >= 0 ? '&' : '?') + 'from=' + encodeURIComponent(a.getAttribute('data-booking'));
   });
 })();
+
+// 6 つのポイントのアイコン：画面に入ったとき 1 回だけ「ぽん」と出る（0.8 倍 → 元の大きさ・0.4 秒・0.08 秒ずつずらす）。DESIGN-SPEC.md 14 章
+// はじめから見えているとき・動きを減らす設定・IntersectionObserver が無いときは、動かさずに最初から表示
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var lists = [].slice.call(document.querySelectorAll('ul')).filter(function (u) { return u.querySelector(':scope > li.point'); });
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.remove('pt-wait'); e.target.classList.add('pt-pop');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  lists.forEach(function (u) {
+    if (u.getBoundingClientRect().top < window.innerHeight) return;
+    u.classList.add('pt-wait'); io.observe(u);
+  });
+})();
