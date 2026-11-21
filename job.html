@@ -42,7 +42,7 @@
         <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-list">その他</button>
         <div class="more-list" id="more-list"><a href="/#flow">支援の流れ</a><a href="/column.html">コラム</a><a href="/company.html">運営会社（BIA）</a><a href="/recruit.html">採用情報</a><a href="/privacy">個人情報の取り扱い</a></div>
       </div>
-      <a class="btn btn-main" href="#">無料でキャリア相談</a>
+      <a class="btn btn-main" href="/booking.html?from=header" data-booking="header">無料でキャリア相談</a>
     </nav>
   </div>
 </header>
@@ -63,7 +63,7 @@
 <section id="contact" class="alt">
   <div class="wrap">
     <div class="sec-head center"><p class="en-big" aria-hidden="true">CONTACT</p><h2>まずは、あなたの <span class="g-hash">#</span> を一緒に。</h2></div>
-    <p style="margin:0 0 26px;color:var(--sub)">オンラインで 60 分。空いている日時を選ぶだけで予約できます。相談は無料です。</p><a class="btn btn-main" href="#">無料でキャリア相談する</a>
+    <p style="margin:0 0 26px;color:var(--sub)">オンラインで 60 分。空いている日時を選ぶだけで予約できます。相談は無料です。</p><a class="btn btn-main" href="/booking.html?from=contact" data-booking="contact">無料でキャリア相談する</a>
   </div>
 </section>
 
@@ -85,7 +85,8 @@
   </div>
 </footer>
 
-<div class="sticky-cta"><a class="btn btn-main" href="#">無料でキャリア相談する</a></div>
+<div class="sticky-cta"><a class="btn btn-main" href="/booking.html?from=sticky" data-booking="sticky">無料でキャリア相談する</a></div>
+<script src="/assets/config.js"></script>
 <script src="/assets/site.js"></script>
 <script src="/assets/jobs.js"></script>
 <script>renderJobDetail(document.getElementById("job-detail"), JOBS)</script>

@@ -62,5 +62,23 @@ function renderJobDetail(el, jobs) {
     '<dt>休日・休暇</dt><dd>' + escapeHtml(j.holidays) + '</dd>' +
     '<dt>この仕事のハッシュタグ</dt><dd><div class="tag-box">' + j.tags.map(function (t) { return tagHtml(t, true); }).join('') + '</div></dd>' +
     '</dl>' +
-    '<div class="job-cta"><a class="btn btn-main" href="#">この求人について相談する</a><a class="btn btn-sub" href="/jobs.html">求人一覧へ</a></div>';
+    '<div class="job-cta"><a class="btn btn-main" href="/booking.html?from=job" data-booking="job">この求人について相談する</a><a class="btn btn-sub" href="/jobs.html">求人一覧へ</a></div>';
+}
+
+// 求人一覧のページ：?tag=○○ があれば、そのハッシュタグの求人だけ出す
+function renderJobsPage(el, jobs) {
+  var tag = new URLSearchParams(location.search).get('tag');
+  var list = tag ? jobs.filter(function (j) { return j.tags.indexOf(tag) >= 0; }) : jobs;
+  document.querySelectorAll('.tag-btn[data-tag]').forEach(function (b) {
+    var on = b.getAttribute('data-tag') === tag;
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.setAttribute('href', on ? '/jobs.html' : '/jobs.html?tag=' + encodeURIComponent(b.getAttribute('data-tag')));
+  });
+  var now = document.getElementById('filter-now');
+  if (now && tag) {
+    now.hidden = false;
+    now.innerHTML = '<span>#' + escapeHtml(tag) + ' の求人（' + list.length + '件）</span><a href="/jobs.html">絞り込みを外す</a>';
+  }
+  if (!list.length) { el.innerHTML = '<div class="empty card line"><p style="margin:0;font-weight:700">このハッシュタグの求人はまだありません。</p></div>'; return; }
+  renderJobList(el, list);
 }

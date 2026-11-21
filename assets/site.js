@@ -18,9 +18,7 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { m.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); } });
   }
   // 見本の絞り込み（押した見た目だけ）
-  document.querySelectorAll('.tag-btn').forEach(function (t) {
-    t.addEventListener('click', function () { t.setAttribute('aria-pressed', t.getAttribute('aria-pressed') !== 'true'); });
-  });
+
 })();
 
 // 6. スクロールで出てくる動き（見出し・カード）。1 回出たら終わり。動きを減らす設定なら何もしない
@@ -74,4 +72,12 @@
     bar.querySelector('a').tabIndex = hide ? -1 : 0;
   });
   targets.forEach(function (t) { io.observe(t); });
+})();
+
+// 「無料でキャリア相談」の行き先を assets/config.js の BOOKING_URL から作る。どのボタンから来たかを ?from= で付ける
+(function () {
+  var cfg = window.HASHTAG_CONFIG || {}; var base = cfg.BOOKING_URL || '/booking.html';
+  document.querySelectorAll('a[data-booking]').forEach(function (a) {
+    a.href = base + (base.indexOf('?') >= 0 ? '&' : '?') + 'from=' + encodeURIComponent(a.getAttribute('data-booking'));
+  });
 })();

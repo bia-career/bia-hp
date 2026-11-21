@@ -235,7 +235,7 @@ body{background:var(--bg)}
 .band{margin:0 16px;border-radius:32px;color:var(--navy);
   background:linear-gradient(90deg,#9FEAE5 0%,#93C8EF 50%,#8393EE 100%)}
 .band .sec-head .en-big,.band .sec-head h2,.band h3,.band .card p{color:var(--navy)}
-.band .card{background:rgba(255,255,255,.85);border:1px solid #FFFFFF}
+.band .card{background:rgba(255,255,255,.9);border:1px solid #FFFFFF}
 .band .card .en{color:#0070B8 !important;font-weight:600}
 .band .step-img{background:#fff}
 /* 支援の流れのカードは 1,100px 以上で 4 枚 1 列、それより狭いと 2 枚×2 段、スマホは 1 列（3＋1 にしない） */
@@ -269,3 +269,18 @@ body{background:var(--bg)}
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 }
 @media (max-width: 767px) and (prefers-reduced-motion: reduce){ .sticky-cta{transition:none} }
+/* 支援の流れのカードの説明文も紺（STEP の番号は #0070B8 のまま） */
+.band .card p{color:var(--navy) !important}
+
+/* 960px 以上は一番上を 2 列（左に文・右にタイピングのカード） */
+@media (min-width: 960px){
+  .hero .wrap{flex-wrap:nowrap;gap:clamp(32px,4vw,56px)}
+  .hero .wrap > :first-child{flex:1 1 auto !important;min-width:0}
+  .hero .wrap > .float-wrap{flex:0 0 clamp(380px,38vw,460px) !important}
+}
+/* 例のハッシュタグを押したあとの「の求人を見る」 */
+.pick-link{margin:16px 0 0;font-size:14px;font-weight:700}
+.pick-link a{color:var(--navy)}
+/* 求人一覧のハッシュタグの絞り込み */
+.filter-now{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:0 0 20px;font-weight:700}
+.filter-now a{font-weight:400;font-size:14px}

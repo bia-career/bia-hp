@@ -42,7 +42,7 @@
         <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-list">その他</button>
         <div class="more-list" id="more-list"><a href="/#flow">支援の流れ</a><a href="/column.html">コラム</a><a href="/company.html">運営会社（BIA）</a><a href="/recruit.html">採用情報</a><a href="/privacy">個人情報の取り扱い</a></div>
       </div>
-      <a class="btn btn-main" href="#">無料でキャリア相談</a>
+      <a class="btn btn-main" href="/booking.html?from=header" data-booking="header">無料でキャリア相談</a>
     </nav>
   </div>
 </header>
@@ -60,16 +60,17 @@
     <form class="filters" role="search" aria-label="求人の絞り込み（見本）" onsubmit="return false">
       <label>職種<select id="f-cat"><option>すべて</option><option>営業</option><option>事務</option><option>IT</option><option>販売・サービス</option></select></label>
       <label>勤務地<select id="f-area"><option>すべて</option><option>東京都</option><option>神奈川県</option><option>大阪府</option><option>そのほか</option></select></label>
-      <div class="filter-tags"><span class="filter-label">ハッシュタグ</span><button type="button" class="tag tag-btn" aria-pressed="false">#未経験からIT</button><button type="button" class="tag tag-btn" aria-pressed="false">#土日休み</button><button type="button" class="tag tag-btn" aria-pressed="false">#人と話す仕事</button><button type="button" class="tag tag-btn" aria-pressed="false">#地元で働く</button></div>
+      <div class="filter-tags"><span class="filter-label">ハッシュタグ</span><a class="tag tag-btn" href="/jobs.html?tag=未経験からIT" data-tag="未経験からIT" aria-pressed="false">#未経験からIT</a><a class="tag tag-btn" href="/jobs.html?tag=土日休み" data-tag="土日休み" aria-pressed="false">#土日休み</a><a class="tag tag-btn" href="/jobs.html?tag=人と話す仕事" data-tag="人と話す仕事" aria-pressed="false">#人と話す仕事</a><a class="tag tag-btn" href="/jobs.html?tag=地元で働く" data-tag="地元で働く" aria-pressed="false">#地元で働く</a><a class="tag tag-btn" href="/jobs.html?tag=3年後にリーダー" data-tag="3年後にリーダー" aria-pressed="false">#3年後にリーダー</a></div>
     </form>
-    <p class="note" style="margin:12px 0 24px">※ 絞り込みは見本です（まだ動きません）。求人はすべて例です。</p>
+    <p class="note" style="margin:12px 0 24px">※ 職種・勤務地の絞り込みは見本です（まだ動きません）。ハッシュタグは押すと絞り込みます。求人はすべて例です。</p>
+    <div class="filter-now" id="filter-now" hidden></div>
     <div class="grid g3" id="job-list"></div>
   </div>
 </section>
 <section id="contact" class="alt">
   <div class="wrap">
     <div class="sec-head center"><p class="en-big" aria-hidden="true">CONTACT</p><h2>まずは、あなたの <span class="g-hash">#</span> を一緒に。</h2></div>
-    <p style="margin:0 0 26px;color:var(--sub)">オンラインで 60 分。空いている日時を選ぶだけで予約できます。相談は無料です。</p><a class="btn btn-main" href="#">無料でキャリア相談する</a>
+    <p style="margin:0 0 26px;color:var(--sub)">オンラインで 60 分。空いている日時を選ぶだけで予約できます。相談は無料です。</p><a class="btn btn-main" href="/booking.html?from=contact" data-booking="contact">無料でキャリア相談する</a>
   </div>
 </section>
 
@@ -91,9 +92,10 @@
   </div>
 </footer>
 
-<div class="sticky-cta"><a class="btn btn-main" href="#">無料でキャリア相談する</a></div>
+<div class="sticky-cta"><a class="btn btn-main" href="/booking.html?from=sticky" data-booking="sticky">無料でキャリア相談する</a></div>
+<script src="/assets/config.js"></script>
 <script src="/assets/site.js"></script>
 <script src="/assets/jobs.js"></script>
-<script>renderJobList(document.getElementById("job-list"), JOBS)</script>
+<script>renderJobsPage(document.getElementById("job-list"), JOBS)</script>
 </body>
 </html>
