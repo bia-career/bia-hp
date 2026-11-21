@@ -7,9 +7,15 @@
 
   // スクロールしたら html に .hd-scrolled（ロゴの下の 1 行を消す・ロゴを小さく・影）。一番上に戻ったら外す
   var ticking = false;
+  // 運営会社のページの BIA のロゴは、紺のフッターに重なっている間だけ白にする（html に .hd-on-dark）
+  var bia = hd.querySelector('.hd-bia img'), foot = document.querySelector('footer');
   function onScroll() {
     ticking = false;
     root.classList.toggle('hd-scrolled', window.scrollY > 4);
+    if (bia && foot) {
+      var l = bia.getBoundingClientRect(), f = foot.getBoundingClientRect(), mid = l.top + l.height / 2;
+      root.classList.toggle('hd-on-dark', f.top <= mid && f.bottom >= mid);
+    }
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
