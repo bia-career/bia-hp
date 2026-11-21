@@ -88,6 +88,15 @@
 .rc-job-detail dd{margin:2px 0 12px;color:var(--sub)}
 .rc-job-apply{display:grid;gap:10px;margin-top:6px}
 .rc-job-apply .btn{justify-content:center;min-height:52px;padding:0 20px;font-size:15px}
+/* 採用の流れ（新卒・中途を横に 2 つ。スマホは縦） */
+.rc-flow{display:grid;gap:16px 32px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.rc-flow .rc-h3{margin:0 0 14px;font-size:18px}
+.rc-steps{display:grid;gap:10px;counter-reset:none}
+.rc-steps li{display:flex;align-items:center;gap:16px;padding:16px 20px;position:relative}
+.rc-steps .rc-no{min-width:1.6em}
+.rc-steps li h4{margin:0 !important;font-size:16px !important}
+.rc-steps li:not(:last-child)::after{content:"";position:absolute;left:34px;bottom:-11px;width:1.5px;height:10px;background:#C9D5DE}
+@media (max-width:767px){ .rc-flow{grid-template-columns:minmax(0,1fr)} }
 /* エントリー */
 .rc-entry{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px}
 .rc-entry .btn{min-height:72px;min-width:260px;justify-content:center;font-size:18px}
