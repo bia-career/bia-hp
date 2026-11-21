@@ -9,15 +9,34 @@
   var ticking = false;
   // 運営会社のページの BIA のロゴは、紺のフッターに重なっている間だけ白にする（html に .hd-on-dark）
   var bia = hd.querySelector('.hd-bia img'), foot = document.querySelector('footer');
+  // BIA のロゴが見出し（h1〜h3・大きな英字の見出し）の文字に重なっている間だけ、ロゴをうすくする（html に .hd-on-head）。本文・カード・表では変えない
+  var heads = bia ? [].slice.call(document.querySelectorAll('h1, h2, h3, .en-big')).filter(function (h) { return !h.closest('.hd, footer'); }) : [];
+  var range = document.createRange();
+  function onHead(l) {
+    for (var i = 0; i < heads.length; i++) {
+      var r = heads[i].getBoundingClientRect();
+      if (r.bottom <= l.top || r.top >= l.bottom || !r.width) continue; // 縦に重ならないものは、ここで飛ばす（軽い）
+      range.selectNodeContents(heads[i]);
+      var rs = range.getClientRects(); // 文字が実際にある所（行ごと）
+      for (var j = 0; j < rs.length; j++) {
+        var t = rs[j];
+        if (t.width && t.right > l.left && t.left < l.right && t.bottom > l.top && t.top < l.bottom) return true;
+      }
+    }
+    return false;
+  }
   function onScroll() {
     ticking = false;
     root.classList.toggle('hd-scrolled', window.scrollY > 4);
     if (bia && foot) {
       var l = bia.getBoundingClientRect(), f = foot.getBoundingClientRect(), mid = l.top + l.height / 2;
       root.classList.toggle('hd-on-dark', f.top <= mid && f.bottom >= mid);
+      root.classList.toggle('hd-on-head', onHead(l));
     }
   }
-  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  function queue() { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
   onScroll();
 
   // SERVICE ▼：マウスを乗せる・押す・キーボード（Enter・Space・↓ で開く、Esc で閉じる、↑↓ で中を動く）
