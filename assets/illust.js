@@ -1,6 +1,6 @@
-// 動くイラスト（assets/illust/*.svg をページの中に直接入れたもの）。DESIGN-SPEC.md 13 章
+// 支援の流れのイラストの「動く # の吹き出し」（DESIGN-SPEC.md 13 章）
 // .illust-anim が画面に見えている間だけ .is-playing を付けて動かす。見えなくなったら外す
-// 動きを減らす設定・IntersectionObserver が無いブラウザでは何もしない（止まった 1 枚の絵のまま）
+// 動きを減らす設定・IntersectionObserver が無いブラウザでは何もしない（吹き出しが出たままの止まった絵）
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function (es) {
