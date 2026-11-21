@@ -113,8 +113,8 @@ nav a[aria-current="page"]{color:var(--caret-on-white)}
 .more-list a{padding:10px 14px;border-radius:12px;white-space:nowrap}
 .more-list a:hover{background:var(--bg2)}
 .more.open .more-list{display:flex}
-/* ヘッダー：1080px より狭いと、右上の ≡ で開く */
-@media (max-width: 1080px){
+/* ヘッダー：960px より狭いと、右上の ≡ で開く */
+@media (max-width: 959px){
   header .wrap{flex-wrap:nowrap;align-items:flex-start;padding-top:12px}
   .logo{height:40px;padding:0 16px;gap:6px}
   .logo .name{font-size:17px}
@@ -228,18 +228,44 @@ body{background:var(--bg)}
 .fl{position:absolute;will-change:transform}
 .fl img{display:block;width:100%;height:auto}
 .fl.tag{background:#fff;white-space:nowrap}
-@media (max-width: 860px){ .fl.pc{display:none} }
+@media (max-width: 1099px){ .fl.pc{display:none} }
 .page-hero .floats{left:auto;width:min(46%,520px)}
 @media (max-width: 860px){ .page-hero .floats{display:none} }
-/* 5. 支援の流れは波のグラデーションの面（白い文字が読めるよう紺を重ねる） */
-.band{margin:0 16px;border-radius:32px;color:#fff;
-  background:linear-gradient(90deg,rgba(29,38,46,.7) 0%,rgba(29,38,46,.6) 50%,rgba(29,38,46,.3) 100%),linear-gradient(90deg,#7FE3DC 0%,#6FB6EA 50%,#5A6FE8 100%)}
-.band .sec-head .en-big,.band .sec-head h2,.band h3,.band p{color:#fff}
-.band .card{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff}
-.band .card p,.band .card .en{color:#fff !important}
+/* 5. 支援の流れは波の色を白に 25% 混ぜた明るい面。文字は紺、STEP は #0070B8、カードは白 85% */
+.band{margin:0 16px;border-radius:32px;color:var(--navy);
+  background:linear-gradient(90deg,#9FEAE5 0%,#93C8EF 50%,#8393EE 100%)}
+.band .sec-head .en-big,.band .sec-head h2,.band h3,.band .card p{color:var(--navy)}
+.band .card{background:rgba(255,255,255,.85);border:1px solid #FFFFFF}
+.band .card .en{color:#0070B8 !important;font-weight:600}
 .band .step-img{background:#fff}
+/* 支援の流れのカードは 1,100px 以上で 4 枚 1 列、それより狭いと 2 枚×2 段、スマホは 1 列（3＋1 にしない） */
+.band ol.grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width: 1099px){ .band ol.grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width: 767px){ .band ol.grid{grid-template-columns:minmax(0,1fr)} }
 @media (max-width: 860px){ .band{margin:0 8px;border-radius:24px} }
 /* 6. スクロールで下から出てくる（1 回だけ。動きを減らす設定では最初から表示） */
 .js-reveal .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .js-reveal .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){ .js-reveal .rv{opacity:1;transform:none;transition:none} }
+
+/* 3. 960〜1,100px はメニューの文字を 13px にして間を狭める */
+@media (min-width: 960px) and (max-width: 1100px){
+  header nav{gap:4px 14px;font-size:13px;padding-left:16px}
+  header nav .btn{padding:0 16px;font-size:13px}
+  .logo-desc{font-size:11px}
+}
+/* 4. 浮かぶ「#」（大）はスマホでは小さく、カードの上の余白に収める */
+@media (max-width: 860px){ .fl.big{width:56px !important;top:-62px !important;right:4px !important} }
+/* 8. 例のハッシュタグを押すと上の枠に打ち込まれる */
+.tag-pick{font:inherit;font-size:14px;font-weight:700;color:var(--navy);cursor:pointer;transition:background .15s,color .15s}
+.tag-pick:hover,.tag-pick[aria-pressed="true"]{background:var(--navy);color:#fff}
+.tag-pick:focus-visible{outline:3px solid var(--caret-on-white);outline-offset:2px}
+/* 9. スマホの下の「無料でキャリア相談」（ファーストビューのボタンが見えている間は隠す） */
+.sticky-cta{display:none}
+@media (max-width: 767px){
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(244,246,248,.94);backdrop-filter:blur(6px);border-top:1px solid var(--line);transition:transform .25s ease}
+  .sticky-cta .btn{width:100%;justify-content:center;min-height:52px}
+  .sticky-cta.hide{transform:translateY(110%)}
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce){ .sticky-cta{transition:none} }

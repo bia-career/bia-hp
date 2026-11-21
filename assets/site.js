@@ -58,3 +58,20 @@
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
   update();
 })();
+
+// 9. スマホの下の「無料でキャリア相談」：ページの中の主なボタンが見えている間は隠す
+(function () {
+  var bar = document.querySelector('.sticky-cta');
+  if (!bar || !('IntersectionObserver' in window)) return;
+  var targets = document.querySelectorAll('main .btn-main');
+  if (!targets.length) return;
+  var seen = new Set();
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+    var hide = seen.size > 0;
+    bar.classList.toggle('hide', hide);
+    bar.setAttribute('aria-hidden', hide);
+    bar.querySelector('a').tabIndex = hide ? -1 : 0;
+  });
+  targets.forEach(function (t) { io.observe(t); });
+})();

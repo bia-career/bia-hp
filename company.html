@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://bia-career.com/assets/ogp.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* 運営会社（BIA）のページ。一番上は今の bia-career.com と同じ形（波・ロゴ・Unleash the potential of youth.） */
 :root{--navy:#1D262E;--caret:#6FD6E6;--caret-on-white:#0093E9;--ink:#1D262E;--sub:#4A5560;--muted:#5F6B76;--bg2:#F3F6F8;--line:#E3EAEF;
@@ -30,7 +30,7 @@ a{color:inherit}
 .en{font-family:Poppins,sans-serif}
 /* 今のサイトと同じ一番上 */
 .fv{position:relative}
-.fv-wave{position:absolute;inset:0 0 auto 0;height:clamp(165px,16.8vw,320px);background:url(/assets/wave.webp) center top/cover no-repeat;transform:rotate(180deg);pointer-events:none}
+.fv-wave{position:absolute;inset:0 0 auto 0;height:clamp(165px,16.8vw,320px);background:image-set(url(/assets/wave-1200.webp) 1x,url(/assets/wave-2400.webp) 2x) center top/cover no-repeat;transform:rotate(180deg);pointer-events:none}
 .bia-header{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:40px 40px 0}
 .bia-header .bia-logo img{width:120px}
 .bia-nav{display:flex;align-items:center;gap:4px;background:#fff;border-radius:999px;padding:6px 8px 6px 24px;box-shadow:0 6px 24px rgba(0,114,184,.14);font-size:14px;font-weight:700}
@@ -94,6 +94,13 @@ body{background:#F4F6F8}
 .js-reveal .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){.js-reveal .rv{opacity:1;transform:none;transition:none}}
 @media (max-width:860px){.sec-head .en-big{font-size:40px}.sec-head{margin-bottom:28px}}
+
+.sticky-cta{display:none}
+@media (max-width:767px){
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(244,246,248,.94);border-top:1px solid var(--line)}
+  .sticky-cta .btn-main{display:flex;width:100%;min-height:52px;align-items:center;justify-content:center;border-radius:999px;background:var(--navy);color:#fff;font-weight:700;text-decoration:none}
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+}
 </style>
 </head>
 <body>
@@ -161,6 +168,7 @@ body{background:#F4F6F8}
 <script>
 (function(){var b=document.querySelector(".menu-btn"),n=document.getElementById("bnav");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o)})})();
 </script>
+<div class="sticky-cta"><a class="btn btn-main" href="#">無料でキャリア相談する</a></div>
 <script src="/assets/site.js"></script>
 </body>
 </html>

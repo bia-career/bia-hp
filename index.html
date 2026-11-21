@@ -20,13 +20,13 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "株式会社ビア", "url": "https://bia-career.com/", "logo": "https://bia-career.com/assets/apple-touch-icon.png", "email": "info@bia-career.com", "foundingDate": "2021-08-10", "address": {"@type": "PostalAddress", "postalCode": "160-0023", "addressRegion": "東京都", "addressLocality": "新宿区", "streetAddress": "西新宿3-9-7 フロンティア新宿タワーオフィス3F", "addressCountry": "JP"}}</script>
 </head>
 <body>
 
-<img class="wave" src="/assets/wave.webp" alt="" width="1800" height="379">
+<img class="wave" src="/assets/wave-1200.webp" srcset="/assets/wave-1200.webp 1200w, /assets/wave-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="506" fetchpriority="high">
 <header>
   <div class="wrap">
     <div>
@@ -65,15 +65,15 @@
       </div>
     </div>
     <div class="float-wrap" style="flex:1 1 420px;min-width:0">
-      <div class="floats" aria-hidden="true"><span class="fl" style="width:96px;right:-28px;top:-64px" data-speed=".1"><img src="/assets/hash-grad.svg" alt="" width="96" height="96"></span><span class="fl tag pc" style="left:-8px;top:-58px" data-speed="-.06">#3年後にリーダー</span><span class="fl pc" style="width:44px;left:-52px;bottom:-34px" data-speed="-.12"><img src="/assets/hash-grad.svg" alt="" width="44" height="44"></span><span class="fl tag" style="right:8px;bottom:-60px" data-speed=".07">#地元で働く</span><span class="fl pc" style="width:30px;right:-56px;top:46%" data-speed="-.08"><img src="/assets/hash-grad.svg" alt="" width="30" height="30"></span></div>
+      <div class="floats" aria-hidden="true"><span class="fl big" style="width:96px;right:-8px;top:-122px" data-speed=".1"><img src="/assets/hash-grad.svg" alt="" width="96" height="96"></span><span class="fl tag pc" style="left:-8px;top:-58px" data-speed="-.06">#3年後にリーダー</span><span class="fl pc" style="width:44px;left:-52px;bottom:-34px" data-speed="-.12"><img src="/assets/hash-grad.svg" alt="" width="44" height="44"></span><span class="fl tag" style="right:8px;bottom:-60px" data-speed=".07">#地元で働く</span><span class="fl pc" style="width:30px;right:-56px;top:46%" data-speed="-.08"><img src="/assets/hash-grad.svg" alt="" width="30" height="30"></span></div>
       <div class="typing-card">
-        <p style="margin:0 0 18px;font-size:13px;font-weight:700;color:var(--muted)">面談で生まれるハッシュタグ（例）</p>
+        <p style="margin:0 0 18px;font-size:13px;font-weight:700;color:var(--muted)">面談で生まれるハッシュタグ（例）<span class="note" style="display:block;font-weight:400">下の例を押すと、上に打ち込まれます</span></p>
         <div class="typing" aria-label="ハッシュタグの例">
           <svg class="hash" viewBox="0 0 40 40" width="24" height="24" aria-hidden="true"><g stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"><line x1="17" y1="6" x2="13" y2="34"/><line x1="28" y1="6" x2="24" y2="34"/><line x1="8" y1="15" x2="34" y2="15"/><line x1="6" y1="25" x2="32" y2="25"/></g></svg>
           <span id="typed">人と話す仕事</span><span class="caret" aria-hidden="true"></span>
         </div>
         <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:8px">
-          <span class="tag">#人と話す仕事</span><span class="tag">#3年後にリーダー</span><span class="tag">#土日休み</span><span class="tag">#未経験からIT</span><span class="tag">#地元で働く</span>
+          <button type="button" class="tag tag-pick" aria-pressed="false" data-word="人と話す仕事">#人と話す仕事</button><button type="button" class="tag tag-pick" aria-pressed="false" data-word="3年後にリーダー">#3年後にリーダー</button><button type="button" class="tag tag-pick" aria-pressed="false" data-word="土日休み">#土日休み</button><button type="button" class="tag tag-pick" aria-pressed="false" data-word="未経験からIT">#未経験からIT</button><button type="button" class="tag tag-pick" aria-pressed="false" data-word="地元で働く">#地元で働く</button>
         </div>
       </div>
     </div>
@@ -98,10 +98,10 @@
   <div class="wrap" style="padding-top:88px;padding-bottom:88px">
     <div class="sec-head"><p class="en-big" aria-hidden="true">FLOW</p><h2>支援の流れ</h2></div>
     <ol class="grid g4" style="list-style:none;margin:0;padding:0">
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 01</p><div class="step-img"><img src="/assets/flow2.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を見つける</h3><p style="margin:0;font-size:14px;color:var(--sub)">キャリア面談で、転職の軸と描きたい未来を言葉にします。</p></li>
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 02</p><div class="step-img"><img src="/assets/flow3.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># に合う会社を選ぶ</h3><p style="margin:0;font-size:14px;color:var(--sub)">あなたのハッシュタグに合う求人だけをご紹介します。</p></li>
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 03</p><div class="step-img"><img src="/assets/flow1.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を伝える</h3><p style="margin:0;font-size:14px;color:var(--sub)">書類と面接で、あなたのハッシュタグを企業に伝えます。</p></li>
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 04</p><div class="step-img"><img src="/assets/flow4.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># の先へ</h3><p style="margin:0;font-size:14px;color:var(--sub)">内定・条件の確認から入社後まで支えます。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 01</p><div class="step-img"><img src="/assets/flow2.svg" alt="" width="200" height="129" loading="lazy" decoding="async"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を見つける</h3><p style="margin:0;font-size:14px;color:var(--sub)">キャリア面談で、転職の軸と描きたい未来を言葉にします。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 02</p><div class="step-img"><img src="/assets/flow3.svg" alt="" width="200" height="129" loading="lazy" decoding="async"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># に合う会社を選ぶ</h3><p style="margin:0;font-size:14px;color:var(--sub)">あなたのハッシュタグに合う求人だけをご紹介します。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 03</p><div class="step-img"><img src="/assets/flow1.svg" alt="" width="200" height="129" loading="lazy" decoding="async"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を伝える</h3><p style="margin:0;font-size:14px;color:var(--sub)">書類と面接で、あなたのハッシュタグを企業に伝えます。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 04</p><div class="step-img"><img src="/assets/flow4.svg" alt="" width="200" height="129" loading="lazy" decoding="async"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># の先へ</h3><p style="margin:0;font-size:14px;color:var(--sub)">内定・条件の確認から入社後まで支えます。</p></li>
     </ol>
   </div>
   </div>
@@ -117,7 +117,7 @@
 <section id="points" >
   <div class="wrap">
     <div class="sec-head"><p class="en-big" aria-hidden="true">POINT</p><h2>6 つのポイント</h2><a class="circle-link" href="/about.html#points" aria-label="6 つのポイントのページへ"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-    <ul class="grid g3" style="list-style:none;margin:0;padding:0"><li class="card line point"><img src="/assets/pt1.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 1</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">マンツーマンで全力サポート</h3></div></li><li class="card line point"><img src="/assets/pt2.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 2</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">転職先のピックアップ</h3></div></li><li class="card line point"><img src="/assets/pt3.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 3</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">何度でも相談可能</h3></div></li><li class="card line point"><img src="/assets/pt4.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 4</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">書類添削・面接対策</h3></div></li><li class="card line point"><img src="/assets/pt5.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 5</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">企業との交渉（給与等）</h3></div></li><li class="card line point"><img src="/assets/pt6.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 6</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">即日対応可能</h3></div></li></ul>
+    <ul class="grid g3" style="list-style:none;margin:0;padding:0"><li class="card line point"><img src="/assets/pt1.svg" alt="" width="56" height="56" loading="lazy" decoding="async"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 1</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">マンツーマンで全力サポート</h3></div></li><li class="card line point"><img src="/assets/pt2.svg" alt="" width="56" height="56" loading="lazy" decoding="async"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 2</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">転職先のピックアップ</h3></div></li><li class="card line point"><img src="/assets/pt3.svg" alt="" width="56" height="56" loading="lazy" decoding="async"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 3</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">何度でも相談可能</h3></div></li><li class="card line point"><img src="/assets/pt4.svg" alt="" width="56" height="56" loading="lazy" decoding="async"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 4</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">書類添削・面接対策</h3></div></li><li class="card line point"><img src="/assets/pt5.svg" alt="" width="56" height="56" loading="lazy" decoding="async"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 5</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">企業との交渉（給与等）</h3></div></li><li class="card line point"><img src="/assets/pt6.svg" alt="" width="56" height="56" loading="lazy" decoding="async"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 6</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">即日対応可能</h3></div></li></ul>
   </div>
 </section>
 
@@ -164,15 +164,38 @@
   </div>
 </footer>
 
+<div class="sticky-cta"><a class="btn btn-main" href="#">無料でキャリア相談する</a></div>
 <script src="/assets/site.js"></script>
 <script src="/assets/jobs.js"></script>
 <script>renderJobList(document.getElementById("new-jobs"), JOBS.slice(0, 3))</script>
 <script>
-// ハッシュタグの例を 1 文字ずつ打って消す（動きを減らす設定なら止める）
+// ハッシュタグの例を 1 文字ずつ打って消す。下の例を押すと、そのハッシュタグを打ち込み、5 秒たったら自動に戻る
 (function(){
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var words=['人と話す仕事','3年後にリーダー','土日休み','未経験からIT','地元で働く'], i=0, n=0, del=false, hold=0, el=document.getElementById('typed');
+  var words=['人と話す仕事','3年後にリーダー','土日休み','未経験からIT','地元で働く'], i=0, n=0, del=false, hold=0;
+  var el=document.getElementById('typed'), box=el.closest('.typing');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var picked=null, pickN=0, resumeAt=0;
+  var picks=document.querySelectorAll('.tag-pick');
+  function mark(w){ picks.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.word===w ? 'true' : 'false'); }); }
+  picks.forEach(function(b){
+    b.addEventListener('click', function(){
+      picked=b.dataset.word; pickN=reduce ? picked.length : 0; resumeAt=0; mark(picked);
+      el.textContent=reduce ? picked : '';
+      box.setAttribute('aria-label','ハッシュタグの例：'+picked);
+      if (reduce) resumeAt=Date.now()+5000;
+    });
+  });
   setInterval(function(){
+    if (picked) {
+      if (pickN < picked.length) { pickN++; el.textContent=picked.slice(0,pickN); if (pickN===picked.length) resumeAt=Date.now()+5000; return; }
+      if (Date.now() < resumeAt) return;
+      // 自動に戻る：押したハッシュタグから消していく
+      words.indexOf(picked) >= 0 ? (i=words.indexOf(picked)) : 0;
+      n=picked.length; del=true; hold=0; picked=null; mark(null);
+      if (reduce) { el.textContent=words[i]; }
+      return;
+    }
+    if (reduce) return;
     var w=words[i];
     if(!del){ if(n<w.length){n++;} else if(++hold>12){hold=0;del=true;} }
     else { if(n>0){n--;} else {del=false;i=(i+1)%words.length;} }
