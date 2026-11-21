@@ -19,12 +19,11 @@
   transition:opacity var(--hd-speed) ease,max-height var(--hd-speed) ease,margin var(--hd-speed) ease}
 .hd-desc span{font-family:Poppins,sans-serif;font-weight:400;color:#3D4B57}
 
-/* 運営会社のページだけ：ロゴは BIA（2026-11。廣瀬さんの決定）。一番上は前と同じく波の上にロゴだけ。
-   スクロールしたら白い丸長方形に入れて小さくし、影を付ける（下の文字と重なって読めなくならないように） */
-.hd-bia{display:inline-flex;align-items:center;border-radius:16px;transition:padding var(--hd-speed) ease,background var(--hd-speed) ease,box-shadow var(--hd-speed) ease}
+/* 運営会社のページだけ：ロゴは BIA（2026-11。廣瀬さんの決定）。枠も影も付けず、ロゴだけがついてくる。
+   スクロールしたら少し小さく（#hashtag のロゴと同じ 48px → 40px の割合） */
+.hd-bia{display:inline-flex;align-items:center}
 .hd-bia img{display:block;width:120px;height:auto;transition:width var(--hd-speed) ease}
-.hd-scrolled .hd-bia{padding:6px 14px;background:#fff;box-shadow:var(--hd-shadow)}
-.hd-scrolled .hd-bia img{width:84px}
+.hd-scrolled .hd-bia img{width:100px}
 
 /* パソコンのメニュー（白い丸長方形） */
 .hd-nav{display:flex;flex-wrap:nowrap;align-items:center;gap:4px;margin-top:10px;padding:6px 6px 6px 14px;background:#fff;border-radius:999px;box-shadow:var(--hd-top-shadow);
@@ -84,8 +83,7 @@
   .hd-scrolled .hd-logo .caret{height:15px}
   .hd-scrolled .hd-in{padding-top:10px}
   .hd-bia img{width:92px}
-  .hd-scrolled .hd-bia{padding:4px 12px}
-  .hd-scrolled .hd-bia img{width:72px}
+  .hd-scrolled .hd-bia img{width:82px}
   .hd-menu{display:grid;place-items:center;flex:none;width:44px;height:44px;padding:0;border:0;border-radius:999px;background:#fff;box-shadow:var(--hd-top-shadow);cursor:pointer;transition:box-shadow var(--hd-speed) ease}
   .hd-scrolled .hd-menu{box-shadow:var(--hd-shadow)}
   .hd-menu span,.hd-menu span::before,.hd-menu span::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--hd-navy);position:relative}
@@ -114,7 +112,7 @@
 
 /* 動きを減らす設定：消える・小さくなる動きをなくす（すぐ切り替える） */
 @media (prefers-reduced-motion:reduce){
-  .hd-logo,.hd-logo .hash,.hd-logo .name,.hd-logo .caret,.hd-bia,.hd-bia img,.hd-desc,.hd-nav,.hd-menu,.hd-arw{transition:none}
+  .hd-logo,.hd-logo .hash,.hd-logo .name,.hd-logo .caret,.hd-bia img,.hd-desc,.hd-nav,.hd-menu,.hd-arw{transition:none}
 }
 
 /* フッターのメニュー：ヘッダーと同じまとまり */

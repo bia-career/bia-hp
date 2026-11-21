@@ -19,11 +19,19 @@
   var items = sv ? [].slice.call(sv.querySelectorAll('.hd-drop a')) : [];
   function setSv(open) { if (!sv) return; sv.classList.toggle('open', open); svb.setAttribute('aria-expanded', open ? 'true' : 'false'); }
   if (sv && svb) {
-    var timer, byHover = false;
-    sv.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !mq.matches) { clearTimeout(timer); if (!sv.classList.contains('open')) byHover = true; setSv(true); } });
-    sv.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse' && !mq.matches) { timer = setTimeout(function () { byHover = false; setSv(false); }, 150); } });
-    // マウスを乗せて開いた直後に押したときは閉じない（乗せる → 押す で閉じてしまわないように）
-    svb.addEventListener('click', function () { if (byHover) { byHover = false; setSv(true); return; } setSv(!sv.classList.contains('open')); });
+    var timer, lastPointer = '';
+    sv.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !mq.matches) { clearTimeout(timer); setSv(true); } });
+    sv.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse' && !mq.matches) { timer = setTimeout(function () { setSv(false); }, 150); } });
+    // マウスのある画面で押したときは「開く」だけ（閉じるのは マウスが外れたとき・外を押したとき・Esc）。
+    // タッチとキーボード（Enter・スペース）は押すたびに開く／閉じる
+    svb.addEventListener('pointerdown', function (e) { lastPointer = e.pointerType || ''; });
+    svb.addEventListener('keydown', function () { lastPointer = 'keyboard'; });
+    svb.addEventListener('click', function (e) {
+      var type = (e.pointerType !== undefined && e.pointerType !== '') ? e.pointerType : (e.detail === 0 ? 'keyboard' : lastPointer);
+      lastPointer = '';
+      if (type === 'mouse' && !mq.matches) { clearTimeout(timer); setSv(true); return; }
+      setSv(!sv.classList.contains('open'));
+    });
     svb.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); e.stopPropagation(); setSv(true); if (items[0]) items[0].focus(); }
     });
@@ -33,6 +41,8 @@
       else if (i >= 0 && e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
       else if (i >= 0 && e.key === 'ArrowUp') { e.preventDefault(); if (i === 0) svb.focus(); else items[i - 1].focus(); }
     });
+    // マウスを乗せて開いているとき（ボタンにフォーカスが無いとき）も Esc で閉じる
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mq.matches && sv.classList.contains('open') && !sv.contains(document.activeElement)) setSv(false); });
     // パソコンでは、SERVICE の外を押す・Tab で外に出ると閉じる
     document.addEventListener('click', function (e) { if (!mq.matches && !sv.contains(e.target)) setSv(false); });
     sv.addEventListener('focusout', function (e) { if (!mq.matches && !sv.contains(e.relatedTarget)) setSv(false); });
