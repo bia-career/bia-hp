@@ -289,3 +289,15 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 /* 04：横の水色の点がきらきら */
 @keyframes fl-sp{0%,14%{transform:scale(0);opacity:0}22%{transform:scale(1.4);opacity:1}32%{transform:scale(.8);opacity:.7}42%{transform:scale(1.2);opacity:1}78%{opacity:1}88%,100%{transform:scale(0);opacity:0}}
 @media (prefers-reduced-motion:reduce){.fl-art *{animation:none!important}}
+
+/* ===== 6 つのポイントのアイコン：画面に入ったとき 1 回だけ「ぽん」と出る（DESIGN-SPEC.md 14 章。assets/site.js） ===== */
+.pt-wait .point img{opacity:0;transform:scale(.8)}
+/* カード自体もふわっと出る（0.6 秒）ので、0.25 秒あとから始めて「ぽん」が見えるようにする */
+.pt-pop .point img{animation:pt-pop .4s cubic-bezier(.34,1.56,.64,1) .25s both}
+.pt-pop .point:nth-child(2) img{animation-delay:.33s}
+.pt-pop .point:nth-child(3) img{animation-delay:.41s}
+.pt-pop .point:nth-child(4) img{animation-delay:.49s}
+.pt-pop .point:nth-child(5) img{animation-delay:.57s}
+.pt-pop .point:nth-child(6) img{animation-delay:.65s}
+@keyframes pt-pop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.pt-wait .point img{opacity:1;transform:none}.pt-pop .point img{animation:none}}
