@@ -221,16 +221,6 @@ body{background:var(--bg)}
   .sec-head .en-big,.page-hero .en-big{font-size:40px}
   .sec-head{margin-bottom:28px}
 }
-/* 4. 浮かぶ「#」（スクロールでゆっくり上下。文字・ボタンには重ねない） */
-.float-wrap{position:relative}
-.floats{position:absolute;inset:0;pointer-events:none;z-index:0}
-.float-wrap > :not(.floats){position:relative;z-index:1}
-.fl{position:absolute;will-change:transform}
-.fl img{display:block;width:100%;height:auto}
-.fl.tag{background:#fff;white-space:nowrap}
-@media (max-width: 1099px){ .fl.pc{display:none} }
-.page-hero .floats{left:auto;width:min(46%,520px)}
-@media (max-width: 860px){ .page-hero .floats{display:none} }
 /* 5. 支援の流れは波の色を白に 25% 混ぜた明るい面。文字は紺、STEP は #0070B8、カードは白 85% */
 .band{margin:0 16px;border-radius:32px;color:var(--navy);
   background:linear-gradient(90deg,#9FEAE5 0%,#93C8EF 50%,#8393EE 100%)}
@@ -254,8 +244,6 @@ body{background:var(--bg)}
   header nav .btn{padding:0 16px;font-size:13px}
   .logo-desc{font-size:11px}
 }
-/* 4. 浮かぶ「#」（大）はスマホでは小さく、カードの上の余白に収める */
-@media (max-width: 860px){ .fl.big{width:56px !important;top:-62px !important;right:4px !important} }
 /* 8. 例のハッシュタグを押すと上の枠に打ち込まれる */
 .tag-pick{font:inherit;font-size:14px;font-weight:700;color:var(--navy);cursor:pointer;transition:background .15s,color .15s}
 .tag-pick:hover,.tag-pick[aria-pressed="true"]{background:var(--navy);color:#fff}
@@ -276,7 +264,7 @@ body{background:var(--bg)}
 @media (min-width: 960px){
   .hero .wrap{flex-wrap:nowrap;gap:clamp(32px,4vw,56px)}
   .hero .wrap > :first-child{flex:1 1 auto !important;min-width:0}
-  .hero .wrap > .float-wrap{flex:0 0 clamp(380px,38vw,460px) !important}
+  .hero .wrap > .hero-card{flex:0 0 clamp(380px,38vw,460px) !important}
 }
 /* 例のハッシュタグを押したあとの「の求人を見る」 */
 .pick-link{margin:16px 0 0;font-size:14px;font-weight:700}

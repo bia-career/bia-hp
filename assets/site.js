@@ -37,25 +37,6 @@
   document.documentElement.classList.add('js-reveal');
 })();
 
-// 4. 浮かぶ「#」：スクロールに合わせてゆっくり上下（最大 40px）。動きを減らす設定なら止める
-(function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var fls = document.querySelectorAll('.fl[data-speed]');
-  if (!fls.length) return;
-  var ticking = false;
-  function update() {
-    var vh = window.innerHeight;
-    fls.forEach(function (el) {
-      var box = el.parentElement.getBoundingClientRect();
-      var d = (box.top + box.height / 2 - vh / 2) * parseFloat(el.dataset.speed);
-      d = Math.max(-40, Math.min(40, d));
-      el.style.transform = 'translate3d(0,' + d.toFixed(1) + 'px,0)';
-    });
-    ticking = false;
-  }
-  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-  update();
-})();
 
 // 9. スマホの下の「無料でキャリア相談」：ページの中の主なボタンが見えている間は隠す
 (function () {
