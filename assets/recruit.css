@@ -1,0 +1,133 @@
+/* ===== 採用ページ（recruit.html）。BIA のページ。docs/DESIGN-SPEC.md 12 章 =====
+   部品（カード・ボタン・印・よくある質問・表）は site.css のまま。ここは並びと、このページだけの部品 */
+
+/* 一番上：運営会社のページと同じ波（上下を反転）。写真は使わない */
+.fv{position:relative}
+.fv-wave{position:absolute;inset:0 0 auto 0;height:clamp(165px,16.8vw,320px);background:image-set(url(/assets/wave-1200.webp) 1x,url(/assets/wave-2400.webp) 2x) center top/cover no-repeat;transform:rotate(180deg);pointer-events:none}
+.fv-copy{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:clamp(80px,8.5vw,136px) 24px 40px}
+.rc-en{margin:0 0 14px;font-family:Poppins,sans-serif;font-weight:500;font-size:14px;letter-spacing:3px;color:var(--muted)}
+.fv-copy h1{margin:0;font-size:clamp(34px,5.4vw,68px);font-weight:900;line-height:1.35;letter-spacing:1px;color:var(--navy)}
+.rc-fv-sub{margin:18px 0 0;font-size:16px;font-weight:700;color:#0070B8}
+/* 決まっていない所の印 */
+.kari{display:inline-block;margin-left:10px;font-size:14px;font-weight:700;letter-spacing:0;color:var(--muted);vertical-align:middle}
+
+/* 一番上の下：ページの中のメニュー（押すとその区画へ） */
+.rc-pnav{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:10px}
+.rc-pnav a{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 20px;border-radius:999px;background:#fff;border:1px solid #DBE5EC;
+  font-family:Poppins,sans-serif;font-weight:500;font-size:14px;letter-spacing:1.5px;color:var(--navy);text-decoration:none;transition:background .2s,color .2s}
+.rc-pnav a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.rc-pnav a:hover{background:var(--navy);color:#fff}
+
+/* 本文と右の目次 */
+.rc-layout{max-width:1200px;margin:0 auto;padding:0 24px}
+.rc-main{min-width:0}
+.rc-main > section{padding:96px 0 0}
+.rc-main > section:last-child{padding-bottom:104px}
+.rc-main > section.rc-cont{padding-top:72px}
+.rc-h3{margin:56px 0 20px;font-size:22px;font-weight:900;line-height:1.5}
+.sec-head + .rc-h3,.rc-cont > .rc-h3:first-child{margin-top:0}
+.rc-main .card h4{margin:8px 0 4px;font-size:18px;font-weight:900;line-height:1.5}
+.rc-main ul,.rc-main ol{list-style:none;margin:0;padding:0}
+.rc-no{margin:0;font-size:15px;font-weight:600;letter-spacing:2px;color:#0070B8}
+
+/* 私たちの考え方 */
+.rc-philo{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0}
+.rc-philo dt{font-size:16px;font-weight:900}
+.rc-philo dt .en{display:block;font-weight:600;font-size:13px;letter-spacing:3px;color:#0070B8}
+.rc-philo dd{margin:10px 0 0;font-size:16px;color:var(--sub)}
+.rc-values{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.rc-values .tag{margin:0 0 12px}
+/* 働く魅力 */
+.rc-appeal{display:grid;gap:16px}
+.rc-appeal li{display:flex;gap:24px;align-items:flex-start}
+.rc-appeal .rc-no{font-size:28px;line-height:1.2;letter-spacing:1px}
+.rc-appeal h3{margin:0 0 6px}
+/* 事業内容 */
+.rc-link-card{display:block;text-decoration:none;transition:box-shadow .2s}
+.rc-link-card:hover{box-shadow:0 12px 32px rgba(29,38,46,.08)}
+.rc-link-card .more{display:inline-block;margin-top:14px;font-weight:700;font-size:14px}
+/* 社員で知るビア（写真なし） */
+.rc-people{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.rc-face{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;margin:0 0 14px;background:linear-gradient(135deg,#9FEAE5 0%,#93C8EF 50%,#8393EE 100%);
+  font-family:Poppins,sans-serif;font-weight:600;font-size:24px;color:var(--navy)}
+.rc-people .rc-role{margin:0;font-size:17px;font-weight:900;color:var(--ink)}
+.rc-people .rc-year{margin:0 0 14px;font-size:13px;color:var(--muted)}
+.rc-people .tag{height:32px;padding:0 12px;font-size:13px}
+.rc-people .rc-word{margin:14px 0 0;font-size:14px;color:var(--sub)}
+/* こだわりのワーク＆ライフ環境 */
+.rc-env{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.rc-env h4{font-size:19px}
+/* オフィス（写真の枠） */
+.rc-office{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.rc-photo{display:grid;place-items:center;aspect-ratio:4/3;border-radius:24px;background:#fff;border:1.5px dashed #C9D5DE;font-size:13px;font-weight:700;color:var(--muted)}
+.rc-office p{margin:8px 4px 0;font-size:14px;color:var(--sub)}
+/* 数字から見るカルチャー */
+.rc-asof{display:inline-block;margin:0 0 16px;padding:6px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}
+.rc-nums{display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.rc-num{display:flex;align-items:baseline;gap:6px;margin:0 0 4px}
+.rc-num .en{font-weight:600;font-size:52px;line-height:1.1;color:var(--navy)}
+.rc-num small{font-size:14px;font-weight:700;color:var(--navy)}
+.rc-nums h3{font-size:16px !important}
+/* 募集職種 */
+.rc-jobs{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.rc-job{display:flex;flex-direction:column}
+.rc-job-types{display:flex;gap:6px;flex-wrap:wrap}
+.rc-job h3{margin:12px 0 4px !important}
+.rc-job-catch{margin:0 0 14px !important}
+.rc-job-meta{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0 0 18px;font-size:14px}
+.rc-job-meta dt{font-weight:700;color:var(--muted)}
+.rc-job-meta dd{margin:0}
+.rc-job-more{min-height:44px;padding:0 20px;justify-content:center;gap:10px;font:inherit;font-weight:700;cursor:pointer;align-self:flex-start}
+.rc-plus{position:relative;width:10px;height:10px}
+.rc-plus::before,.rc-plus::after{content:"";position:absolute;left:0;top:4px;width:10px;height:1.5px;background:currentColor}
+.rc-plus::after{transform:rotate(90deg);transition:transform .2s}
+.rc-job-more[aria-expanded="true"] .rc-plus::after{transform:none}
+.rc-job-detail{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.rc-job-detail dl{margin:0;font-size:14px}
+.rc-job-detail dt{font-weight:700}
+.rc-job-detail dd{margin:2px 0 12px;color:var(--sub)}
+.rc-job-apply{display:grid;gap:10px;margin-top:6px}
+.rc-job-apply .btn{justify-content:center;min-height:52px;padding:0 20px;font-size:15px}
+/* エントリー */
+.rc-entry{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px}
+.rc-entry .btn{min-height:72px;min-width:260px;justify-content:center;font-size:18px}
+
+/* 右の目次（1,100px 以上だけ） */
+.rc-toc{display:none}
+@media (min-width:1100px){
+  .rc-layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:56px;align-items:start}
+  .rc-toc{display:block;position:sticky;top:120px;margin-top:96px}
+  .rc-toc ul{list-style:none;margin:0 0 20px;padding:0;border-left:1.5px solid var(--line)}
+  .rc-toc li a{display:block;margin-left:-1.5px;padding:8px 0 8px 16px;border-left:3px solid transparent;font-size:14px;font-weight:700;line-height:1.5;color:var(--navy);text-decoration:none}
+  .rc-toc li a:hover{color:#0072B8}
+  .rc-toc li a[aria-current="true"]{color:#0072B8;border-left-color:#0072B8}
+  .rc-toc-btn{width:100%;justify-content:center;min-height:52px;padding:0 16px;font-size:14px}
+}
+
+/* タブレット・スマホ */
+@media (max-width:1099px){
+  .rc-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rc-env{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .fv-copy{padding:72px 16px 32px}
+  .rc-pnav,.rc-layout{padding:0 16px}
+  .rc-pnav{gap:8px}
+  .rc-pnav a{padding:0 16px;font-size:13px;letter-spacing:1px}
+  .rc-main > section{padding-top:72px}
+  .rc-main > section:last-child{padding-bottom:72px}
+  .rc-main > section.rc-cont{padding-top:56px}
+  .rc-h3{margin-top:44px;font-size:20px}
+  .rc-people,.rc-office{grid-template-columns:minmax(0,1fr)}
+  .rc-appeal li{gap:16px}
+  .rc-appeal .rc-no{font-size:22px}
+}
+@media (max-width:767px){
+  .rc-env{grid-template-columns:minmax(0,1fr)}
+  .rc-num .en{font-size:40px}
+  .rc-nums .card{padding:22px 18px}
+  .rc-entry .btn{width:100%;min-width:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .rc-pnav a,.rc-link-card,.rc-plus::after{transition:none}
+}

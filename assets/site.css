@@ -229,3 +229,27 @@ body{background:var(--bg)}
 /* 求人一覧のハッシュタグの絞り込み */
 .filter-now{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:0 0 20px;font-weight:700}
 .filter-now a{font-weight:400;font-size:14px}
+
+/* ===== トップのオープニング（index.html だけ。assets/intro.js。docs/DESIGN-SPEC.md 11 章） =====
+   画面全体 #F4F6F8、真ん中に紺の丸長方形（空の入力欄）。中は白い「#」と水色のカーソルだけ。
+   大きさは em（丸長方形の文字の大きさ）で決め、ヘッダーのロゴ（48px の高さに 21px の文字）と同じ割合にする */
+/* JS が描く前の覆い。何かあっても 3.5 秒で消える */
+html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;background:#F4F6F8;animation:intro-safe 0s linear 3.5s forwards}
+@keyframes intro-safe{to{visibility:hidden}}
+.intro{position:fixed;inset:0;z-index:1000;background:#F4F6F8;opacity:1;transition:opacity .5s ease}
+.intro.intro-out{opacity:0}
+.intro-pill{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.94);opacity:0;
+  display:flex;align-items:center;gap:.381em;box-sizing:border-box;width:min(600px,86vw);height:96px;padding:0 1.0476em;border-radius:999px;background:#1D262E;color:#fff;
+  font-size:42px;transition:opacity .4s ease,transform .4s ease}
+.intro-in .intro-pill{opacity:1;transform:translate(-50%,-50%)}
+.intro-pill .hash{width:1.0476em;height:1.0476em;flex:none}
+.intro-name{font-family:Poppins,sans-serif;font-weight:400;font-size:1em;letter-spacing:.0476em;line-height:1;white-space:nowrap}
+.intro-name:empty{display:none}
+.intro-caret{display:inline-block;flex:none;width:.114em;height:1em;border-radius:2px;background:#6FD6E6}
+/* カーソルが約 1 秒で 2 回点滅 */
+.intro-blink .intro-caret{animation:caret .5s step-end 2}
+/* 左上のロゴへ 0.6 秒で小さくなりながら動く */
+.intro-fly .intro-pill{transition:left .6s cubic-bezier(.4,0,.2,1),top .6s cubic-bezier(.4,0,.2,1),width .6s cubic-bezier(.4,0,.2,1),height .6s cubic-bezier(.4,0,.2,1),
+  font-size .6s cubic-bezier(.4,0,.2,1),padding .6s cubic-bezier(.4,0,.2,1)}
+@media (max-width:767px){ .intro-pill{height:72px;font-size:31.5px} }
+@media (prefers-reduced-motion:reduce){ .intro,html.intro-on body::before{display:none} }

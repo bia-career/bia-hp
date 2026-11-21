@@ -30,7 +30,9 @@
 - SERVICE ▼ はマウスで押すと開くだけ（閉じるのは外れる・外を押す・Esc）。今いるページの青は #0072B8
 - 運営会社の BIA のロゴは枠・影なしでついてくる。紺のフッターに重なる間だけ白（0.2 秒）
 
-## 4. まだのこと（廣瀬さんの指示。まだ手を付けていない）
+## 4. 指示 1・2・オープニング（2026-11-21 に作った。Cowork の確認待ち）
+
+作ったもの：`recruit.html`・`assets/recruit.css`・`assets/recruit.js`・`assets/recruit-jobs.js`・`entry.html`（エントリーの準備中のページ）・`assets/intro.js`・`assets/config.js`（`RECRUIT_ENTRY_URL`・`INTRO_MODE`）。決まりは DESIGN-SPEC.md 11 章（オープニング）・12 章（採用ページ）。以下は元の指示（記録として残す）
 
 ### 4-1. 採用ページ（recruit.html）の作り込み（指示 1）
 参考：https://www.neo-career.co.jp/recruit/（並びと考え方だけ）。新卒・中途の両方。社員の写真なし。ビジョン・文字・絵（波や図）で見せる。決まっていない文は【仮】か空欄。
@@ -66,10 +68,10 @@
 |---|---|---|---|
 | 「無料でキャリア相談」の行き先 | `assets/config.js` の `BOOKING_URL: '/booking.html'`（準備中のページ）。各ボタンに `data-booking`（header・hero・contact・sticky・job）、`site.js` が `?from=` を付ける | 予約のページ **/book**（PR 2 で作成中・練習モード）。`?from=` は予約の記録だけに残す。同意のチェックは「プライバシーポリシーに同意する」（リンク先 /privacy） | 予約のページが本番になったら、`BOOKING_URL` を Caddie の `/book` の URL（のちに book.bia-career.com）に書き換えるだけ。URL に個人情報は入れない |
 | 求人（トップの新着・求人一覧・求人） | `assets/jobs.js` の配列 `JOBS`（今は見本。1 件の形はファイルの先頭のコメント） | 自社求人（Caddie の「企業」→ 求人。Caddie の掲載＝掲載中のもの） | あとで Caddie が同じ形の配列（JSON）を出し、`jobs.js` を置き換える（形は変えない）。報酬・手数料・選考難易度・NG・求人DB の URL は載せない |
-| 採用ページの募集職種（RECRUIT の JOBS） | これから `assets/recruit-jobs.js` の配列 1 か所に作る（4-1） | まだ無い（あとで Caddie から自動） | `jobs.js` と同じく、配列を置き換える形にしておく |
-| エントリー | これから `assets/config.js` の `RECRUIT_ENTRY_URL`（新卒・中途）に作る（4-1） | まだ無い | 行き先が決まったら設定を書き換えるだけ |
+| 採用ページの募集職種（RECRUIT の JOBS） | `assets/recruit-jobs.js` の配列 `RECRUIT_JOBS` 1 か所（今は【仮】2 件。1 件の形はファイルの先頭のコメント） | まだ無い（あとで Caddie から自動） | `jobs.js` と同じく、配列を置き換える形にしておく |
+| エントリー | `assets/config.js` の `RECRUIT_ENTRY_URL`（`new`・`career`。今は準備中のページ `entry.html`） | まだ無い | 行き先が決まったら設定を書き換えるだけ |
 
 ## 6. 確かめ方（前のセッションで使ったもの）
 
-- 手元で `python3 -m http.server` などで開き、Playwright（Chromium は入っている）で 3 つの幅のスクリーンショットと、メニュー・キーボード・リンク切れ・横スクロールを確かめた。/privacy は privacy.html に置き換えて開く
+- 手元で開き（2026-11-21 のセッションはサーバーを立てられなかったので、Playwright の route でリポジトリのファイルをそのまま返して開いた）、Playwright（Chromium は入っている）で 3 つの幅のスクリーンショットと、メニュー・キーボード・リンク切れ・横スクロールを確かめた。/privacy は privacy.html に置き換えて開く
 - privacy.html の本文は一字も変えない（変える前後で本文を比べる）
