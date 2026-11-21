@@ -6,139 +6,32 @@
 <title>ハッシュタグ｜新卒・20代の転職支援（運営：株式会社ビア）</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="キャリア設計から始める、新卒・20代のための転職支援サービス「ハッシュタグ」。面談であなたの転職の軸と描きたい未来を言葉にし、そこに合う会社を選びます。運営：株式会社ビア。">
-<link rel="icon" href="assets/hashtag-icon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://bia-career.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ハッシュタグ｜新卒・20代の転職支援">
+<meta property="og:title" content="ハッシュタグ｜新卒・20代の転職支援（運営：株式会社ビア）">
+<meta property="og:description" content="キャリア設計から始める、新卒・20代のための転職支援サービス「ハッシュタグ」。面談であなたの転職の軸と描きたい未来を言葉にし、そこに合う会社を選びます。運営：株式会社ビア。">
+<meta property="og:url" content="https://bia-career.com/">
+<meta property="og:image" content="https://bia-career.com/assets/ogp.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/hashtag-icon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ===== デザインの決まり（この見本の値をそのまま使う） ===== */
-:root{
-  --navy:#1D262E;       /* ロゴ・主ボタン・塗りの丸長方形 */
-  --caret:#6FD6E6;      /* 紺の上のカーソル */
-  --caret-on-white:#0093E9; /* 白の上のカーソル */
-  --blue1:#0093E9; --blue2:#00CECE; /* BIA のグラデーション（波） */
-  --ink:#1D262E; --sub:#4A5560; --muted:#5F6B76;
-  --bg:#FFFFFF; --bg2:#F3F6F8; --line:#E3EAEF; --chip:#EEF3F6;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Noto Sans CJK JP",sans-serif;line-height:1.8}
-a{color:inherit}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-.en{font-family:Poppins,sans-serif}
-@keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
-.caret{display:inline-block;width:2.4px;border-radius:2px;background:var(--caret);animation:caret 1.06s step-end infinite}
-@media (prefers-reduced-motion: reduce){.caret{animation:none}}
-.hash{display:inline-block;flex:none}
-
-/* ロゴ（E：#hashtag） */
-.logo{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none}
-.logo .name{font-family:Poppins,sans-serif;font-weight:400;font-size:21px;letter-spacing:1px;line-height:1}
-.logo .caret{height:21px}
-.logo-desc{font-size:12px;font-weight:700;letter-spacing:1px;margin:6px 0 0 6px}
-.logo-desc span{font-family:Poppins,sans-serif;font-weight:400;color:var(--muted)}
-
-/* 本人のハッシュタグ（例）：線だけの丸長方形 */
-.tag{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:999px;border:1.5px solid var(--navy);font-size:14px;font-weight:700;background:#fff}
-/* 小さな印 */
-.chip{display:inline-flex;align-items:center;height:30px;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #DBE5EC;font-size:13px;font-weight:700}
-
-.btn{display:inline-flex;align-items:center;min-height:56px;padding:0 32px;border-radius:999px;font-weight:700;text-decoration:none}
-.btn-main{background:var(--navy);color:#fff}
-.btn-sub{border:1.5px solid var(--navy);color:var(--navy);background:#fff}
-
-/* ヘッダー */
-header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
-nav{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;font-size:14px;font-weight:700}
-nav a{text-decoration:none}
-nav .btn{min-height:44px;padding:0 22px;font-size:14px}
-
-/* ファーストビュー：BIA の波を背景のモチーフとして残す */
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F3F9FC 0%,#FFFFFF 70%)}
-.hero .waves{position:absolute;left:0;right:0;top:0;height:220px;opacity:.55;pointer-events:none}
-.hero .wrap{position:relative;display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-top:96px;padding-bottom:112px}
-.hero h1{margin:0;font-size:clamp(36px,4.6vw,56px);font-weight:900;line-height:1.35;letter-spacing:1px}
-.hero .lead{margin:16px 0 0;font-size:18px;font-weight:700;color:#0070B8}
-.hero p.body{margin:14px 0 0;font-size:15px;color:var(--sub)}
-.typing-card{background:#fff;border-radius:32px;padding:36px 32px;box-shadow:0 24px 64px rgba(29,38,46,.10)}
-.typing{display:flex;align-items:center;gap:10px;height:64px;padding:0 28px;border-radius:999px;background:var(--navy);color:#fff;font-size:22px;font-weight:700;overflow:hidden;white-space:nowrap}
-.typing .caret{height:28px}
-
-section{padding:104px 0}
-.alt{background:var(--bg2)}
-.sec-head{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;margin-bottom:36px}
-.sec-head h2{margin:0;font-size:30px;font-weight:900}
-.sec-head .en{font-weight:500;font-size:14px;letter-spacing:3px;color:var(--muted)}
-.grid{display:grid;gap:20px}
-.g4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:#fff;border-radius:24px;padding:28px 24px}
-.card.line{border:1px solid var(--line)}
-.step-img{height:150px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border-radius:18px;color:var(--muted);font-size:12px}
-footer{background:var(--navy);color:#D5DDE4;padding:56px 0}
-footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
-.logo-white{background:#fff;color:var(--navy)}
-.logo-white .caret{background:var(--caret-on-white)}
-.note{font-size:12px;color:var(--muted)}
-
-/* 今の BIA の波（wave.webp）を上下を反転して一番上に敷く */
-.top{position:relative}
-.top .wave{position:absolute;left:0;top:0;width:100%;height:260px;object-fit:cover;object-position:center;transform:rotate(180deg);z-index:0}
-header{position:relative;background:transparent;border-bottom:0;backdrop-filter:none;z-index:2}
-header nav{background:#fff;border-radius:999px;padding:6px 8px 6px 20px;box-shadow:0 6px 24px rgba(30,80,160,.15)}
-header .logo-desc{color:#1D262E}
-header .logo-desc span{color:#3D4B57}
-.hero{background:transparent;position:relative;z-index:1}
-.hero .wrap{padding-top:150px}
-.top .wave{height:300px}
-
-/* ===== ここから見本に足したもの ===== */
-.step-img img{height:118px;width:auto}
-.point{display:flex;gap:18px;align-items:center}
-.point img{width:56px;height:56px;flex:none}
-.faq{display:grid;gap:12px}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:24px;padding:0 24px}
-.faq summary{cursor:pointer;list-style:none;padding:20px 32px 20px 0;font-weight:700;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:Poppins,sans-serif;font-size:22px;font-weight:400}
-.faq details[open] summary::after{content:"−"}
-.faq details p{margin:0 0 20px;color:var(--sub)}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--caret-on-white);outline-offset:3px}
-.menu-btn{display:none}
-/* スマホ：ロゴは左上に小さく、メニューは右上の ≡ で開く */
-@media (max-width: 860px){
-  .wrap{padding:0 16px}
-  header .wrap{flex-wrap:nowrap;align-items:flex-start;padding-top:12px}
-  .logo{height:40px;padding:0 16px;gap:6px}
-  .logo .name{font-size:17px}
-  .logo .caret{height:17px}
-  .logo svg{width:18px;height:18px}
-  .logo-desc{font-size:11px;margin:4px 0 0 4px}
-  .menu-btn{display:grid;place-items:center;flex:none;width:44px;height:44px;border:0;border-radius:999px;background:#fff;box-shadow:0 6px 24px rgba(30,80,160,.15);cursor:pointer}
-  .menu-btn span,.menu-btn span::before,.menu-btn span::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--navy);position:relative}
-  .menu-btn span::before{position:absolute;top:-6px}.menu-btn span::after{position:absolute;top:6px}
-  .menu-btn[aria-expanded="true"] span{background:transparent}
-  .menu-btn[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
-  .menu-btn[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-  header nav{display:none;position:absolute;left:16px;right:16px;top:68px;flex-direction:column;align-items:stretch;gap:0;border-radius:24px;padding:10px;font-size:15px}
-  header nav.open{display:flex}
-  header nav a{padding:12px 14px}
-  header nav .btn{justify-content:center;margin-top:6px}
-  .top .wave{height:200px}
-  .hero .wrap{padding-top:104px;padding-bottom:72px;gap:40px}
-  .typing-card{padding:28px 20px;border-radius:28px}
-  .typing{padding:0 20px;font-size:19px}
-  section{padding:72px 0}
-  .g3,.g4{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "株式会社ビア", "url": "https://bia-career.com/", "logo": "https://bia-career.com/assets/apple-touch-icon.png", "email": "info@bia-career.com", "foundingDate": "2021-08-10", "address": {"@type": "PostalAddress", "postalCode": "160-0023", "addressRegion": "東京都", "addressLocality": "新宿区", "streetAddress": "西新宿3-9-7 フロンティア新宿タワーオフィス3F", "addressCountry": "JP"}}</script>
 </head>
 <body>
 
 <div class="top">
-<img class="wave" src="assets/wave.webp" alt="" width="1800" height="379">
+<img class="wave" src="/assets/wave.webp" alt="" width="1800" height="379">
 <header>
   <div class="wrap">
     <div>
-      <a class="logo" href="#" aria-label="hashtag トップへ">
+      <a class="logo" href="/" aria-label="hashtag トップへ">
         <svg class="hash" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true"><g stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"><line x1="17" y1="6" x2="13" y2="34"/><line x1="28" y1="6" x2="24" y2="34"/><line x1="8" y1="15" x2="34" y2="15"/><line x1="6" y1="25" x2="32" y2="25"/></g></svg>
         <span class="name">hashtag</span><span class="caret" aria-hidden="true"></span>
       </a>
@@ -146,11 +39,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
     </div>
     <button class="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span></button>
     <nav id="gnav" aria-label="メインメニュー">
-      <a href="#about">ハッシュタグとは</a>
-      <a href="#flow">支援の流れ</a>
-      <a href="#jobs">求人を探す</a>
-      <a href="#faq">よくある質問</a>
-      <a class="btn btn-main" href="#contact">無料でキャリア相談</a>
+      <a href="/about.html">ハッシュタグとは</a><a href="/jobs.html">求人を探す</a><a href="/faq.html">よくある質問</a><a href="/corp.html">企業の方へ</a>
+      <div class="more">
+        <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-list">その他</button>
+        <div class="more-list" id="more-list"><a href="/#flow">支援の流れ</a><a href="/column.html">コラム</a><a href="/company.html">運営会社（BIA）</a><a href="/recruit.html">採用情報</a><a href="/privacy">個人情報の取り扱い</a></div>
+      </div>
+      <a class="btn btn-main" href="#">無料でキャリア相談</a>
     </nav>
   </div>
 </header>
@@ -164,8 +58,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
       <p class="lead">キャリア設計から始める、新卒・20代のための転職支援サービス</p>
       <p class="body">求人を紹介する前に、まずあなたのハッシュタグを一緒に作ります。大事にしたい転職の軸と、ワクワクする未来を言葉にして、そこに合う会社を選びます。</p>
       <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:12px">
-        <a class="btn btn-main" href="#contact">無料でキャリア相談する</a>
-        <a class="btn btn-sub" href="#jobs">求人を見る</a>
+        <a class="btn btn-main" href="#">無料でキャリア相談する</a>
+        <a class="btn btn-sub" href="/jobs.html">求人を見る</a>
       </div>
       <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
         <span class="chip">相談無料</span><span class="chip">オンライン面談</span><span class="chip">求人のご紹介</span>
@@ -204,29 +98,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   <div class="wrap">
     <div class="sec-head"><h2>支援の流れ</h2><span class="en">FLOW</span></div>
     <ol class="grid g4" style="list-style:none;margin:0;padding:0">
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 01</p><div class="step-img"><img src="assets/flow2.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を見つける</h3><p style="margin:0;font-size:14px;color:var(--sub)">キャリア面談で、転職の軸と描きたい未来を言葉にします。</p></li>
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 02</p><div class="step-img"><img src="assets/flow3.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># に合う会社を選ぶ</h3><p style="margin:0;font-size:14px;color:var(--sub)">あなたのハッシュタグに合う求人だけをご紹介します。</p></li>
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 03</p><div class="step-img"><img src="assets/flow1.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を伝える</h3><p style="margin:0;font-size:14px;color:var(--sub)">書類と面接で、あなたのハッシュタグを企業に伝えます。</p></li>
-      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 04</p><div class="step-img"><img src="assets/flow4.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># の先へ</h3><p style="margin:0;font-size:14px;color:var(--sub)">内定・条件の確認から入社後まで支えます。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 01</p><div class="step-img"><img src="/assets/flow2.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を見つける</h3><p style="margin:0;font-size:14px;color:var(--sub)">キャリア面談で、転職の軸と描きたい未来を言葉にします。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 02</p><div class="step-img"><img src="/assets/flow3.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># に合う会社を選ぶ</h3><p style="margin:0;font-size:14px;color:var(--sub)">あなたのハッシュタグに合う求人だけをご紹介します。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 03</p><div class="step-img"><img src="/assets/flow1.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># を伝える</h3><p style="margin:0;font-size:14px;color:var(--sub)">書類と面接で、あなたのハッシュタグを企業に伝えます。</p></li>
+      <li class="card"><p class="en" style="margin:0;font-size:13px;color:var(--muted)">STEP 04</p><div class="step-img"><img src="/assets/flow4.svg" alt="" width="200" height="129"></div><h3 style="margin:12px 0 4px;font-size:19px;font-weight:900"># の先へ</h3><p style="margin:0;font-size:14px;color:var(--sub)">内定・条件の確認から入社後まで支えます。</p></li>
     </ol>
   </div>
 </section>
 
 <section id="jobs">
   <div class="wrap">
-    <div class="sec-head" style="justify-content:space-between"><div style="display:flex;gap:20px;align-items:baseline"><h2>新着の求人</h2><span class="en">JOBS</span></div><a href="#" style="font-weight:700">求人をすべて見る →</a></div>
-    <div class="grid g3">
-      <div class="card line"><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="height:28px;font-size:12px">#未経験からIT</span><span class="tag" style="height:28px;font-size:12px">#土日休み</span></div><p style="margin:12px 0 6px;font-weight:700">[求人タイトル]（Caddie から自動）</p><p class="note" style="margin:0">[勤務地]・想定年収 [下限]〜[上限]万円</p></div>
-      <div class="card line"><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="height:28px;font-size:12px">#人と話す仕事</span><span class="tag" style="height:28px;font-size:12px">#地元で働く</span></div><p style="margin:12px 0 6px;font-weight:700">[求人タイトル]（Caddie から自動）</p><p class="note" style="margin:0">[勤務地]・想定年収 [下限]〜[上限]万円</p></div>
-      <div class="card line"><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag" style="height:28px;font-size:12px">#3年後にリーダー</span><span class="tag" style="height:28px;font-size:12px">#研修が手厚い</span></div><p style="margin:12px 0 6px;font-weight:700">[求人タイトル]（Caddie から自動）</p><p class="note" style="margin:0">[勤務地]・想定年収 [下限]〜[上限]万円</p></div>
-    </div>
+    <div class="sec-head" style="justify-content:space-between"><div style="display:flex;gap:20px;align-items:baseline"><h2>新着の求人</h2><span class="en">JOBS</span></div><a href="/jobs.html" style="font-weight:700">求人をすべて見る →</a></div>
+    <div class="grid g3" id="new-jobs"></div>
   </div>
 </section>
 
 <section id="points" >
   <div class="wrap">
     <div class="sec-head"><h2>6 つのポイント</h2><span class="en">POINT</span></div>
-    <ul class="grid g3" style="list-style:none;margin:0;padding:0"><li class="card line point"><img src="assets/pt1.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 1</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">マンツーマンで全力サポート</h3></div></li><li class="card line point"><img src="assets/pt2.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 2</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">転職先のピックアップ</h3></div></li><li class="card line point"><img src="assets/pt3.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 3</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">何度でも相談可能</h3></div></li><li class="card line point"><img src="assets/pt4.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 4</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">書類添削・面接対策</h3></div></li><li class="card line point"><img src="assets/pt5.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 5</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">企業との交渉（給与等）</h3></div></li><li class="card line point"><img src="assets/pt6.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 6</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">即日対応可能</h3></div></li></ul>
+    <ul class="grid g3" style="list-style:none;margin:0;padding:0"><li class="card line point"><img src="/assets/pt1.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 1</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">マンツーマンで全力サポート</h3></div></li><li class="card line point"><img src="/assets/pt2.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 2</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">転職先のピックアップ</h3></div></li><li class="card line point"><img src="/assets/pt3.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 3</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">何度でも相談可能</h3></div></li><li class="card line point"><img src="/assets/pt4.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 4</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">書類添削・面接対策</h3></div></li><li class="card line point"><img src="/assets/pt5.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 5</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">企業との交渉（給与等）</h3></div></li><li class="card line point"><img src="/assets/pt6.svg" alt="" width="56" height="56"><div><p class="en" style="margin:0;font-size:13px;color:var(--muted)">POINT 6</p><h3 style="margin:2px 0 0;font-size:17px;font-weight:900;line-height:1.5">即日対応可能</h3></div></li></ul>
   </div>
 </section>
 
@@ -259,23 +149,23 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 <footer>
   <div class="wrap">
     <div>
-      <span class="logo logo-white" style="height:40px">
+      <a class="logo logo-white" href="/" style="height:40px" aria-label="hashtag トップへ">
         <svg class="hash" viewBox="0 0 40 40" width="18" height="18" aria-hidden="true"><g stroke="#1D262E" stroke-width="3" stroke-linecap="round" fill="none"><line x1="17" y1="6" x2="13" y2="34"/><line x1="28" y1="6" x2="24" y2="34"/><line x1="8" y1="15" x2="34" y2="15"/><line x1="6" y1="25" x2="32" y2="25"/></g></svg>
         <span class="name" style="font-size:17px">hashtag</span><span class="caret" style="height:17px" aria-hidden="true"></span>
-      </span>
+      </a>
       <p style="margin:12px 0 0;font-size:13px">新卒・20代の転職支援　ハッシュタグ</p>
       <p style="margin:0;font-size:13px">運営：株式会社ビア（有料職業紹介 13-ユ-315626）</p>
     </div>
     <nav aria-label="フッター" style="font-weight:400;color:#D5DDE4">
-      <a href="company.html">運営会社（BIA）</a><a href="#">企業の方へ（採用のご相談）</a><a href="#">採用情報</a><a href="https://bia-career.com/privacy">個人情報の取り扱い</a>
+      <a href="/company.html">運営会社（BIA）</a><a href="/corp.html">企業の方へ（採用のご相談）</a><a href="/recruit.html">採用情報</a><a href="/column.html">コラム</a><a href="/privacy">個人情報の取り扱い</a>
     </nav>
   </div>
 </footer>
 
+<script src="/assets/site.js"></script>
+<script src="/assets/jobs.js"></script>
+<script>renderJobList(document.getElementById("new-jobs"), JOBS.slice(0, 3))</script>
 <script>
-// スマホのメニュー
-(function(){var b=document.querySelector(".menu-btn"),n=document.getElementById("gnav");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"メニューを閉じる":"メニューを開く")});n.addEventListener("click",function(e){if(e.target.closest("a")){n.classList.remove("open");b.setAttribute("aria-expanded","false")}})})();
-
 // ハッシュタグの例を 1 文字ずつ打って消す（動きを減らす設定なら止める）
 (function(){
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

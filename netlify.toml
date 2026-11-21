@@ -10,3 +10,14 @@
     X-Robots-Tag = "noindex, nofollow"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 個人情報の取り扱いは、今のサイトと同じ /privacy で開く
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacy.html"
+  status = 200
