@@ -14,7 +14,7 @@ Caddie（社内の CRM）とは別のリポジトリ・別の Netlify サイト�
 | 運営会社（BIA） | `company.html` |
 | 採用情報（BIA） | `recruit.html` |
 | コラム（準備中） | `column.html` |
-| 個人情報の取り扱い（`/privacy` で開く。今の bia-career.com/privacy の文章のまま） | `privacy.html` |
+| プライバシーポリシー（`/privacy` で開く。今の bia-career.com/privacy の文章のまま） | `privacy.html` |
 
 - `assets/site.css` … 全ページの見た目（index.html と同じ部品）。`assets/site.js` … メニュー（≡・その他）
 - `assets/jobs.js` … 求人の部品。`JOBS` の配列（今はすべて例）からカードと求人ページを描く。後で Caddie から同じ形で出す

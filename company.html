@@ -102,17 +102,30 @@ body{background:#F4F6F8}
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 }
 </style>
+<link rel="stylesheet" href="/assets/header.css">
 </head>
 <body>
 <div class="fv">
   <div class="fv-wave" aria-hidden="true"></div>
-  <header class="bia-header">
-    <a class="bia-logo" href="#"><img src="/assets/logo.svg" alt="株式会社ビア" width="130" height="52"></a>
-    <button class="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="bnav"><span></span></button>
-    <nav class="bia-nav" id="bnav" aria-label="メニュー">
-      <a href="#vision">ビジョン</a><a href="#company">会社概要</a><a href="/corp.html">企業の方へ</a><a href="/recruit.html">採用情報</a><a href="/privacy">個人情報</a><a class="btn" href="/">ハッシュタグ</a>
-    </nav>
-  </header>
+  <header class="hd">
+  <div class="hd-bar">
+    <div class="hd-in">
+      <div class="hd-brand">
+        <a class="hd-logo" href="/" aria-label="hashtag トップへ"><svg class="hash" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true"><g stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"><line x1="17" y1="6" x2="13" y2="34"/><line x1="28" y1="6" x2="24" y2="34"/><line x1="8" y1="15" x2="34" y2="15"/><line x1="6" y1="25" x2="32" y2="25"/></g></svg><span class="name">hashtag</span><span class="caret" aria-hidden="true"></span></a>
+        <p class="hd-desc">新卒・20代の転職支援 <span>by BIA</span></p>
+      </div>
+      <nav class="hd-nav" id="gnav" aria-label="メインメニュー">
+        <ul class="hd-list">
+          <li class="hd-sv"><button class="hd-top hd-sv-btn" type="button" aria-expanded="false" aria-controls="hd-sv-list"><span lang="en">SERVICE</span><span class="sr">（サービス）</span><span class="hd-arw" aria-hidden="true"></span></button>
+            <ul class="hd-drop" id="hd-sv-list"><li><a href="/about.html">ハッシュタグとは</a></li><li><a href="/#flow">支援の流れ</a></li><li><a href="/jobs.html">求人を探す</a></li><li><a href="/faq.html">よくある質問</a></li></ul></li>
+          <li><a class="hd-top" href="/corp.html"><span lang="en">FOR BUSINESS</span><span class="sr">（企業の方へ）</span></a></li><li><a class="hd-top" href="/recruit.html"><span lang="en">RECRUIT</span><span class="sr">（採用情報）</span></a></li><li><a class="hd-top" href="/company.html" aria-current="page"><span lang="en">ABOUT US</span><span class="sr">（運営会社）</span></a></li>
+        </ul>
+        <a class="hd-cta" href="/booking.html?from=header" data-booking="header">無料でキャリア相談</a>
+      </nav>
+      <button class="hd-menu" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span></button>
+    </div>
+  </div>
+</header>
   <div class="fv-copy">
     <h1>Unleash<br>the potential<br>of youth.</h1>
     <p class="ja">若者のポテンシャルを解放する</p>
@@ -160,14 +173,13 @@ body{background:#F4F6F8}
       <p style="margin:12px 0 0;font-size:13px">新卒・20代の転職支援　ハッシュタグ</p>
       <p style="margin:0;font-size:13px">運営：株式会社ビア（有料職業紹介 13-ユ-315626）</p>
     </div>
-    <nav aria-label="フッター" style="font-weight:400;color:#D5DDE4">
-      <a href="/company.html">運営会社（BIA）</a><a href="/corp.html">企業の方へ（採用のご相談）</a><a href="/recruit.html">採用情報</a><a href="/column.html">コラム</a><a href="/privacy">個人情報の取り扱い</a>
+    <nav class="ft-nav" aria-label="フッター">
+      <div class="ft-col"><p class="ft-h" lang="en">SERVICE</p><a href="/about.html">ハッシュタグとは</a><a href="/#flow">支援の流れ</a><a href="/jobs.html">求人を探す</a><a href="/faq.html">よくある質問</a></div>
+      <div class="ft-col"><a class="ft-h" href="/corp.html"><span lang="en">FOR BUSINESS</span><small>企業の方へ</small></a><a class="ft-h" href="/recruit.html"><span lang="en">RECRUIT</span><small>採用情報</small></a><a class="ft-h" href="/company.html"><span lang="en">ABOUT US</span><small>運営会社</small></a></div>
+      <div class="ft-col"><a href="/privacy">プライバシーポリシー</a></div>
     </nav>
   </div>
 </footer>
-<script>
-(function(){var b=document.querySelector(".menu-btn"),n=document.getElementById("bnav");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o)})})();
-</script>
 <div class="sticky-cta"><a class="btn btn-main" href="/booking.html?from=sticky" data-booking="sticky">無料でキャリア相談する</a></div>
 <script src="/assets/config.js"></script>
 <script src="/assets/site.js"></script>

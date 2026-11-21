@@ -1,24 +1,63 @@
-// 全ページの共通：スマホのメニュー（≡）と、パソコンの「その他」
+// 全ページの共通：ヘッダー（ロゴとメニュー）。DESIGN-SPEC.md 10 章
 (function () {
-  var b = document.querySelector('.menu-btn'), n = document.getElementById('gnav');
-  if (b && n) {
-    b.addEventListener('click', function () {
-      var o = n.classList.toggle('open');
-      b.setAttribute('aria-expanded', o);
-      b.setAttribute('aria-label', o ? 'メニューを閉じる' : 'メニューを開く');
-    });
-    n.addEventListener('click', function (e) {
-      if (e.target.closest('a')) { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'メニューを開く'); }
-    });
-  }
-  var m = document.querySelector('.more'), mb = document.querySelector('.more-btn');
-  if (m && mb) {
-    mb.addEventListener('click', function (e) { e.stopPropagation(); var o = m.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
-    document.addEventListener('click', function (e) { if (!m.contains(e.target)) { m.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); } });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { m.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); } });
-  }
-  // 見本の絞り込み（押した見た目だけ）
+  var root = document.documentElement;
+  var hd = document.querySelector('.hd');
+  if (!hd) return;
+  var mq = window.matchMedia('(max-width: 959px)');
 
+  // スクロールしたら html に .hd-scrolled（ロゴの下の 1 行を消す・ロゴを小さく・影）。一番上に戻ったら外す
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    root.classList.toggle('hd-scrolled', window.scrollY > 4);
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // SERVICE ▼：マウスを乗せる・押す・キーボード（Enter・Space・↓ で開く、Esc で閉じる、↑↓ で中を動く）
+  var sv = hd.querySelector('.hd-sv'), svb = hd.querySelector('.hd-sv-btn');
+  var items = sv ? [].slice.call(sv.querySelectorAll('.hd-drop a')) : [];
+  function setSv(open) { if (!sv) return; sv.classList.toggle('open', open); svb.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  if (sv && svb) {
+    var timer, byHover = false;
+    sv.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !mq.matches) { clearTimeout(timer); if (!sv.classList.contains('open')) byHover = true; setSv(true); } });
+    sv.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse' && !mq.matches) { timer = setTimeout(function () { byHover = false; setSv(false); }, 150); } });
+    // マウスを乗せて開いた直後に押したときは閉じない（乗せる → 押す で閉じてしまわないように）
+    svb.addEventListener('click', function () { if (byHover) { byHover = false; setSv(true); return; } setSv(!sv.classList.contains('open')); });
+    svb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); e.stopPropagation(); setSv(true); if (items[0]) items[0].focus(); }
+    });
+    sv.addEventListener('keydown', function (e) {
+      var i = items.indexOf(document.activeElement);
+      if (e.key === 'Escape' && sv.classList.contains('open')) { e.stopPropagation(); setSv(false); svb.focus(); }
+      else if (i >= 0 && e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+      else if (i >= 0 && e.key === 'ArrowUp') { e.preventDefault(); if (i === 0) svb.focus(); else items[i - 1].focus(); }
+    });
+    // パソコンでは、SERVICE の外を押す・Tab で外に出ると閉じる
+    document.addEventListener('click', function (e) { if (!mq.matches && !sv.contains(e.target)) setSv(false); });
+    sv.addEventListener('focusout', function (e) { if (!mq.matches && !sv.contains(e.relatedTarget)) setSv(false); });
+  }
+
+  // スマホの ≡：開いている間は後ろのページをスクロールさせない（html に .hd-open）。Esc・リンク・外を押すと閉じる
+  var b = hd.querySelector('.hd-menu'), n = document.getElementById('gnav');
+  function setMenu(open, focusBack) {
+    if (!b || !n) return;
+    n.classList.toggle('open', open);
+    root.classList.toggle('hd-open', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    if (!open) setSv(false); // 次に開いたとき SERVICE は閉じている
+    if (!open && focusBack) b.focus();
+  }
+  if (b && n) {
+    b.addEventListener('click', function () { setMenu(!n.classList.contains('open')); });
+    n.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && n.classList.contains('open')) setMenu(false, true); });
+    document.addEventListener('click', function (e) { if (n.classList.contains('open') && (!hd.contains(e.target) || e.target.classList.contains('hd-bar') || e.target.classList.contains('hd-in'))) setMenu(false); });
+    hd.addEventListener('focusout', function (e) { if (n.classList.contains('open') && e.relatedTarget && !hd.contains(e.relatedTarget)) setMenu(false); });
+    // 幅がパソコンに変わったら閉じる
+    (mq.addEventListener ? mq.addEventListener.bind(mq, 'change') : mq.addListener.bind(mq))(function () { setMenu(false); setSv(false); });
+  }
 })();
 
 // 6. スクロールで出てくる動き（見出し・カード）。1 回出たら終わり。動きを減らす設定なら何もしない

@@ -34,9 +34,7 @@ a{color:inherit}
 .btn-main{background:var(--navy);color:#fff}
 .btn-sub{border:1.5px solid var(--navy);color:var(--navy);background:#fff}
 
-/* ヘッダー */
-header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+/* ヘッダーは assets/header.css。ここはフッターなどの nav */
 nav{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;font-size:14px;font-weight:700}
 nav a{text-decoration:none}
 nav .btn{min-height:44px;padding:0 22px;font-size:14px}
@@ -72,10 +70,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;
 /* 今の BIA の波（wave.webp）を上下を反転して一番上に敷く */
 body{position:relative}
 .wave{position:absolute;left:0;top:0;width:100%;height:260px;object-fit:cover;object-position:center;transform:rotate(180deg);z-index:0}
-header{position:relative;background:transparent;border-bottom:0;backdrop-filter:none;z-index:2}
-header nav{background:#fff;border-radius:999px;padding:6px 8px 6px 20px;box-shadow:0 6px 24px rgba(30,80,160,.15)}
-header .logo-desc{color:#1D262E}
-header .logo-desc span{color:#3D4B57}
 .hero{background:transparent;position:relative;z-index:1}
 .hero .wrap{padding-top:150px}
 .wave{height:300px}
@@ -92,7 +86,6 @@ header .logo-desc span{color:#3D4B57}
 .faq details[open] summary::after{content:"−"}
 .faq details p{margin:0 0 20px;color:var(--sub)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--caret-on-white);outline-offset:3px}
-.menu-btn{display:none}
 /* スマホ：ロゴは左上に小さく、メニューは右上の ≡ で開く */
 @media (max-width: 860px){
   .wrap{padding:0 16px}
@@ -106,36 +99,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 
 /* ===== 全ページの共通（ヘッダーのメニュー・その他・下のページ） ===== */
 nav a[aria-current="page"]{color:var(--caret-on-white)}
-.more{position:relative}
-.more-btn{font:inherit;font-weight:700;color:inherit;background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:4px}
-.more-btn::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}
-.more-list{display:none;position:absolute;right:-12px;top:calc(100% + 14px);min-width:200px;background:#fff;border-radius:20px;padding:8px;box-shadow:0 12px 32px rgba(29,38,46,.14);flex-direction:column;z-index:10}
-.more-list a{padding:10px 14px;border-radius:12px;white-space:nowrap}
-.more-list a:hover{background:var(--bg2)}
-.more.open .more-list{display:flex}
-/* ヘッダー：960px より狭いと、右上の ≡ で開く */
-@media (max-width: 959px){
-  header .wrap{flex-wrap:nowrap;align-items:flex-start;padding-top:12px}
-  .logo{height:40px;padding:0 16px;gap:6px}
-  .logo .name{font-size:17px}
-  .logo .caret{height:17px}
-  .logo svg{width:18px;height:18px}
-  .logo-desc{font-size:11px;margin:4px 0 0 4px}
-  .menu-btn{display:grid;place-items:center;flex:none;width:44px;height:44px;border:0;border-radius:999px;background:#fff;box-shadow:0 6px 24px rgba(30,80,160,.15);cursor:pointer}
-  .menu-btn span,.menu-btn span::before,.menu-btn span::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--navy);position:relative}
-  .menu-btn span::before{position:absolute;top:-6px}.menu-btn span::after{position:absolute;top:6px}
-  .menu-btn[aria-expanded="true"] span{background:transparent}
-  .menu-btn[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
-  .menu-btn[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-  header nav{display:none;position:absolute;left:16px;right:16px;top:68px;flex-direction:column;align-items:stretch;gap:0;border-radius:24px;padding:10px;font-size:15px}
-  header nav.open{display:flex}
-  header nav a{padding:12px 14px}
-  header nav .btn{justify-content:center;margin-top:6px}
-  header nav .more{display:contents}
-  header nav .more-btn{display:none}
-  header nav .more-list{display:flex;position:static;box-shadow:none;padding:0;min-width:0;border-top:1px solid var(--line);margin-top:4px;padding-top:4px;border-radius:0}
-  header nav .more-list a{padding:12px 14px;border-radius:0;font-weight:700}
-}
 /* 下のページの見出し（波の下の白い地から） */
 .page-hero{position:relative;z-index:1}
 .page-hero .wrap{padding-top:150px;padding-bottom:24px}
@@ -238,12 +201,6 @@ body{background:var(--bg)}
 .js-reveal .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){ .js-reveal .rv{opacity:1;transform:none;transition:none} }
 
-/* 3. 960〜1,100px はメニューの文字を 13px にして間を狭める */
-@media (min-width: 960px) and (max-width: 1100px){
-  header nav{gap:4px 14px;font-size:13px;padding-left:16px}
-  header nav .btn{padding:0 16px;font-size:13px}
-  .logo-desc{font-size:11px}
-}
 /* 8. 例のハッシュタグを押すと上の枠に打ち込まれる */
 .tag-pick{font:inherit;font-size:14px;font-weight:700;color:var(--navy);cursor:pointer;transition:background .15s,color .15s}
 .tag-pick:hover,.tag-pick[aria-pressed="true"]{background:var(--navy);color:#fff}
