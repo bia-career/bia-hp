@@ -1,0 +1,3 @@
+# 仮の公開の間は、検索に出さない（bia-career.com に切り替えるときに変える）
+User-agent: *
+Disallow: /

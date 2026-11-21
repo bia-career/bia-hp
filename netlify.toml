@@ -1,0 +1,12 @@
+# ハッシュタグ（#hashtag）ホームページ。ビルドはしない（HTML をそのまま公開する）
+[build]
+  publish = "."
+  command = ""
+
+# 仮の公開の間は、すべてのページを検索に出さない
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
