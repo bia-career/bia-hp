@@ -155,3 +155,10 @@
     u.classList.add('pt-wait'); io.observe(u);
   });
 })();
+
+// LINE の相談の行き先を assets/config.js の LINE_URL から（a[data-line]）
+(function () {
+  var u = (window.HASHTAG_CONFIG || {}).LINE_URL;
+  if (!u) return;
+  document.querySelectorAll('a[data-line]').forEach(function (a) { a.href = u; });
+})();
