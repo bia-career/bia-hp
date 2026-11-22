@@ -100,7 +100,7 @@
   <div class="wrap">
     <div class="sec-head"><p class="en-big" aria-hidden="true">ABOUT</p><h2>ハッシュタグとは</h2><a class="circle-link" href="/about.html" aria-label="ハッシュタグとはのページへ"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     <div style="display:flex;flex-wrap:wrap;gap:40px">
-      <p style="flex:999 1 520px;margin:0;font-size:17px;color:var(--sub)">ハッシュタグは、求人を紹介するだけの転職支援ではありません。面談であなたの「#」――大事にしたい転職の軸と、ワクワクする未来――を一緒に言葉にし、そこからキャリアを設計します。# の先に何を書くかは、あなたが決める。私たちは、その言葉が本当になる会社選びを最後まで支えます。</p>
+      <p style="flex:999 1 520px;margin:0;font-size:17px;color:var(--sub)">ハッシュタグは、求人を紹介するだけの転職支援ではありません。面談であなたの「#」――5 年後・10 年後に叶えたい未来――を一緒に言葉にし、そこからキャリアを設計します。# の先に何を書くかは、あなたが決める。私たちは、その言葉が本当になる会社選びを最後まで支えます。</p>
       <div style="flex:1 1 300px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start">
         <span class="tag">#好きなことを仕事に</span><span class="tag">#30歳で独立</span><span class="tag">#人生の選択肢を増やす</span>
         <p class="note" style="width:100%;margin:6px 0 0">※ 例です</p>
@@ -155,8 +155,8 @@
 <section id="contact">
   <div class="wrap" style="text-align:center">
     <div class="sec-head center"><p class="en-big" aria-hidden="true">CONTACT</p><h2>まずは、あなたの <span class="g-hash">#</span> を一緒に。</h2></div>
-    <p style="margin:0 0 26px;color:var(--sub)">オンラインで 60 分。空いている日時を選ぶだけで予約できます。相談は無料です。</p>
-    <div class="cta-row"><a class="btn btn-main" href="/booking.html?from=contact" data-booking="contact">無料でキャリア相談する</a><a class="btn btn-sub btn-line" href="https://lin.ee/wz4YyNG" data-line target="_blank" rel="noopener"><svg class="line-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3.5C6.8 3.5 2.8 6.9 2.8 11c0 3.7 3.1 6.7 7.4 7.3.3.1.7.2.8.5.1.2 0 .6 0 .8l-.1.8c0 .3-.2.9.8.5s5.4-3.2 7.4-5.4c1.4-1.5 2.1-3 2.1-4.5 0-4.1-4-7.5-9.2-7.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 9.3v3.6h2.1M10.6 9.3v3.6M12.6 12.9V9.3l2.5 3.6V9.3M18 9.3h-2v3.6h2M16 11.1h1.8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>LINE で気軽に相談<span class="sr">（LINE が開きます）</span></a></div>
+    <p style="margin:0 0 26px;color:var(--sub)">オンラインで 60 分。平日の夜や土日も、空いている日時を選ぶだけで予約できます。</p>
+    <div class="cta-row"><a class="btn btn-main" href="/booking.html?from=contact" data-booking="contact">無料でキャリア相談する</a><a class="btn btn-sub btn-line" href="https://lin.ee/wz4YyNG" data-line target="_blank" rel="noopener"><svg class="line-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4C7.3 4 3.5 7.1 3.5 11c0 2.1 1.1 4 2.9 5.3L5.6 20l4-2.1c.8.2 1.6.3 2.4.3 4.7 0 8.5-3.1 8.5-7.1S16.7 4 12 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>LINE で気軽に相談<span class="sr">（LINE が開きます）</span></a></div>
   </div>
 </section>
 </main>
@@ -210,7 +210,12 @@
       picked=b.dataset.word; pickN=reduce ? picked.length : 0; resumeAt=0; mark(picked);
       el.textContent=reduce ? picked : '';
       box.setAttribute('aria-label','ハッシュタグの例：'+picked);
-      if (link) { link.hidden=false; var a=link.querySelector('a'); a.href='/jobs.html?tag='+encodeURIComponent(picked); a.textContent='#'+picked+' の求人を見る →'; }
+      if (link) {
+        link.hidden=false;
+        var has=(typeof JOBS!=='undefined') && JOBS.some(function(j){ return j.tags.indexOf(picked)>=0; });
+        if (has) link.innerHTML='<a href="/jobs.html?tag='+encodeURIComponent(picked)+'">#'+escapeHtml(picked)+' の求人を見る →</a>';
+        else link.innerHTML='<span class="pick-none">このハッシュタグに合う求人は、非公開の求人も含めて面談でご紹介します。</span><a class="btn btn-main" href="'+escapeHtml(bookingHref('pick'))+'" data-booking="pick">無料でキャリア相談する</a>';
+      }
       if (reduce) resumeAt=Date.now()+5000;
     });
   });

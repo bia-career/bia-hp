@@ -6,7 +6,7 @@ var JOBS = [
     description: '社員の方からのパソコンやアカウントの困りごとに、電話とチャットで答えます。はじめは先輩と一緒に対応し、よくある質問から少しずつ覚えていきます。',
     place: '東京都（例）', holidays: '土日祝休み・年末年始（例）' },
   { id: 'example-2', example: true, title: '法人営業（地域の会社への提案）', company: '例：事務用品の会社', category: '営業', area: '神奈川県',
-    salaryMin: 320, salaryMax: 420, tags: ['地元に恩返し', '20代で年収1000万'],
+    salaryMin: 320, salaryMax: 420, tags: ['地元に恩返し', '人生の選択肢を増やす'],
     description: '地域の会社を訪ね、事務用品やオフィスの困りごとを伺って提案します。新しいお客さまより、今のお客さまとの関係づくりが中心です。',
     place: '神奈川県（例）', holidays: '土日休み（例）' },
   { id: 'example-3', example: true, title: '営業事務（チームの受発注を支える）', company: '例：食品の卸の会社', category: '事務', area: '東京都',
@@ -65,6 +65,16 @@ function renderJobDetail(el, jobs) {
     '<div class="job-cta"><a class="btn btn-main" href="/booking.html?from=job" data-booking="job">この求人について相談する</a><a class="btn btn-sub" href="/jobs.html">求人一覧へ</a></div>';
 }
 
+// 例の求人が 0 件のハッシュタグ：面談でご紹介する旨と「無料でキャリア相談する」（行き先は config.js の BOOKING_URL）
+function bookingHref(from) {
+  var base = (window.HASHTAG_CONFIG || {}).BOOKING_URL || '/booking.html';
+  return base + (base.indexOf('?') >= 0 ? '&' : '?') + 'from=' + encodeURIComponent(from);
+}
+function noJobsHtml(from) {
+  return '<div class="empty card line no-jobs"><p style="margin:0;font-weight:700">このハッシュタグに合う求人は、非公開の求人も含めて面談でご紹介します。</p>' +
+    '<p style="margin:16px 0 0"><a class="btn btn-main" href="' + escapeHtml(bookingHref(from)) + '" data-booking="' + escapeHtml(from) + '">無料でキャリア相談する</a></p></div>';
+}
+
 // 求人一覧のページ：?tag=○○ があれば、そのハッシュタグの求人だけ出す
 function renderJobsPage(el, jobs) {
   var tag = new URLSearchParams(location.search).get('tag');
@@ -79,6 +89,6 @@ function renderJobsPage(el, jobs) {
     now.hidden = false;
     now.innerHTML = '<span>#' + escapeHtml(tag) + ' の求人（' + list.length + '件）</span><a href="/jobs.html">絞り込みを外す</a>';
   }
-  if (!list.length) { el.innerHTML = '<div class="empty card line"><p style="margin:0;font-weight:700">このハッシュタグの求人はまだありません。</p></div>'; return; }
+  if (!list.length) { el.innerHTML = noJobsHtml('jobs-empty'); return; }
   renderJobList(el, list);
 }
