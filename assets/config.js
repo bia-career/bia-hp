@@ -3,9 +3,9 @@
 window.HASHTAG_CONFIG = {
   BOOKING_URL: '/booking.html',
 
-  // LINE の相談の行き先（1 か所）。今は仮の URL。ホームページ専用の URL が届いたら差し替える
+  // LINE の相談の行き先（1 か所）。ホームページ専用の経路（2026-11）
   // リンクに data-line を付けると、ここの URL になる（相談の帯・よくある質問の答えの中）
-  LINE_URL: 'https://lin.ee/wz4YyNG',
+  LINE_URL: 'https://lin.ee/qq1v7gG',
 
   // 採用ページ（recruit.html）の「エントリー」の行き先。new＝新卒の方、career＝中途の方
   // 募集職種のカードの「このポジションに応募する」・ヘッダーとスマホの下の「エントリー」も、ここを使う（新しいタブで開く）
