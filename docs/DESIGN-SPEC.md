@@ -219,7 +219,7 @@
 5. **フッターも 2 種類**：会社のページは BIA のロゴ（白）・会社名・有料職業紹介の許可番号・各ページへのリンク。ハッシュタグのページは今までのフッター（「運営：株式会社ビア」→ `/`）。スマホの下の固定のボタンは、ハッシュタグのページ（無料でキャリア相談）と採用ページ（エントリー）だけ
 6. **お問い合わせ（`/contact.html`）**：最初に「求職者の方」「企業の方」の 2 つの大きなボタン（`aria-pressed`）。選んだ方の案内だけを出す（JS が動かないときは両方）。`#seeker`・`#company` で選んだ状態で開ける
    - 求職者の方：無料でキャリア相談（`BOOKING_URL`・`from=contact-page`）と LINE（`LINE_URL`）
-   - 企業の方：メール（info@bia-career.com。企業の方へのページと同じ）と企業の方へのページ。外部のフォームは作らない
+   - 企業の方：Google フォーム（`CORP_CONTACT_URL`。リンクに `data-corp-contact`、新しいタブ。ボタン名「フォームで相談する」。企業の方へのページは「お問い合わせフォーム」）。メール info@bia-career.com は「メールでも受け付けています」として補足に残す（2026-11 廣瀬さん）
 7. **転送**（`/` にクエリが付いて来ても転送しない。`/` は常に会社のトップ。2026-11 廣瀬さん：公開前で、古い行き先の広告が無いため）：`netlify.toml` で古い URL（`/about.html`・`/jobs.html`・`/job.html`・`/faq.html`・`/booking.html`・`/column.html` と拡張子なしの形）→ `/hashtag/…` に 301（クエリはそのまま付く）。`/` は転送しない
 8. `BOOKING_URL`（`/booking.html`）・`LINE_URL`・`RECRUIT_ENTRY_URL` は変えない（`/booking.html` は転送で `/hashtag/booking.html` へ。`?from=` も残る）
 9. sitemap.xml・canonical・og:url は新しい URL。構造化データ：Organization は会社のトップ、FAQPage は `/hashtag/faq.html`。JobPosting は今は無い（求人が例のため）。本物の求人が Caddie から来たら `/hashtag/job.html` に入れる

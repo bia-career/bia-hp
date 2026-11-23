@@ -169,3 +169,10 @@
   if (!u) return;
   document.querySelectorAll('a[data-line]').forEach(function (a) { a.href = u; });
 })();
+
+// 企業の方のお問い合わせの行き先を assets/config.js の CORP_CONTACT_URL から（a[data-corp-contact]）
+(function () {
+  var u = (window.HASHTAG_CONFIG || {}).CORP_CONTACT_URL;
+  if (!u) return;
+  document.querySelectorAll('a[data-corp-contact]').forEach(function (a) { a.href = u; });
+})();

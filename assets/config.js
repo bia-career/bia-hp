@@ -7,6 +7,10 @@ window.HASHTAG_CONFIG = {
   // リンクに data-line を付けると、ここの URL になる（相談の帯・よくある質問の答えの中）
   LINE_URL: 'https://lin.ee/qq1v7gG',
 
+  // 企業の方のお問い合わせの行き先（Google フォーム。2026-11）。新しいタブで開く
+  // リンクに data-corp-contact を付けると、ここの URL になる（企業の方へ・お問い合わせの「企業の方」）。メール info@bia-career.com は補足として残す
+  CORP_CONTACT_URL: 'https://docs.google.com/forms/d/e/1FAIpQLSdxHrxVS_SncdiXlNGNjn_Nxk2ewwiHd40cv8X9rzTHxWgQIA/viewform',
+
   // 採用ページ（recruit.html）の「エントリー」の行き先。new＝新卒の方、career＝中途の方
   // 募集職種のカードの「このポジションに応募する」・ヘッダーとスマホの下の「エントリー」も、ここを使う（新しいタブで開く）
   // 今は Google フォーム（新卒・中途とも同じ）。あとで社内システム（人事の機能）に作り替える予定

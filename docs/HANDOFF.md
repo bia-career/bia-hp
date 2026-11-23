@@ -20,7 +20,7 @@
 - 各ページは HTML を直接直す（前に使っていた生成スクリプトはリポジトリに無い。ヘッダー・フッターは 2 種類（会社のページ／ハッシュタグのページ）。同じ種類のページには同じ HTML が入っているので、直すときはそろえる）
 - 共通の見た目：`assets/site.css`（地・部品）・`assets/header.css`（ヘッダーとフッターのメニュー・固定・スクロールの変化）
 - 共通の動き：`assets/site.js`（ヘッダー・SERVICE ▼・≡・出てくる動き・下の相談ボタン・予約の行き先）
-- 設定：`assets/config.js`（`window.HASHTAG_CONFIG`）：`BOOKING_URL`・`LINE_URL`・`RECRUIT_ENTRY_URL`・`INTRO_MODE`
+- 設定：`assets/config.js`（`window.HASHTAG_CONFIG`）：`BOOKING_URL`・`LINE_URL`・`RECRUIT_ENTRY_URL`・`CORP_CONTACT_URL`・`INTRO_MODE`
 - トップのオープニング：`assets/intro.js`（index.html の `<head>` で読む）。支援の流れの動く # の吹き出し：`assets/illust.js`（＋ site.css の最後・index.html の `.fl-art`）
 - 採用ページ：`recruit.html`・`assets/recruit.css`・`assets/recruit.js`・`assets/recruit-jobs.js`（募集職種）。応募は Google フォーム（`assets/config.js` の `RECRUIT_ENTRY_URL`）
 - 運営会社のページ（`company.html`）は BIA のページ（ロゴは BIA・波は rotate(180deg)・中に自分の style）。ほかは #hashtag のロゴ
@@ -104,6 +104,7 @@
 - PR #11 の追加：**パーパス・ビジョン・ミッションを新しく**（廣瀬さんの決定。並びはパーパス → ビジョン → ミッション）。会社のトップの一番上・オープニング・会社概要・採用・タブの名前・meta・会社用 OGP を「人生に、#を。」に。前のパーパス（若者のポテンシャルを解放する）はサイトから消した
 - PR #11 の追加：ABOUT の「ほかの転職支援との違い」に 4 ステップをまとめ、**支援の流れのセクションはなくした**（4 ステップは 1 本。メニューの「支援の流れ」は `/hashtag/#about`）。動く # の吹き出し（`assets/illust.js`）は外した。採用ページの「※」と ENTRY のメールの 1 行を消した
 - PR #11 の答え：メニュー・フッターの「支援の流れ」を消し「ハッシュタグとは」1 つに。使っていない画像（flow1〜4.svg・recruit.svg・wave.webp）・CSS を消した（DESIGN-SPEC.md 17 章の 12）
+- PR #11 の答え：企業の方の問い合わせは Google フォーム（`assets/config.js` の `CORP_CONTACT_URL`）。/corp「お問い合わせフォーム」・/contact「フォームで相談する」。メールは補足に残す。/corp の作り直しは #11 のマージ後に main から新しいブランチで
 
 ## 4. まだのこと
 
