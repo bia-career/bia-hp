@@ -67,7 +67,7 @@
 .rc-num .en{font-weight:600;font-size:44px;line-height:1.1;color:var(--navy)}
 .rc-num .rc-pre{font-size:15px;font-weight:700;color:var(--navy)}
 .rc-num small{font-size:14px;font-weight:700;color:var(--navy)}
-.rc-nums h3{font-size:16px !important}
+.rc-nums h3{font-size:16px !important;margin-bottom:0 !important}
 /* 募集職種 */
 .rc-jobs{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
 .rc-job{display:flex;flex-direction:column}
