@@ -22,7 +22,7 @@ var RECRUIT_JOBS = [
     place: '本社オフィス',
     employment: '正社員',
     salary: '【仮】',
-    catch: '求職者向けの就職サポート',
+    catch: '20 代の人生の分岐点に伴走し、成果で応える仕事',
     detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '土日祝（年間休日 125 日）', benefits: '【仮】' }
   },
   {
@@ -32,7 +32,7 @@ var RECRUIT_JOBS = [
     place: '本社オフィス',
     employment: '正社員',
     salary: '【仮】',
-    catch: '企業向けの就職サポート',
+    catch: '企業の採用に向き合い、事業の成長をつくる仕事',
     detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '土日祝（年間休日 125 日）', benefits: '【仮】' }
   },
   {
@@ -42,7 +42,7 @@ var RECRUIT_JOBS = [
     place: '本社オフィス',
     employment: '正社員',
     salary: '【仮】',
-    catch: '【仮】',
+    catch: 'データと AI で、ハッシュタグの集客を伸ばす仕事',
     detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '土日祝（年間休日 125 日）', benefits: '【仮】' }
   }
 ];
