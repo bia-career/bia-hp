@@ -1,10 +1,10 @@
 // 会社のトップ（index.html）のオープニング。決まりは docs/DESIGN-SPEC.md 16 章
-// - 白い画面に BIA のロゴがふわっと出る → ビジョンを水色のカーソルで 1 文字ずつ打ち込む → その文字が一番上の見出しの位置へ動いて入れ替わる（約 3 秒）
+// - 白い画面に BIA のロゴがふわっと出る → パーパス（若者のポテンシャルを解放する。）を水色のカーソルで 1 文字ずつ打ち込む → その文字が一番上の日本語の行へ動いて入れ替わる（約 3 秒）
 // - assets/config.js の BIA_INTRO：'type'（出す）／'off'（出さない）
 // - 同じタブで 1 回だけ（sessionStorage。使えないときは出さない）。同じサイトから来た・戻ったときは出さない
 // - 画面を押す・キーを押すとすぐ飛ばす。動きを減らす設定・JS が動かないときは出さない。3.5 秒を超えて止めない
 // - /?intro=1 で強制で見られる
-// 打ち込む文字は、見出し（h1.co-vision）と同じ大きさ・同じ幅・同じ改行で作り、縮めて真ん中に置く。最後は縮めたのを戻すだけなので、改行がずれない
+// 打ち込む文字はパーパス（.co-purpose-ja・2026-11 にビジョンから変更）。その行と同じ大きさ・同じ幅・同じ改行で作り、縮めて真ん中に置く。最後は縮めたのを戻すだけなので、改行がずれない
 // このファイルは <head> で読む（ページが描かれる前に、地の色で覆うため。覆いは site.css の html.intro-on）
 (function () {
   var root = document.documentElement;
@@ -42,7 +42,7 @@
 
   function start() {
     if (done) return;
-    var h1 = document.querySelector('.co-vision');
+    var h1 = document.querySelector('.co-purpose-ja');
     if (!h1 || Date.now() - t0 > 800) { finish(0); return; } // 準備に時間がかかったときは出さない
     later(function () { finish(200); }, 3300); // 何があっても 3.5 秒で終わる
 
