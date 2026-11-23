@@ -62,9 +62,10 @@
 .rc-office p{margin:8px 4px 0;font-size:14px;color:var(--sub)}
 /* 数字から見るカルチャー */
 .rc-asof{display:inline-block;margin:0 0 16px;padding:6px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}
-.rc-nums{display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.rc-nums{display:grid;gap:16px;grid-template-columns:repeat(5,minmax(0,1fr))}
 .rc-num{display:flex;align-items:baseline;gap:6px;margin:0 0 4px}
-.rc-num .en{font-weight:600;font-size:52px;line-height:1.1;color:var(--navy)}
+.rc-num .en{font-weight:600;font-size:44px;line-height:1.1;color:var(--navy)}
+.rc-num .rc-pre{font-size:15px;font-weight:700;color:var(--navy)}
 .rc-num small{font-size:14px;font-weight:700;color:var(--navy)}
 .rc-nums h3{font-size:16px !important}
 /* 募集職種 */
@@ -114,7 +115,7 @@
 
 /* タブレット・スマホ */
 @media (max-width:1099px){
-  .rc-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rc-nums{grid-template-columns:repeat(3,minmax(0,1fr))}
   .rc-env{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:860px){
@@ -131,6 +132,7 @@
   .rc-appeal .rc-no{font-size:22px}
 }
 @media (max-width:767px){
+  .rc-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
   .rc-env{grid-template-columns:minmax(0,1fr)}
   .rc-num .en{font-size:40px}
   .rc-nums .card{padding:22px 18px}

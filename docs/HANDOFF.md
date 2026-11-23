@@ -71,13 +71,14 @@
 ## 4. まだのこと
 
 1. **LINE_URL が仮**（`assets/config.js`。今は https://lin.ee/wz4YyNG）。ホームページ専用の URL が届いたら、ここ 1 か所を書き換える
-2. **採用ページの【仮】の中身**（recruit.html・`assets/recruit-jobs.js`。廣瀬さんがあとで共有）：働く魅力、社員 3 人、ワーク＆ライフ環境 01〜06、オフィスの写真、数字から見るカルチャー（数字・時点）、募集職種の勤務地・雇用形態・給与と詳細、よくある誤解の答え、採用の流れ（新卒・中途の違い）。決まったら【仮】を消して差し替える
-3. **BOOKING_URL を Caddie の /book に切り替える**：Caddie の予約ページを本番にしたあと、`assets/config.js` の `BOOKING_URL` を書き換えるだけ（5 章）
-4. **正式公開**（bia-career.com に切り替えるとき）
+2. **エントリーの行き先を Google フォームに**：URL が届いたら `assets/config.js` の `RECRUIT_ENTRY_URL` を書き換える（届くまでは準備中のページ）。あとで社内システム（人事の機能）に作り替える予定
+3. **採用ページの【仮】の中身**（recruit.html・`assets/recruit-jobs.js`。廣瀬さんがあとで共有）：働く魅力、社員 3 人、ワーク＆ライフ環境 01〜06、オフィスの写真、数字から見るカルチャー（説明の文・「○年○月時点」。数字 5 つは決定）、募集職種の勤務地・雇用形態・給与と詳細、よくある誤解の答え、採用の流れ（新卒・中途の違い）。決まったら【仮】を消して差し替える
+4. **BOOKING_URL を Caddie の /book に切り替える**：Caddie の予約ページを本番にしたあと、`assets/config.js` の `BOOKING_URL` を書き換えるだけ（5 章）
+5. **正式公開**（bia-career.com に切り替えるとき）
    - お名前.com の DNS を Netlify に向ける
    - noindex を外す：`robots.txt`（今は Disallow: /）・`netlify.toml` の `X-Robots-Tag`・全ページの `<meta name="robots" content="noindex, nofollow">`
    - Netlify の Private を外す
-5. **採用ページのパーパス・ミッション・ビジョンは仮。あとで調整**（【仮】の印は付けていない。2026-11 に入れた文）
+6. **採用ページのパーパス・ミッション・ビジョンは仮。あとで調整**（【仮】の印は付けていない。2026-11 に入れた文）
    - パーパス：若者のポテンシャルを解放する。（Unleash the potential of youth.）
    - ミッション：一人ひとりの「叶えたい未来」を言葉にし、そこへ近づくキャリアを一緒につくる。
    - ビジョン：20 代が「自分の #」で仕事を選ぶのが、当たり前の社会へ。
@@ -91,7 +92,7 @@
 | LINE の相談 | `assets/config.js` の `LINE_URL`（仮）。リンクに `data-line` | — | ホームページ専用の URL が届いたら書き換えるだけ |
 | 求人（トップの新着・求人一覧・求人） | `assets/jobs.js` の配列 `JOBS`（今は見本。1 件の形はファイルの先頭のコメント） | 自社求人（Caddie の「企業」→ 求人。Caddie の掲載＝掲載中のもの） | あとで Caddie が同じ形の配列（JSON）を出し、`jobs.js` を置き換える（形は変えない）。報酬・手数料・選考難易度・NG・求人DB の URL は載せない |
 | 採用ページの募集職種（RECRUIT の JOBS） | `assets/recruit-jobs.js` の配列 `RECRUIT_JOBS` 1 か所（今は【仮】2 件。1 件の形はファイルの先頭のコメント） | まだ無い（あとで Caddie から自動） | `jobs.js` と同じく、配列を置き換える形にしておく |
-| エントリー | `assets/config.js` の `RECRUIT_ENTRY_URL`（`new`・`career`。今は準備中のページ `entry.html`） | まだ無い | 行き先が決まったら設定を書き換えるだけ |
+| エントリー | `assets/config.js` の `RECRUIT_ENTRY_URL`（`new`・`career`。今は準備中のページ `entry.html`） | まだ無い。**あとで社内システム（人事の機能）に作り替える予定** | まず Google フォーム（廣瀬さん・Cowork が作って URL を送る）。届いたら `RECRUIT_ENTRY_URL` を書き換えるだけ。届くまでは準備中のページのまま |
 
 ## 6. 確かめ方（前のセッションで使ったもの）
 
