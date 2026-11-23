@@ -62,7 +62,7 @@ function renderJobDetail(el, jobs) {
     '<dt>休日・休暇</dt><dd>' + escapeHtml(j.holidays) + '</dd>' +
     '<dt>この仕事のハッシュタグ</dt><dd><div class="tag-box">' + j.tags.map(function (t) { return tagHtml(t, true); }).join('') + '</div></dd>' +
     '</dl>' +
-    '<div class="job-cta"><a class="btn btn-main" href="/hashtag/booking.html?from=job" data-booking="job">この求人について相談する</a><a class="btn btn-sub" href="/hashtag/jobs.html">求人一覧へ</a></div>';
+    '<div class="job-cta"><a class="btn btn-main btn-cta" href="/hashtag/booking.html?from=job" data-booking="job">この求人について相談する</a><a class="btn btn-sub" href="/hashtag/jobs.html">求人一覧へ</a></div>';
 }
 
 // 例の求人が 0 件のハッシュタグ：面談でご紹介する旨と「無料でキャリア相談する」（行き先は config.js の BOOKING_URL）
@@ -72,7 +72,7 @@ function bookingHref(from) {
 }
 function noJobsHtml(from) {
   return '<div class="empty card line no-jobs"><p style="margin:0;font-weight:700">このハッシュタグに合う求人は、非公開の求人も含めて面談でご紹介します。</p>' +
-    '<p style="margin:16px 0 0"><a class="btn btn-main" href="' + escapeHtml(bookingHref(from)) + '" data-booking="' + escapeHtml(from) + '">無料でキャリア相談する</a></p></div>';
+    '<p style="margin:16px 0 0"><a class="btn btn-main btn-cta" href="' + escapeHtml(bookingHref(from)) + '" data-booking="' + escapeHtml(from) + '">無料でキャリア相談する</a></p></div>';
 }
 
 // 求人一覧のページ：?tag=○○ があれば、そのハッシュタグの求人だけ出す
