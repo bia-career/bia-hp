@@ -351,11 +351,9 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 }
 
 /* ===== 「無料でキャリア相談」を一番目立つボタンに（ハッシュタグのページだけ。.btn-cta）2026-11 =====
-   濃紺のロゴと差をつける明るいグラデーション。文字は濃紺（白い文字は明るい色の上では 4.5:1 に届かないため。濃紺なら 5.8〜10:1）
-   色の案は html[data-cta="1|2|3"]（?cta=1〜3 で見比べる。決まったら 1 つにして切り替えを消す） */
-:root{--cta-grad:linear-gradient(100deg,#8FD8FF 0%,#6FD6E6 100%);--cta-shadow:rgba(0,147,233,.32)}
-html[data-cta="2"]{--cta-grad:linear-gradient(100deg,#6FD6E6 0%,#38C9B6 100%);--cta-shadow:rgba(16,160,150,.32)}
-html[data-cta="3"]{--cta-grad:linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%);--cta-shadow:rgba(90,111,232,.32)}
+   色は「水色 → 紫寄りの青」（サイトの波の色。廣瀬さんの決定）：#7FE3DC → #6FB6EA → #8A9AF2。文字は濃紺 #1D262E
+   （白い文字は明るい色の上で 4.5:1 に届かないため。濃紺なら 5.8〜10:1） */
+:root{--cta-grad:linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%);--cta-shadow:rgba(90,111,232,.32)}
 .btn-cta,.hd .hd-cta.btn-cta,.pick-link .btn-cta{background:var(--cta-grad);color:#1D262E;border:0;
   box-shadow:0 6px 18px var(--cta-shadow),inset 0 0 0 1px rgba(255,255,255,.45);transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
 .btn-cta::after{content:"→";margin-left:10px;font-family:Poppins,sans-serif;font-weight:500;transition:transform .2s ease}
