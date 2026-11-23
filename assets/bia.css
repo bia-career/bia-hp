@@ -14,7 +14,6 @@
 .co-philo dt{font-size:16px;font-weight:900}
 .co-philo dt .en{display:block;font-weight:600;font-size:13px;letter-spacing:3px;color:#0070B8}
 .co-philo dd{margin:10px 0 0;font-size:17px;font-weight:700;line-height:1.7;color:var(--ink)}
-.co-philo .co-philo-en{display:block;margin-top:6px;font-family:Poppins,sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
 /* 採用への案内の帯 */
 .co-band .wrap{padding-top:72px;padding-bottom:72px;text-align:center}
 .co-band h2{margin:8px 0 24px;font-size:clamp(22px,3vw,32px);font-weight:900}

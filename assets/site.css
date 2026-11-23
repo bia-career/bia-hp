@@ -22,8 +22,6 @@ a{color:inherit}
 .logo{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none}
 .logo .name{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;font-size:21.84px;letter-spacing:1px;line-height:1;margin-right:-.228em}
 .logo .caret{height:21px}
-.logo-desc{font-size:12px;font-weight:700;letter-spacing:1px;margin:6px 0 0 6px}
-.logo-desc span{font-family:Poppins,sans-serif;font-weight:400;color:var(--muted)}
 
 /* 本人のハッシュタグ（例）：線だけの丸長方形 */
 .tag{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:999px;border:1.5px solid var(--navy);font-size:14px;font-weight:700;background:#fff}
@@ -41,7 +39,6 @@ nav .btn{min-height:44px;padding:0 22px;font-size:14px}
 
 /* ファーストビュー：BIA の波を背景のモチーフとして残す */
 .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F3F9FC 0%,#FFFFFF 70%)}
-.hero .waves{position:absolute;left:0;right:0;top:0;height:220px;opacity:.55;pointer-events:none}
 .hero .wrap{position:relative;display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-top:96px;padding-bottom:112px}
 .hero h1{margin:0;font-size:clamp(36px,4.6vw,56px);font-weight:900;line-height:1.35;letter-spacing:1px}
 .hero .lead{margin:16px 0 0;font-size:18px;font-weight:700;color:#0070B8}
@@ -60,7 +57,6 @@ section{padding:104px 0}
 .g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .card{background:#fff;border-radius:24px;padding:28px 24px}
 .card.line{border:1px solid var(--line)}
-.step-img{height:150px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border-radius:18px;color:var(--muted);font-size:12px}
 footer{background:var(--navy);color:#D5DDE4;padding:56px 0}
 footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
 .logo-white{background:#fff;color:var(--navy)}
@@ -75,7 +71,6 @@ body{position:relative}
 .wave{height:300px}
 
 /* ===== ここから見本に足したもの ===== */
-.step-img img{height:118px;width:auto}
 .point{display:flex;gap:18px;align-items:center}
 .point img{width:56px;height:56px;flex:none}
 .faq{display:grid;gap:12px}
@@ -102,24 +97,18 @@ nav a[aria-current="page"]{color:var(--caret-on-white)}
 /* 下のページの見出し（波の下の白い地から） */
 .page-hero{position:relative;z-index:1}
 .page-hero .wrap{padding-top:150px;padding-bottom:24px}
-.page-hero .eyebrow{margin:0 0 6px;font-weight:500;font-size:14px;letter-spacing:3px;color:var(--muted)}
 .page-hero h1{margin:0;font-size:clamp(32px,4vw,48px);font-weight:900;line-height:1.35;letter-spacing:1px}
 .page-hero .lead{margin:12px 0 0;font-size:18px;font-weight:700;color:#0070B8}
 .page-hero + section{padding-top:64px}
 .sec-head.center{justify-content:center;text-align:center}
 section:has(.sec-head.center) .wrap{text-align:center}
 .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.split{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
-.split > :first-child{flex:999 1 520px;min-width:0}
-.split > :last-child{flex:1 1 300px;min-width:0}
-.big-copy{margin:0 0 16px;font-size:clamp(28px,3.4vw,40px);font-weight:900;line-height:1.4}
 .text{margin:0 0 16px;font-size:17px;color:var(--sub)}
 .tag-box{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
 .steps h3,.card h3{margin:8px 0 4px;font-size:19px;font-weight:900;line-height:1.5}
 .steps p,.card p{margin:0;font-size:14px;color:var(--sub)}
 .step-no{margin:0;font-size:13px;color:var(--muted);letter-spacing:2px}
 .compare-label{margin:0 0 2px;font-size:13px;font-weight:700;color:var(--muted)}
-.compare .strong{border:1.5px solid var(--navy)}
 .list{margin:8px 0 0;padding-left:1.2em;font-size:14px;color:var(--sub)}
 .empty{text-align:center;padding:48px 24px}
 /* 求人 */
@@ -190,7 +179,6 @@ body{background:var(--bg)}
 .band .sec-head .en-big,.band .sec-head h2,.band h3,.band .card p{color:var(--navy)}
 .band .card{background:rgba(255,255,255,.9);border:1px solid #FFFFFF}
 .band .card .en{color:#0070B8 !important;font-weight:600}
-.band .step-img{background:#fff}
 /* 支援の流れのカードは 1,100px 以上で 4 枚 1 列、それより狭いと 2 枚×2 段、スマホは 1 列（3＋1 にしない） */
 .band ol.grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width: 1099px){ .band ol.grid{grid-template-columns:repeat(2,minmax(0,1fr))} }

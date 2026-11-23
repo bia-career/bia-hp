@@ -96,7 +96,7 @@
     // 打ち終わり（約 2.13 秒）：ファーストビューの大きなロゴの位置へ 0.6 秒で動く
     later(function () {
       // 入れ替わる先：/hashtag/ のファーストビューの大きなロゴ（2026-11。ヘッダーは BIA のロゴだけになったため）
-      var logo = document.querySelector('.ht-mark-logo') || document.querySelector('.hd-logo');
+      var logo = document.querySelector('.ht-mark-logo');
       if (!logo) { finish(300); return; }
       var r = logo.getBoundingClientRect(), s = getComputedStyle(logo);
       var fs = logo.querySelector('.caret').getBoundingClientRect().height || r.height * 0.4375; // 丸長方形の大きさの基準＝ロゴのカーソルの高さ（文字はその 1.04 倍）

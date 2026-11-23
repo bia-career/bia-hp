@@ -8,9 +8,9 @@
   // スクロールしたら html に .hd-scrolled（ロゴの下の 1 行を消す・ロゴを小さく・影）。一番上に戻ったら外す
   var ticking = false;
   // 運営会社のページの BIA のロゴは、紺のフッターに重なっている間だけ白にする（html に .hd-on-dark）
-  // 見出しとの重なりを見るロゴ：BIA のロゴ（会社・ハッシュタグの両方のページ）と #hashtag のロゴ（ハッシュタグのページ）。1 つずつ .is-faded を付ける
+  // 見出しとの重なりを見るロゴ：BIA のロゴ（全ページのヘッダー）。重なったら .is-faded を付ける
   var bia = hd.querySelector('.hd-bia img'), foot = document.querySelector('footer');
-  var fadeLogos = [].slice.call(hd.querySelectorAll('.hd-bia, .hd-logo'));
+  var fadeLogos = [].slice.call(hd.querySelectorAll('.hd-bia'));
   // ロゴが見出し（h1〜h3・大きな英字の見出し）の文字に重なっている間だけ、そのロゴをうすくする。本文・カード・表では変えない
   var heads = fadeLogos.length ? [].slice.call(document.querySelectorAll('h1, h2, h3, .en-big')).filter(function (h) { return !h.closest('.hd, footer'); }) : [];
   var range = document.createRange();
