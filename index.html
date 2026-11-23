@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>株式会社ビア｜若者のポテンシャルを解放する</title>
+<title>株式会社ビア｜人生に、#を。</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="株式会社ビアは、新卒・20代の就職・転職支援サービス「ハッシュタグ」と、企業向けの人材紹介・採用コンサルティングを行っています。">
 <link rel="canonical" href="https://bia-career.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="株式会社ビア">
-<meta property="og:title" content="株式会社ビア｜若者のポテンシャルを解放する">
+<meta property="og:title" content="株式会社ビア｜人生に、#を。">
 <meta property="og:description" content="株式会社ビアは、新卒・20代の就職・転職支援サービス「ハッシュタグ」と、企業向けの人材紹介・採用コンサルティングを行っています。">
 <meta property="og:url" content="https://bia-career.com/">
 <meta property="og:image" content="https://bia-career.com/assets/ogp-bia.png">
@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="/assets/header.css">
 <link rel="stylesheet" href="/assets/bia.css">
 <link rel="stylesheet" href="/assets/svc-card.css">
+<link rel="stylesheet" href="/assets/philosophy.css">
 <!-- オープニング（DESIGN-SPEC.md 16 章）。描く前に覆うため <head> で読む -->
 <script src="/assets/config.js"></script>
 <script src="/assets/intro-bia.js"></script>
@@ -54,19 +55,22 @@
   </div>
 </header>
   <div class="fv-copy">
-    <!-- 一番上はパーパス（文は assets/philosophy.js）。オープニングは下の日本語の行に入れ替わる -->
-    <h1 class="co-purpose"><span class="co-purpose-en" lang="en" data-philo="purpose-en">Unleash the potential of youth.</span><span class="co-purpose-ja" data-philo="purpose">若者のポテンシャルを解放する。</span></h1>
+    <!-- 一番上はパーパス（文は assets/philosophy.js）。オープニングはこの見出しに入れ替わる -->
+    <p class="co-en" lang="en">PURPOSE</p>
+    <h1 class="co-purpose" data-philo="purpose" data-philo-hash>人生に、<span class="g-hash">#</span>を。</h1>
+    <p class="philo-tags co-purpose-tags" data-philo="purpose-tags"><span class="tag">#家族と過ごす夕方</span><span class="tag">#仲間と笑う月曜日</span><span class="tag">#旅するように働く</span></p>
+    <p class="co-purpose-text" data-philo="purpose-text">人生に#があると、働くことは物語になる。</p>
   </div>
 </div>
 <main>
 <section id="philosophy">
   <div class="wrap">
     <div class="sec-head"><p class="en-big" aria-hidden="true">PHILOSOPHY</p><h2>私たちの考え方</h2></div>
-    <!-- 文は assets/philosophy.js の 1 か所で直す（採用ページにも同じ文が出る） -->
+    <!-- 文は assets/philosophy.js の 1 か所で直す（会社概要・採用ページにも同じ文が出る）。並びはパーパス → ビジョン → ミッション -->
     <dl class="co-philo">
-      <div class="card"><dt><span class="en" lang="en">PURPOSE</span>パーパス</dt><dd><span data-philo="purpose">若者のポテンシャルを解放する。</span><span class="co-philo-en" lang="en" data-philo="purpose-en">Unleash the potential of youth.</span></dd></div>
-      <div class="card"><dt><span class="en" lang="en">MISSION</span>ミッション</dt><dd data-philo="mission">一人ひとりの「叶えたい未来」を言葉にし、そこへ近づくキャリアを一緒につくる。</dd></div>
-      <div class="card"><dt><span class="en" lang="en">VISION</span>ビジョン</dt><dd data-philo="vision">20代が「自分の #」で仕事を選ぶのが、当たり前の社会へ。</dd></div>
+      <div class="card"><dt><span class="en" lang="en">PURPOSE</span>パーパス</dt><dd><p class="philo-h" data-philo="purpose" data-philo-hash>人生に、<span class="g-hash">#</span>を。</p><p class="philo-tags" data-philo="purpose-tags"><span class="tag">#家族と過ごす夕方</span><span class="tag">#仲間と笑う月曜日</span><span class="tag">#旅するように働く</span></p><p class="philo-t" data-philo="purpose-text">人生に#があると、働くことは物語になる。</p></dd></div>
+      <div class="card"><dt><span class="en" lang="en">VISION</span>ビジョン</dt><dd><p class="philo-h" lang="en" data-philo="vision">Open market, open you.</p><p class="philo-t" data-philo="vision-text">知らないから、選べなかった。見えないから、あきらめていた。<br>市場がひらけば、あなたはもっと遠くへ行ける。</p></dd></div>
+      <div class="card"><dt><span class="en" lang="en">MISSION</span>ミッション</dt><dd><p class="philo-h" data-philo="mission">地図は渡す。背中も押す。旅は、あなたが選ぶ。</p><p class="philo-t" data-philo="mission-text">求人の裏側も、自分の市場価値も、全部伝える。そのうえで決めるのは、いつもあなた。</p></dd></div>
     </dl>
   </div>
 </section>

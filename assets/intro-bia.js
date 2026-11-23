@@ -1,10 +1,10 @@
 // 会社のトップ（index.html）のオープニング。決まりは docs/DESIGN-SPEC.md 16 章
-// - 白い画面に BIA のロゴがふわっと出る → パーパス（若者のポテンシャルを解放する。）を水色のカーソルで 1 文字ずつ打ち込む → その文字が一番上の日本語の行へ動いて入れ替わる（約 3 秒）
+// - 白い画面に BIA のロゴがふわっと出る → パーパス（人生に、#を。）を水色のカーソルで 1 文字ずつ打ち込む → その文字が一番上の見出しへ動いて入れ替わる（約 3 秒）
 // - assets/config.js の BIA_INTRO：'type'（出す）／'off'（出さない）
 // - 同じタブで 1 回だけ（sessionStorage。使えないときは出さない）。同じサイトから来た・戻ったときは出さない
 // - 画面を押す・キーを押すとすぐ飛ばす。動きを減らす設定・JS が動かないときは出さない。3.5 秒を超えて止めない
 // - /?intro=1 で強制で見られる
-// 打ち込む文字はパーパス（.co-purpose-ja・2026-11 にビジョンから変更）。その行と同じ大きさ・同じ幅・同じ改行で作り、縮めて真ん中に置く。最後は縮めたのを戻すだけなので、改行がずれない
+// 打ち込む文字はパーパス（h1.co-purpose。文は assets/philosophy.js）。「#」は見出しと同じグラデーションで打つ。その行と同じ大きさ・同じ幅・同じ改行で作り、縮めて真ん中に置く。最後は縮めたのを戻すだけなので、改行がずれない
 // このファイルは <head> で読む（ページが描かれる前に、地の色で覆うため。覆いは site.css の html.intro-on）
 (function () {
   var root = document.documentElement;
@@ -42,7 +42,7 @@
 
   function start() {
     if (done) return;
-    var h1 = document.querySelector('.co-purpose-ja');
+    var h1 = document.querySelector('.co-purpose');
     if (!h1 || Date.now() - t0 > 800) { finish(0); return; } // 準備に時間がかかったときは出さない
     later(function () { finish(200); }, 3300); // 何があっても 3.5 秒で終わる
 
@@ -72,7 +72,7 @@
     // 0.1 秒：ロゴがふわっと出る → 0.6 秒：打ち込む（1 文字 45ms）
     later(function () { wrap.classList.add('bintro-in'); }, 100);
     var chars = Array.from(text), step = Math.min(45, 1300 / Math.max(1, chars.length));
-    chars.forEach(function (c, i) { later(function () { typed.textContent = chars.slice(0, i + 1).join(''); }, 600 + step * (i + 1)); });
+    chars.forEach(function (c, i) { later(function () { typed.innerHTML = chars.slice(0, i + 1).join('').replace(/[&<>]/g, function (x) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[x]; }).replace(/#/g, '<span class="g-hash">#</span>'); }, 600 + step * (i + 1)); });
     var endType = 600 + step * chars.length;
     // 打ち終わって 0.2 秒：見出しの位置へ 0.6 秒で動く（ロゴは消える）→ 地の色を 0.3 秒で消して、見出しと入れ替わる
     later(function () { wrap.classList.add('bintro-fly'); box.style.transform = 'none'; }, endType + 200);

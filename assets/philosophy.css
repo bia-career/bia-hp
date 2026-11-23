@@ -1,0 +1,13 @@
+/* ===== パーパス・ビジョン・ミッションの見た目（会社のトップ・会社概要・採用ページ。文は assets/philosophy.js）2026-11 =====
+   見出しは大きく、添える文は小さく。パーパスの「#」の 3 つは、線だけの丸長方形のハッシュタグ（本人のハッシュタグの見た目） */
+.philo-h,.card .philo-h{margin:0;font-size:22px;font-weight:900;line-height:1.5;color:#1D262E}
+.philo-h[lang="en"],.card .philo-h[lang="en"]{font-family:Poppins,sans-serif;font-weight:600;letter-spacing:-.2px}
+.philo-tags,.card .philo-tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.philo-tags .tag{display:inline-flex;align-items:center;height:32px;padding:0 13px;border-radius:999px;border:1.5px solid #1D262E;background:#fff;font-size:13px;font-weight:700;color:#1D262E}
+.philo-t,.card .philo-t{margin:12px 0 0;font-size:14px;font-weight:400;line-height:1.8;color:#4A5560}
+.philo-h .g-hash,.co-purpose .g-hash{background:linear-gradient(135deg,#7FE3DC 0%,#6FB6EA 50%,#5A6FE8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-right:.04em}
+/* .card p（site.css）より強くするため、.card .philo-… も書く */
+/* 会社概要の PURPOSE（大きめ） */
+.philo-lg .philo-h{font-size:clamp(30px,4vw,44px)}
+.philo-lg .philo-t{font-size:16px}
+.philo-lg .philo-tags .tag{height:36px;padding:0 16px;font-size:14px}

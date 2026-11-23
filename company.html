@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>会社概要｜株式会社ビア</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="株式会社ビアの会社概要。若者のポテンシャルを解放する。新卒・20代の就職・転職支援サービス「ハッシュタグ」を運営しています。">
+<meta name="description" content="株式会社ビアの会社概要。人生に、#を。新卒・20代の就職・転職支援サービス「ハッシュタグ」を運営しています。">
 <link rel="icon" href="/assets/hashtag-icon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -13,14 +13,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="株式会社ビア">
 <meta property="og:title" content="会社概要｜株式会社ビア">
-<meta property="og:description" content="株式会社ビアの会社概要。若者のポテンシャルを解放する。新卒・20代の就職・転職支援サービス「ハッシュタグ」を運営しています。">
+<meta property="og:description" content="株式会社ビアの会社概要。人生に、#を。新卒・20代の就職・転職支援サービス「ハッシュタグ」を運営しています。">
 <meta property="og:url" content="https://bia-career.com/company.html">
 <meta property="og:image" content="https://bia-career.com/assets/ogp-bia.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* 会社概要（BIA）のページ。一番上の「Unleash the potential of youth.」は 2026-11 に会社のトップへ移した。ここは波・ロゴ → パーパスから始まる */
+/* 会社概要（BIA）のページ。波・ロゴ → パーパス（文は assets/philosophy.js）から始まる */
 :root{--navy:#1D262E;--caret:#6FD6E6;--caret-on-white:#0093E9;--ink:#1D262E;--sub:#4A5560;--muted:#5F6B76;--bg2:#F3F6F8;--line:#E3EAEF;
   --g-text:linear-gradient(90deg,#0093E9 0%,#87E1E1 100%)}
 *{box-sizing:border-box}
@@ -105,6 +105,7 @@ body{background:#F4F6F8}
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/header.css">
 <link rel="stylesheet" href="/assets/svc-card.css">
+<link rel="stylesheet" href="/assets/philosophy.css">
 </head>
 <body>
 <div class="fv">
@@ -133,9 +134,12 @@ body{background:#F4F6F8}
 <section id="purpose" style="padding-top:clamp(120px,12vw,160px)">
   <div class="wrap">
     <div class="sec-head"><p class="en-big" aria-hidden="true">PURPOSE</p><h2>パーパス</h2></div>
-    <!-- パーパスの文は assets/philosophy.js（全サイトで 1 か所） -->
-    <p class="vision" data-philo="purpose">若者のポテンシャルを解放する。</p>
-    <p class="body">私たちは、若者が持つ無限の可能性に光を当て、それを解放するために存在しています。各々が持つユニークな才能やスキルを見出し、育て、そして若者一人ひとりを適切な場所に導くことで、若者自身も社会もより良い未来を築くことができると信じています。私たちの役割は、単に仕事を紹介すること以上に、若者一人ひとりがその真の力を理解し、活かせるよう支援することです。この存在意義のもとで、私たちは情熱を持って取り組んでまいります。</p>
+    <!-- パーパスの文は assets/philosophy.js（全サイトで 1 か所）。前の長い説明の文は 2026-11 に消した -->
+    <div class="philo-lg">
+      <p class="philo-h" data-philo="purpose" data-philo-hash>人生に、<span class="g-hash">#</span>を。</p>
+      <p class="philo-tags" data-philo="purpose-tags"><span class="tag">#家族と過ごす夕方</span><span class="tag">#仲間と笑う月曜日</span><span class="tag">#旅するように働く</span></p>
+      <p class="philo-t" data-philo="purpose-text">人生に#があると、働くことは物語になる。</p>
+    </div>
   </div>
 </section>
 <section id="service" class="alt">
