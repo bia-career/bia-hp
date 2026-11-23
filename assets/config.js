@@ -8,10 +8,11 @@ window.HASHTAG_CONFIG = {
   LINE_URL: 'https://lin.ee/wz4YyNG',
 
   // 採用ページ（recruit.html）の「エントリー」の行き先。new＝新卒の方、career＝中途の方
-  // 募集職種のカードの「このポジションに応募する」も、ここを使う。今は準備中のページ（entry.html）
+  // 募集職種のカードの「このポジションに応募する」・ヘッダーとスマホの下の「エントリー」も、ここを使う（新しいタブで開く）
+  // 今は Google フォーム（新卒・中途とも同じ）。あとで社内システム（人事の機能）に作り替える予定
   RECRUIT_ENTRY_URL: {
-    new: '/entry.html?type=new',
-    career: '/entry.html?type=career'
+    new: 'https://forms.gle/y8prBTsdwqu2tVwK9',
+    career: 'https://forms.gle/y8prBTsdwqu2tVwK9'
   },
 
   // トップのオープニング（DESIGN-SPEC.md 11 章）

@@ -5,7 +5,8 @@
 (function () {
   var cfg = window.HASHTAG_CONFIG || {};
   var entry = cfg.RECRUIT_ENTRY_URL || {};
-  var urls = { '新卒': entry.new || '/entry.html?type=new', '中途': entry.career || '/entry.html?type=career' };
+  // 応募フォーム（新しいタブで開く）。設定が無いときはページの中の ENTRY へ
+  var urls = { '新卒': entry.new || entry.career || '#entry', '中途': entry.career || entry.new || '#entry' };
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
@@ -24,7 +25,7 @@
         var d = j.detail || {};
         var types = (j.types || []).filter(function (t) { return urls[t]; });
         var apply = types.map(function (t) {
-          return '<a class="btn btn-main" href="' + esc(urls[t]) + '">' + (types.length > 1 ? esc(t) + 'で' : '') + 'このポジションに応募する</a>';
+          return '<a class="btn btn-main" href="' + esc(urls[t]) + '" target="_blank" rel="noopener">' + (types.length > 1 ? esc(t) + 'で' : '') + 'このポジションに応募する<span class="sr">（応募フォームが新しいタブで開きます）</span></a>';
         }).join('');
         var rows = [['仕事内容', d.work], ['求める人', d.want], ['給与', d.salary], ['勤務時間', d.hours], ['休日', d.holidays], ['福利厚生', d.benefits]];
         return '<li class="card line rc-job">' +
@@ -50,7 +51,7 @@
     }
   }
 
-  // 2. エントリーのボタン（data-entry="new" / "career"）
+  // 2. エントリーのボタン（data-entry="new" / "career"）：ENTRY の 2 つ・ヘッダーとスマホの下の「エントリー」
   document.querySelectorAll('a[data-entry]').forEach(function (a) {
     var u = a.getAttribute('data-entry') === 'new' ? urls['新卒'] : urls['中途'];
     if (u) a.href = u;

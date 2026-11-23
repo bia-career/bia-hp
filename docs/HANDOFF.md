@@ -21,7 +21,7 @@
 - 共通の動き：`assets/site.js`（ヘッダー・SERVICE ▼・≡・出てくる動き・下の相談ボタン・予約の行き先）
 - 設定：`assets/config.js`（`window.HASHTAG_CONFIG`）：`BOOKING_URL`・`LINE_URL`・`RECRUIT_ENTRY_URL`・`INTRO_MODE`
 - トップのオープニング：`assets/intro.js`（index.html の `<head>` で読む）。支援の流れの動く # の吹き出し：`assets/illust.js`（＋ site.css の最後・index.html の `.fl-art`）
-- 採用ページ：`recruit.html`・`assets/recruit.css`・`assets/recruit.js`・`assets/recruit-jobs.js`（募集職種）。エントリーの準備中のページ：`entry.html`（BIA のロゴ）
+- 採用ページ：`recruit.html`・`assets/recruit.css`・`assets/recruit.js`・`assets/recruit-jobs.js`（募集職種）。応募は Google フォーム（`assets/config.js` の `RECRUIT_ENTRY_URL`）
 - 運営会社のページ（`company.html`）は BIA のページ（ロゴは BIA・波は rotate(180deg)・中に自分の style）。ほかは #hashtag のロゴ
 - `netlify.toml`：/privacy の書き換え、/docs/*・README.md・netlify.toml は 404（このファイルもサイトからは見えない）
 
@@ -43,7 +43,7 @@
 - トップのオープニング：**決定は `'type'`**（打ち込んでロゴになる。約 3 秒）。同じタブで 1 回・ほかのページから来たときは出さない・押すと飛ばす・動きを減らす設定では出さない。`/?intro=type`・`/?intro=empty` で見られる
 
 ### PR #2（dc18a5b）BIA のロゴ・採用ページのヘッダー（10 章 16・17、12 章）
-- BIA のロゴ（運営会社・採用ページ・entry.html）は、**見出し（h1〜h3・大きな英字）の文字に重なっている間だけうすく**（0.15・0.2 秒）。一番上（スクロールしていないとき）はうすくしない。本文・カード・表では変えない
+- BIA のロゴ（運営会社・採用ページ）は、**見出し（h1〜h3・大きな英字）の文字に重なっている間だけうすく**（0.15・0.2 秒）。一番上（スクロールしていないとき）はうすくしない。本文・カード・表では変えない
 - 採用ページのヘッダーのボタンは「エントリー」（ENTRY の区画へ）。採用ページには「無料でキャリア相談」を出さない
 - 進め方を「PR → 下書き用の画面で確認 → マージ」に変えた（1 章）
 
@@ -85,9 +85,9 @@
 3. **採用ページの待ちのもの**（届いたら差し替える）
    - オフィスの写真と、その下の説明（写真と一緒に届く。今は「写真は準備中」の枠 3 つと【仮】）
    - 3 職種の求人情報（`assets/recruit-jobs.js`）：給与・仕事内容・求める人・勤務時間・福利厚生（今は【仮】）
-   - 応募フォームの URL（Google フォーム）：届いたら `assets/config.js` の `RECRUIT_ENTRY_URL` を書き換える（届くまでは準備中のページ `entry.html`）。**あとで社内システム（人事の機能）に作り替える予定**
-4. **BOOKING_URL を Caddie の /book に切り替える**：Caddie の予約ページを本番にしたあと、`assets/config.js` の `BOOKING_URL` を書き換えるだけ（5 章）
-5. **正式公開**（bia-career.com に切り替えるとき）
+4. **応募は Google フォーム**（https://forms.gle/y8prBTsdwqu2tVwK9。持ち主は a.h@bia-career.com）。新卒・中途とも同じ URL を `assets/config.js` の `RECRUIT_ENTRY_URL` に入れてある。**あとで社内システム（人事の機能）に作り替える予定**（そのときは `RECRUIT_ENTRY_URL` を書き換えるだけ）
+5. **BOOKING_URL を Caddie の /book に切り替える**：Caddie の予約ページを本番にしたあと、`assets/config.js` の `BOOKING_URL` を書き換えるだけ（5 章）
+6. **正式公開**（bia-career.com に切り替えるとき）
    - お名前.com の DNS を Netlify に向ける
    - noindex を外す：`robots.txt`（今は Disallow: /）・`netlify.toml` の `X-Robots-Tag`・全ページの `<meta name="robots" content="noindex, nofollow">`
    - Netlify の Private を外す
@@ -100,7 +100,7 @@
 | LINE の相談 | `assets/config.js` の `LINE_URL`（仮）。リンクに `data-line` | — | ホームページ専用の URL が届いたら書き換えるだけ |
 | 求人（トップの新着・求人一覧・求人） | `assets/jobs.js` の配列 `JOBS`（今は見本。1 件の形はファイルの先頭のコメント） | 自社求人（Caddie の「企業」→ 求人。Caddie の掲載＝掲載中のもの） | あとで Caddie が同じ形の配列（JSON）を出し、`jobs.js` を置き換える（形は変えない）。報酬・手数料・選考難易度・NG・求人DB の URL は載せない |
 | 採用ページの募集職種（RECRUIT の JOBS） | `assets/recruit-jobs.js` の配列 `RECRUIT_JOBS` 1 か所（今は【仮】2 件。1 件の形はファイルの先頭のコメント） | まだ無い（あとで Caddie から自動） | `jobs.js` と同じく、配列を置き換える形にしておく |
-| エントリー | `assets/config.js` の `RECRUIT_ENTRY_URL`（`new`・`career`。今は準備中のページ `entry.html`） | まだ無い。**あとで社内システム（人事の機能）に作り替える予定** | まず Google フォーム（廣瀬さん・Cowork が作って URL を送る）。届いたら `RECRUIT_ENTRY_URL` を書き換えるだけ。届くまでは準備中のページのまま |
+| エントリー（応募） | `assets/config.js` の `RECRUIT_ENTRY_URL`（`new`・`career`。今は Google フォーム https://forms.gle/y8prBTsdwqu2tVwK9、持ち主は a.h@bia-career.com。新しいタブで開く） | まだ無い。**あとで社内システム（人事の機能）に作り替える予定** | できたら `RECRUIT_ENTRY_URL` を書き換えるだけ |
 
 ## 6. 確かめ方（前のセッションで使ったもの）
 

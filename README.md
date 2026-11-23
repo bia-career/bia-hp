@@ -13,7 +13,6 @@ Caddie（社内の CRM）とは別のリポジトリ・別の Netlify サイト�
 | 企業の方へ（BIA） | `corp.html` |
 | 運営会社（BIA） | `company.html` |
 | 採用情報（BIA） | `recruit.html`（募集職種は `assets/recruit-jobs.js`） |
-| エントリー（準備中） | `entry.html` |
 | コラム（準備中） | `column.html` |
 | プライバシーポリシー（`/privacy` で開く。今の bia-career.com/privacy の文章のまま） | `privacy.html` |
 
