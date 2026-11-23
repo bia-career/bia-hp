@@ -93,9 +93,10 @@
     for (var i = 1; i <= word.length; i++) {
       (function (n) { later(function () { name.textContent = word.slice(0, n); }, 1500 + 90 * n); })(i);
     }
-    // 打ち終わり（約 2.13 秒）：小さくなりながら、左上のヘッダーのロゴの位置へ 0.6 秒で動く
+    // 打ち終わり（約 2.13 秒）：ファーストビューの大きなロゴの位置へ 0.6 秒で動く
     later(function () {
-      var logo = document.querySelector('.hd-logo');
+      // 入れ替わる先：/hashtag/ のファーストビューの大きなロゴ（2026-11。ヘッダーは BIA のロゴだけになったため）
+      var logo = document.querySelector('.ht-mark-logo') || document.querySelector('.hd-logo');
       if (!logo) { finish(300); return; }
       var r = logo.getBoundingClientRect(), s = getComputedStyle(logo);
       var fs = logo.querySelector('.caret').getBoundingClientRect().height || r.height * 0.4375; // 丸長方形の大きさの基準＝ロゴのカーソルの高さ（文字はその 1.04 倍）
