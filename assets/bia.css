@@ -15,31 +15,6 @@
 .co-philo dt .en{display:block;font-weight:600;font-size:13px;letter-spacing:3px;color:#0070B8}
 .co-philo dd{margin:10px 0 0;font-size:17px;font-weight:700;line-height:1.7;color:var(--ink)}
 .co-philo .co-philo-en{display:block;margin-top:6px;font-family:Poppins,sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
-/* 事業紹介：ハッシュタグ 1 つ（大きなカード）に、求職者の方・企業の方の 2 つの入口 */
-.co-svc{padding:40px 40px 36px}
-.co-svc-head{display:flex;gap:32px;align-items:flex-start}
-.co-svc-logo{height:64px;padding:0 28px;flex:none}
-.co-svc-logo .hash{width:29px;height:29px}
-.co-svc-logo .name{font-size:29px}
-.co-svc-logo .caret{height:28px}
-.co-svc h3{margin:0 0 8px !important;font-size:24px !important}
-.co-svc h3 span{display:block;margin-top:2px;font-size:14px;font-weight:700;color:#0070B8}
-.co-svc-head p{margin:0;font-size:15px;color:var(--sub)}
-.co-svc-doors{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}
-.co-svc-doors a{position:relative;display:flex;flex-direction:column;gap:2px;padding:22px 56px 22px 24px;border:1.5px solid var(--navy);border-radius:20px;color:var(--navy);text-decoration:none;transition:background .2s,color .2s}
-.co-svc-doors a:hover{background:var(--navy);color:#fff}
-.co-svc-doors a:hover .co-biz-label,.co-svc-doors a:hover span{color:#fff}
-.co-svc-doors strong{font-size:20px;font-weight:900}
-.co-svc-doors span{font-size:14px;color:var(--sub)}
-.co-biz-label{margin:0;font-family:Poppins,sans-serif;font-weight:600;font-size:13px;letter-spacing:2px;color:#0070B8 !important}
-.co-door-arw{position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:22px !important;color:inherit !important}
-@media (max-width:860px){
-  .co-svc{padding:28px 20px}
-  .co-svc-head{flex-direction:column;gap:18px}
-  .co-svc-logo{height:52px;padding:0 22px}
-  .co-svc-logo .hash{width:23px;height:23px}.co-svc-logo .name{font-size:23px}.co-svc-logo .caret{height:22px}
-  .co-svc-doors{grid-template-columns:minmax(0,1fr)}
-}
 /* 採用への案内の帯 */
 .co-band .wrap{padding-top:72px;padding-bottom:72px;text-align:center}
 .co-band h2{margin:8px 0 24px;font-size:clamp(22px,3vw,32px);font-weight:900}
@@ -58,7 +33,7 @@
   .co-philo,.ct-choose{grid-template-columns:minmax(0,1fr)}
   .ct-choose button{min-height:0}
 }
-@media (prefers-reduced-motion:reduce){ .co-svc-doors a,.ct-choose button{transition:none} }
+@media (prefers-reduced-motion:reduce){ .ct-choose button{transition:none} }
 
 /* 会社のトップのオープニング（assets/intro-bia.js。DESIGN-SPEC.md 16 章）
    地 #F4F6F8 → BIA のロゴがふわっと → ビジョンを水色のカーソルで打ち込む → 見出しの位置へ（縮めたのを戻す）→ 地が消える */

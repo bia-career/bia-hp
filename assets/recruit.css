@@ -41,10 +41,6 @@
 .rc-appeal li{display:flex;gap:24px;align-items:flex-start}
 .rc-appeal .rc-no{font-size:28px;line-height:1.2;letter-spacing:1px}
 .rc-appeal h3{margin:0 0 6px}
-/* 事業内容 */
-.rc-link-card{display:block;text-decoration:none;transition:box-shadow .2s}
-.rc-link-card:hover{box-shadow:0 12px 32px rgba(29,38,46,.08)}
-.rc-link-card .more{display:inline-block;margin-top:14px;font-weight:700;font-size:14px}
 /* こだわりのワーク＆ライフ環境 */
 .rc-env{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
 .rc-env h4{font-size:19px}
@@ -138,5 +134,5 @@
   .rc-entry .btn{width:100%;min-width:0}
 }
 @media (prefers-reduced-motion:reduce){
-  .rc-pnav a,.rc-link-card,.rc-plus::after{transition:none}
+  .rc-pnav a,.rc-plus::after{transition:none}
 }

@@ -104,6 +104,7 @@ body{background:#F4F6F8}
 </style>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/header.css">
+<link rel="stylesheet" href="/assets/svc-card.css">
 </head>
 <body>
 <div class="fv">
@@ -134,15 +135,25 @@ body{background:#F4F6F8}
     <div class="sec-head"><p class="en-big" aria-hidden="true">PURPOSE</p><h2>パーパス</h2></div>
     <!-- パーパスの文は assets/philosophy.js（全サイトで 1 か所） -->
     <p class="vision" data-philo="purpose">若者のポテンシャルを解放する。</p>
-    <p class="body">私たちは、若者が持つ無限の可能性に光を当て、それを解放するために存在しています。各々が持つユニークな才能やスキルを見出し、育て、そして適切な場所に彼らを導くことで、彼ら自身も社会もより良い未来を築くことができると信じています。私たちの役割は、単に仕事を紹介すること以上に、若者一人ひとりがその真の力を理解し、活かせるよう支援することです。この存在意義のもとで、私たちは情熱を持って取り組んでまいります。</p>
+    <p class="body">私たちは、若者が持つ無限の可能性に光を当て、それを解放するために存在しています。各々が持つユニークな才能やスキルを見出し、育て、そして若者一人ひとりを適切な場所に導くことで、若者自身も社会もより良い未来を築くことができると信じています。私たちの役割は、単に仕事を紹介すること以上に、若者一人ひとりがその真の力を理解し、活かせるよう支援することです。この存在意義のもとで、私たちは情熱を持って取り組んでまいります。</p>
   </div>
 </section>
 <section id="service" class="alt">
   <div class="wrap">
     <div class="sec-head"><p class="en-big" aria-hidden="true">SERVICE</p><h2>事業内容</h2></div>
-    <div class="grid">
-      <a class="card" href="/hashtag/"><h3>ハッシュタグ（新卒・20代の就職・転職支援）</h3><p>新卒・第二新卒・既卒・フリーターの方に、キャリア設計から始めるオーダーメイド型の就職・転職支援を行います。</p><span class="more">ハッシュタグを見る →</span></a>
-      <a class="card" href="/corp.html"><h3>人材紹介・採用コンサルティング（企業の方へ）</h3><p>企業向けに、新卒・20代の人材紹介と、オーダーメイド型の採用コンサルティングを行います。母集団形成から選考フェーズまで支援します。</p><span class="more">企業の方へ →</span></a>
+    <!-- 事業は「ハッシュタグ」1 つ（求職者向け・企業向けの両方を持つ）。大きなカード 1 枚に、入口を 2 つ -->
+    <div class="co-svc card">
+      <div class="co-svc-head">
+        <span class="co-svc-logo" role="img" aria-label="hashtag"><svg class="hash" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true"><g stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"><line x1="17" y1="6" x2="13" y2="34"/><line x1="28" y1="6" x2="24" y2="34"/><line x1="8" y1="15" x2="34" y2="15"/><line x1="6" y1="25" x2="32" y2="25"/></g></svg><span class="name">hashtag</span><span class="caret" aria-hidden="true"></span></span>
+        <div>
+          <h3>ハッシュタグ<span>新卒・20代の就職・転職支援／人材紹介・採用コンサルティング</span></h3>
+          <p>求職者の「叶えたい未来」と、企業の採用をつなぐサービスです。新卒・第二新卒・既卒・フリーターの方にはキャリア設計から始める就職・転職支援を、企業には人材紹介・採用コンサルティングを行います。</p>
+        </div>
+      </div>
+      <div class="co-svc-doors">
+        <a href="/hashtag/"><span class="co-biz-label" lang="en">FOR JOB SEEKERS</span><strong>求職者の方</strong><span>新卒・20代の就職・転職支援</span><span class="co-door-arw" aria-hidden="true">→</span></a>
+        <a href="/corp.html"><span class="co-biz-label" lang="en">FOR BUSINESS</span><strong>企業の方</strong><span>人材紹介・採用コンサルティング</span><span class="co-door-arw" aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
 </section>

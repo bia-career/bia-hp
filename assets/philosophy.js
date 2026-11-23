@@ -5,7 +5,7 @@ window.BIA_PHILOSOPHY = {
   'purpose': '若者のポテンシャルを解放する。',
   'purpose-en': 'Unleash the potential of youth.',
   'mission': '一人ひとりの「叶えたい未来」を言葉にし、そこへ近づくキャリアを一緒につくる。',
-  'vision': '20 代が「自分の #」で仕事を選ぶのが、当たり前の社会へ。'
+  'vision': '20代が「自分の #」で仕事を選ぶのが、当たり前の社会へ。'
 };
 (function () {
   var p = window.BIA_PHILOSOPHY;
