@@ -18,21 +18,31 @@ var RECRUIT_JOBS = [
   {
     id: 'ca',
     title: 'キャリアアドバイザー',
-    types: ['中途'],
-    place: '【仮】',
-    employment: '【仮】',
+    types: ['新卒', '中途'],
+    place: '本社オフィス',
+    employment: '正社員',
     salary: '【仮】',
     catch: '求職者向けの就職サポート',
-    detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '【仮】', benefits: '【仮】' }
+    detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '土日祝（年間休日 125 日）', benefits: '【仮】' }
   },
   {
     id: 'ra',
     title: 'リクルーティングアドバイザー',
-    types: ['中途'],
-    place: '【仮】',
-    employment: '【仮】',
+    types: ['新卒', '中途'],
+    place: '本社オフィス',
+    employment: '正社員',
     salary: '【仮】',
     catch: '企業向けの就職サポート',
-    detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '【仮】', benefits: '【仮】' }
+    detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '土日祝（年間休日 125 日）', benefits: '【仮】' }
+  },
+  {
+    id: 'webmkt',
+    title: 'Web マーケティング',
+    types: ['新卒', '中途'],
+    place: '本社オフィス',
+    employment: '正社員',
+    salary: '【仮】',
+    catch: '【仮】',
+    detail: { work: '【仮】', want: '【仮】', salary: '【仮】', hours: '【仮】', holidays: '土日祝（年間休日 125 日）', benefits: '【仮】' }
   }
 ];
