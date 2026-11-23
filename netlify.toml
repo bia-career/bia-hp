@@ -40,3 +40,78 @@
   to = "/404.html"
   status = 404
   force = true
+
+# 2026-11 のサイトの組み替え：ハッシュタグのページは /hashtag/ の下へ。古い URL は 301 で新しい URL へ
+# （?from= などのクエリは Netlify がそのまま新しい URL に付けて渡す）。トップの / は会社のトップなので転送しない
+
+[[redirects]]
+  from = "/about.html"
+  to = "/hashtag/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/hashtag/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jobs.html"
+  to = "/hashtag/jobs.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jobs"
+  to = "/hashtag/jobs.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/job.html"
+  to = "/hashtag/job.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/job"
+  to = "/hashtag/job.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq.html"
+  to = "/hashtag/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq"
+  to = "/hashtag/faq.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/booking.html"
+  to = "/hashtag/booking.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/booking"
+  to = "/hashtag/booking.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/column.html"
+  to = "/hashtag/column.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/column"
+  to = "/hashtag/column.html"
+  status = 301
+  force = true

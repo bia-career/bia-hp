@@ -22,20 +22,22 @@
     } else {
       box.innerHTML = jobs.map(function (j, i) {
         var id = 'rc-job-' + (j.id ? String(j.id).replace(/[^a-zA-Z0-9_-]/g, '') : i);
-        var d = j.detail || {};
+        // 詳しく見る：[見出し, 文] または [見出し, [箇条書き…]] を上から順に。古い形（{ work, want, … }）でも出る
+        var d = j.detail || [];
+        if (!Array.isArray(d)) d = [['仕事内容', d.work], ['求める人', d.want], ['給与', d.salary], ['勤務時間', d.hours], ['休日', d.holidays], ['福利厚生', d.benefits]];
         var types = (j.types || []).filter(function (t) { return urls[t]; });
         var apply = types.map(function (t) {
           return '<a class="btn btn-main" href="' + esc(urls[t]) + '" target="_blank" rel="noopener">' + (types.length > 1 ? esc(t) + 'で' : '') + 'このポジションに応募する<span class="sr">（応募フォームが新しいタブで開きます）</span></a>';
         }).join('');
-        var rows = [['仕事内容', d.work], ['求める人', d.want], ['給与', d.salary], ['勤務時間', d.hours], ['休日', d.holidays], ['福利厚生', d.benefits]];
+        function cell(v) { return Array.isArray(v) ? '<ul>' + v.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : val(v); }
         return '<li class="card line rc-job">' +
           '<div class="rc-job-types">' + (j.types || []).map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') + '</div>' +
           '<h3>' + val(j.title) + '</h3>' +
           '<p class="rc-job-catch">' + val(j.catch) + '</p>' +
-          '<dl class="rc-job-meta"><dt>勤務地</dt><dd>' + val(j.place) + '</dd><dt>雇用形態</dt><dd>' + val(j.employment) + '</dd><dt>給与</dt><dd>' + val(j.salary) + '</dd></dl>' +
+          '<dl class="rc-job-meta"><dt>勤務地</dt><dd>' + val(j.place) + '</dd><dt>雇用形態</dt><dd>' + val(j.employment) + '</dd><dt>給与</dt><dd>' + val(j.salary) + '</dd>' + (j.openings ? '<dt>募集人数</dt><dd>' + val(j.openings) + '</dd>' : '') + '</dl>' +
           '<button class="btn btn-sub rc-job-more" type="button" aria-expanded="false" aria-controls="' + id + '">詳しく見る<span class="rc-plus" aria-hidden="true"></span></button>' +
           '<div class="rc-job-detail" id="' + id + '" hidden>' +
-            '<dl>' + rows.map(function (r) { return '<dt>' + r[0] + '</dt><dd>' + val(r[1]) + '</dd>'; }).join('') + '</dl>' +
+            '<dl>' + d.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + cell(r[1]) + '</dd>'; }).join('') + '</dl>' +
             (apply ? '<div class="rc-job-apply">' + apply + '</div>' : '') +
           '</div>' +
         '</li>';

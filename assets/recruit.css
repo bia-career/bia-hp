@@ -48,10 +48,16 @@
 /* こだわりのワーク＆ライフ環境 */
 .rc-env{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
 .rc-env h4{font-size:19px}
-/* オフィス（写真の枠） */
-.rc-office{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
-.rc-photo{display:grid;place-items:center;aspect-ratio:4/3;border-radius:24px;background:#fff;border:1.5px dashed #C9D5DE;font-size:13px;font-weight:700;color:var(--muted)}
-.rc-office p{margin:8px 4px 0;font-size:14px;color:var(--sub)}
+/* オフィスの写真（ギャラリー）：パソコンは 2 列、スマホは横にすべらせる */
+.rc-gallery{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.rc-gallery figure{margin:0}
+.rc-gallery img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:24px;background:#E3EAEF}
+.rc-gallery figcaption{margin:8px 4px 0;font-size:14px;font-weight:700;color:var(--ink)}
+@media (max-width:767px){
+  .rc-gallery{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:78%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding-bottom:6px;margin-right:-16px;padding-right:16px}
+  .rc-gallery li{scroll-snap-align:start}
+  .rc-gallery img{border-radius:18px}
+}
 /* 数字から見るカルチャー */
 .rc-asof{display:inline-block;margin:0 0 16px;padding:6px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}
 .rc-nums{display:grid;gap:16px;grid-template-columns:repeat(5,minmax(0,1fr))}
@@ -78,6 +84,8 @@
 .rc-job-detail dl{margin:0;font-size:14px}
 .rc-job-detail dt{font-weight:700}
 .rc-job-detail dd{margin:2px 0 12px;color:var(--sub)}
+.rc-job-detail dd ul{margin:4px 0 0;padding-left:1.2em;list-style:disc}
+.rc-job-detail dd li{margin:0 0 4px}
 .rc-job-apply{display:grid;gap:10px;margin-top:6px}
 .rc-job-apply .btn{justify-content:center;min-height:52px;padding:0 12px;font-size:13px;letter-spacing:-.2px;white-space:nowrap}
 /* 採用の流れ（新卒・中途を横に 2 つ。スマホは縦） */
@@ -119,7 +127,6 @@
   .rc-main > section:last-child{padding-bottom:72px}
   .rc-main > section.rc-cont{padding-top:56px}
   .rc-h3{margin-top:44px;font-size:20px}
-  .rc-office{grid-template-columns:minmax(0,1fr)}
   .rc-appeal li{gap:16px}
   .rc-appeal .rc-no{font-size:22px}
 }

@@ -28,7 +28,6 @@
 .hd-bia{display:inline-flex;align-items:center}
 .hd-bia img{display:block;width:120px;height:auto;transition:width var(--hd-speed) ease,filter var(--hd-speed) ease,opacity var(--hd-speed) ease}
 /* 見出しの文字に重なっている間だけ、ロゴをうすく（site.js が html に .hd-on-head を付ける。2026-11 の試し） */
-.hd-on-head .hd-bia img{opacity:.15}
 /* 紺のフッターの上にいる間だけロゴを白に（枠は付けない。site.js が html に .hd-on-dark を付ける） */
 .hd-on-dark .hd-bia img{filter:brightness(0) invert(1)}
 .hd-scrolled .hd-bia img{width:100px}
@@ -131,3 +130,62 @@
 .ft-h{font-family:Poppins,sans-serif;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#fff !important;margin:0 0 2px;font-size:13px}
 .ft-h small{display:block;margin-top:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0;text-transform:none;color:#D5DDE4}
 @media (max-width:959px){ .ft-nav{gap:20px 32px} }
+
+/* ===== 2 種類のヘッダー（2026-11 のサイトの組み替え。DESIGN-SPEC.md 16 章） =====
+   会社のページ（.hd-co）：BIA のロゴ・SERVICE ▼（ハッシュタグ・企業の方へ）・ABOUT US・RECRUIT・お問い合わせ
+   ハッシュタグのページ（.hd-ht）：#hashtag のロゴ・日本語のメニュー 4 つ・無料でキャリア相談・「運営：株式会社ビア」 */
+.hd-top.hd-ja{font-family:"Noto Sans JP",sans-serif;font-weight:700;letter-spacing:0;text-transform:none}
+.hd-desc a{color:inherit;font-family:Poppins,sans-serif;font-weight:400;color:#3D4B57;text-decoration:none;pointer-events:auto}
+.hd-desc a:hover{text-decoration:underline}
+.hd-op{display:none}
+@media (max-width:959px){
+  .hd-op{display:block;margin:10px 4px 2px;padding:10px;text-align:center;font-size:13px;font-weight:700;color:var(--hd-navy);text-decoration:none}
+}
+/* 見出しの文字に重なっている間だけロゴをうすく（BIA のロゴ・#hashtag のロゴの両方。site.js が html に .hd-on-head） */
+.hd-logo{transition:height var(--hd-speed) ease,padding var(--hd-speed) ease,box-shadow var(--hd-speed) ease,opacity var(--hd-speed) ease}
+
+/* 会社のページのフッター（BIA） */
+.ft-co .ft-bia{display:inline-block}
+.ft-co .ft-bia img{display:block;width:110px;height:auto;filter:brightness(0) invert(1)}
+.ft-co .ft-name{margin:14px 0 0;font-size:14px;font-weight:700;color:#fff}
+.ft-co .ft-lic{margin:2px 0 0;font-size:13px;color:#D5DDE4}
+@media (prefers-reduced-motion:reduce){ .hd-logo{transition:none} }
+/* 今いるページの青（nav a[aria-current]）を紺のボタンには使わない（お問い合わせのページで白い文字のまま） */
+.hd .hd-cta[aria-current]{color:#fff}
+
+/* ハッシュタグのページ：左上に BIA のロゴ（会社のページと同じ位置・大きさ）、その横に一段小さい #hashtag のロゴ（2026-11）
+   会社のページ ⇄ ハッシュタグのページを行き来しても、BIA のロゴは動かない */
+.hd-brand-dual{flex-direction:row;align-items:flex-start;gap:12px}
+.hd-brand-dual .hd-sep{flex:none;width:1.5px;height:28px;margin-top:10px;border-radius:2px;background:rgba(29,38,46,.35);transition:height var(--hd-speed) ease,margin var(--hd-speed) ease}
+.hd-ht-brand{display:flex;flex-direction:column;align-items:flex-start;margin-top:6px;transition:margin var(--hd-speed) ease}
+.hd-ht .hd-logo{height:36px;padding:0 16px;gap:6px}
+.hd-ht .hd-logo .hash{width:17px;height:17px}
+.hd-ht .hd-logo .name{font-size:16.4px}
+.hd-ht .hd-logo .caret{height:15.75px}
+.hd-ht .hd-desc{margin:4px 0 0 4px;font-size:11px}
+.hd-scrolled .hd-brand-dual .hd-sep{height:24px;margin-top:8px}
+.hd-scrolled .hd-ht-brand{margin-top:4px}
+.hd-scrolled .hd-ht .hd-logo{height:32px;padding:0 14px;box-shadow:var(--hd-shadow),0 0 0 1.5px rgba(255,255,255,.85)}
+.hd-scrolled .hd-ht .hd-logo .hash{width:15px;height:15px}
+.hd-scrolled .hd-ht .hd-logo .name{font-size:14.6px}
+.hd-scrolled .hd-ht .hd-logo .caret{height:14px}
+@media (max-width:959px){
+  .hd-brand-dual{gap:8px}
+  .hd-brand-dual .hd-sep{height:22px;margin-top:8px}
+  .hd-ht-brand{margin-top:5px}
+  .hd-ht .hd-logo{height:30px;padding:0 11px;gap:5px}
+  .hd-ht .hd-logo .hash{width:14px;height:14px}
+  .hd-ht .hd-logo .name{font-size:13.65px}
+  .hd-ht .hd-logo .caret{height:13.1px}
+  .hd-ht .hd-desc{font-size:10px;margin:3px 0 0 3px}
+  .hd-scrolled .hd-brand-dual .hd-sep{height:20px;margin-top:7px}
+  .hd-scrolled .hd-ht-brand{margin-top:4px}
+  .hd-scrolled .hd-ht .hd-logo{height:28px;padding:0 10px}
+  .hd-scrolled .hd-ht .hd-logo .hash{width:13px;height:13px}
+  .hd-scrolled .hd-ht .hd-logo .name{font-size:12.6px}
+  .hd-scrolled .hd-ht .hd-logo .caret{height:12px}
+}
+/* 見出しの文字に重なったロゴだけをうすく（1 つずつ。site.js が .is-faded を付ける） */
+.hd-bia.is-faded img,.hd-logo.is-faded{opacity:.15}
+.hd-bia img{transition:width var(--hd-speed) ease,filter var(--hd-speed) ease,opacity var(--hd-speed) ease}
+@media (prefers-reduced-motion:reduce){ .hd-bia img,.hd-logo,.hd-brand-dual .hd-sep,.hd-ht-brand{transition:none} }

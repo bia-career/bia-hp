@@ -1,4 +1,4 @@
-# 引き継ぎ（ハッシュタグのホームページ bia-hp。2026-11-22 更新）
+# 引き継ぎ（株式会社ビアのホームページ bia-hp。2026-11-23 更新）
 
 このリポジトリ（bia-career/bia-hp）の作業は、ここから **新しいセッション** で続けます。Caddie（bia-career/caddie）は別のセッションの担当です。
 
@@ -16,7 +16,8 @@
 
 ## 2. 作り（どこを直すか）
 
-- 各ページは HTML を直接直す（前に使っていた生成スクリプトはリポジトリに無い。ヘッダー・フッターは各ページに同じ HTML が入っているので、直すときは全ページそろえる）
+- ページの置き場所：会社のページはルート（index・company・recruit・corp・contact・privacy・404）、ハッシュタグのページは `hashtag/`（index・about・jobs・job・faq・booking・column）
+- 各ページは HTML を直接直す（前に使っていた生成スクリプトはリポジトリに無い。ヘッダー・フッターは 2 種類（会社のページ／ハッシュタグのページ）。同じ種類のページには同じ HTML が入っているので、直すときはそろえる）
 - 共通の見た目：`assets/site.css`（地・部品）・`assets/header.css`（ヘッダーとフッターのメニュー・固定・スクロールの変化）
 - 共通の動き：`assets/site.js`（ヘッダー・SERVICE ▼・≡・出てくる動き・下の相談ボタン・予約の行き先）
 - 設定：`assets/config.js`（`window.HASHTAG_CONFIG`）：`BOOKING_URL`・`LINE_URL`・`RECRUIT_ENTRY_URL`・`INTRO_MODE`
@@ -61,7 +62,7 @@
 - 新しい区画「面談で持ち帰れる 3 つ」（TAKEAWAY：強み／市場価値・年収の目安／キャリアの設計図）
 - 支援の流れ：# を描く／# への道をつくる／# に近づく一社を選ぶ／# を叶えにいく
 - **よくある質問は 15 個**（faq.html。構造化データも 15）。トップは上から 6 個。最後の 3 つ（何歳まで・しつこく連絡・個人情報）はトップに出さない
-- LINE の相談：`LINE_URL`（仮）。相談の帯の副ボタン「LINE で気軽に相談」（ふつうの吹き出しのアイコン。LINE の緑・公式ロゴは使わない）と、よくある質問の答えの中のリンク
+- LINE の相談：`LINE_URL`。相談の帯の副ボタン「LINE で気軽に相談」（ふつうの吹き出しのアイコン。LINE の緑・公式ロゴは使わない）と、よくある質問の答えの中のリンク
 - 相談の帯の文：「無料・オンラインで 60 分。平日の夜や土日も、空いている日時を選ぶだけで予約できます。」
 
 ### PR #6・#7（HANDOFF の更新・ロゴの文字・採用ページの中身）
@@ -74,20 +75,32 @@
   - 採用の流れ（新卒 7 段階・中途 4 段階）・よくある質問 6 つ（「よくある誤解に答えます」から変更）
   - エントリーの行き先は Google フォームにする予定（4 章の 3）
 
+### PR #8（採用ページの求人を正式に・LINE の経路）
+- **募集職種 3 つを正式な内容に**（【仮】を全部外した。`assets/recruit-jobs.js`）：共通の条件（正社員・東京都新宿区西新宿3-9-7 フロンティア新宿タワーオフィス3F・9:30〜18:30・完全週休 2 日〔年間休日 125 日〕・年収 360万〜550万円〔CA・RA は＋インセンティブ〕・福利厚生・対象）と、職種ごとの仕事内容・入社後の流れ・身につく力（Web マーケは主な業務・経験できること）・選考・募集人数。**年齢の範囲と平均インセンティブは絶対に書かない**
+- 詳細の形を「[見出し, 文または箇条書き]」を上から並べる形に変えた（ファイルの先頭のコメント）。カードに募集人数を出す
+- **LINE_URL をホームページ専用の経路 https://lin.ee/qq1v7gG に**（HTML に直接書いてある URL も同じに）
+- 採用ページの「会社概要」を消した（会社概要は運営会社のページにある）
+- **オフィスの写真 4 枚**を「ワーク＆ライフ環境」の下にギャラリーで（`assets/img/office/` の office-entrance・office-lounge・office-cafe・office-table。webp・長辺 1,600px 以内。パソコンは 2 列、スマホは横にすべらせる）。元はドライブのフォルダ「HP採用ページ オフィス写真」。**写真の使用許可は確認中**
+- 選考は 3 職種とも同じ（ページの「採用の流れ」と同じ書き方）。書籍購入手当は全員が対象（3 職種とも同じ福利厚生）。Web マーケも新卒で募集する
+
+### サイトの組み替え（PR #9。骨組み。マージ待ち）
+- **トップ（`/`）は株式会社ビアの会社サイト、ハッシュタグは `/hashtag/` の下のサービスページ**（DESIGN-SPEC.md 16 章）
+- 新しく：会社のトップ（index.html）・お問い合わせ（contact.html）・`assets/bia.css`・`assets/philosophy.js`（パーパス・ミッション・ビジョンの 1 か所）
+- ヘッダー・フッターを 2 種類に（会社のページ／ハッシュタグのページ）。古い URL は `netlify.toml` で 301 転送
+- **Caddie の求人の読み口（`/api/public/hp-jobs`）を使う予定の画面は `/hashtag/jobs.html`・`/hashtag/job.html`**（`assets/jobs.js`）
+- PR #9 の答え（廣瀬さん）：会社のトップのオープニング（BIA のロゴ → ビジョンを打ち込む → 見出しへ。`assets/intro-bia.js`）／`/` はクエリが付いても転送しない／採用ページの右上は「エントリー」、ほかは「お問い合わせ」／会社のページにスマホの下の固定ボタンは出さない／会社用の OGP（`assets/ogp-bia.png`）／ハッシュタグのメニューは日本語
+- 直し：事業紹介はハッシュタグの大きなカード 1 枚に入口 2 つ（求職者の方・企業の方）。ハッシュタグのページも左上に BIA のロゴ（会社のページと同じ位置）＋一段小さい #hashtag のロゴ。うすくなる動きはロゴ 1 つずつ
+
 ## 4. まだのこと
 
-1. **LINE_URL が仮**（`assets/config.js`。今は https://lin.ee/wz4YyNG）。ホームページ専用の URL が届いたら、ここ 1 か所を書き換える
-2. **採用ページの仮のもの**（入っているが、あとで調整するかもしれない。【仮】の印は付けていない）
+1. **採用ページの仮のもの**（入っているが、あとで調整するかもしれない。【仮】の印は付けていない）
    - 数字から見るカルチャーの「約 27 歳｜平均年齢」「約 60%｜20 代の割合」
    - パーパス：若者のポテンシャルを解放する。（Unleash the potential of youth.）／ミッション：一人ひとりの「叶えたい未来」を言葉にし、そこへ近づくキャリアを一緒につくる。／ビジョン：20 代が「自分の #」で仕事を選ぶのが、当たり前の社会へ。
    - 働く魅力（3 つ）
-   - 募集職種の一言（`assets/recruit-jobs.js`）：キャリアアドバイザー「20 代の人生の分岐点に伴走し、成果で応える仕事」／リクルーティングアドバイザー「企業の採用に向き合い、事業の成長をつくる仕事」／Web マーケティング「データと AI で、ハッシュタグの集客を伸ばす仕事」
-3. **採用ページの待ちのもの**（届いたら差し替える）
-   - オフィスの写真と、その下の説明（写真と一緒に届く。今は「写真は準備中」の枠 3 つと【仮】）
-   - 3 職種の求人情報（`assets/recruit-jobs.js`）：給与・仕事内容・求める人・勤務時間・福利厚生（今は【仮】）
-4. **応募は Google フォーム**（https://forms.gle/y8prBTsdwqu2tVwK9。持ち主は a.h@bia-career.com）。新卒・中途とも同じ URL を `assets/config.js` の `RECRUIT_ENTRY_URL` に入れてある。**あとで社内システム（人事の機能）に作り替える予定**（そのときは `RECRUIT_ENTRY_URL` を書き換えるだけ）
-5. **BOOKING_URL を Caddie の /book に切り替える**：Caddie の予約ページを本番にしたあと、`assets/config.js` の `BOOKING_URL` を書き換えるだけ（5 章）
-6. **正式公開**（bia-career.com に切り替えるとき）
+2. **写真の使用許可は確認中**（採用ページのオフィスの写真 4 枚）。許可が取れなかったときは、`recruit.html` の `.rc-gallery` を消す
+3. **応募は Google フォーム**（https://forms.gle/y8prBTsdwqu2tVwK9。持ち主は a.h@bia-career.com）。新卒・中途とも同じ URL を `assets/config.js` の `RECRUIT_ENTRY_URL` に入れてある。**あとで社内システム（人事の機能）に作り替える予定**（そのときは `RECRUIT_ENTRY_URL` を書き換えるだけ）
+4. **BOOKING_URL を Caddie の /book に切り替える**：Caddie の予約ページを本番にしたあと、`assets/config.js` の `BOOKING_URL` を書き換えるだけ（5 章）
+5. **正式公開**（bia-career.com に切り替えるとき）
    - お名前.com の DNS を Netlify に向ける
    - noindex を外す：`robots.txt`（今は Disallow: /）・`netlify.toml` の `X-Robots-Tag`・全ページの `<meta name="robots" content="noindex, nofollow">`
    - Netlify の Private を外す
@@ -97,8 +110,8 @@
 | 所 | 今 | Caddie 側 | 受け渡し |
 |---|---|---|---|
 | 「無料でキャリア相談」の行き先 | `assets/config.js` の `BOOKING_URL: '/booking.html'`（準備中のページ）。各ボタンに `data-booking`（header・hero・contact・sticky・job・takeaway・pick・jobs-empty）、`site.js` が `?from=` を付ける | 予約のページ **/book**（PR 2 で作成中・練習モード）。`?from=` は予約の記録だけに残す。同意のチェックは「プライバシーポリシーに同意する」（リンク先 /privacy） | 予約のページが本番になったら、`BOOKING_URL` を Caddie の `/book` の URL（のちに book.bia-career.com）に書き換えるだけ。URL に個人情報は入れない |
-| LINE の相談 | `assets/config.js` の `LINE_URL`（仮）。リンクに `data-line` | — | ホームページ専用の URL が届いたら書き換えるだけ |
-| 求人（トップの新着・求人一覧・求人） | `assets/jobs.js` の配列 `JOBS`（今は見本。1 件の形はファイルの先頭のコメント） | 自社求人（Caddie の「企業」→ 求人。Caddie の掲載＝掲載中のもの） | あとで Caddie が同じ形の配列（JSON）を出し、`jobs.js` を置き換える（形は変えない）。報酬・手数料・選考難易度・NG・求人DB の URL は載せない |
+| LINE の相談 | `assets/config.js` の `LINE_URL`（https://lin.ee/qq1v7gG。ホームページ専用の経路）。リンクに `data-line` | — | 経路を変えるときは書き換えるだけ |
+| 求人（ハッシュタグのトップの新着・`/hashtag/jobs.html`・`/hashtag/job.html`） | `assets/jobs.js` の配列 `JOBS`（今は見本。1 件の形はファイルの先頭のコメント） | 自社求人（Caddie の「企業」→ 求人。Caddie の掲載＝掲載中のもの） | あとで Caddie の読み口（`/api/public/hp-jobs`）から同じ形の配列（JSON）を出し、`jobs.js` を置き換える（形は変えない。使う画面は `/hashtag/jobs.html`・`/hashtag/job.html`）。報酬・手数料・選考難易度・NG・求人DB の URL は載せない |
 | 採用ページの募集職種（RECRUIT の JOBS） | `assets/recruit-jobs.js` の配列 `RECRUIT_JOBS` 1 か所（今は【仮】2 件。1 件の形はファイルの先頭のコメント） | まだ無い（あとで Caddie から自動） | `jobs.js` と同じく、配列を置き換える形にしておく |
 | エントリー（応募） | `assets/config.js` の `RECRUIT_ENTRY_URL`（`new`・`career`。今は Google フォーム https://forms.gle/y8prBTsdwqu2tVwK9、持ち主は a.h@bia-career.com。新しいタブで開く） | まだ無い。**あとで社内システム（人事の機能）に作り替える予定** | できたら `RECRUIT_ENTRY_URL` を書き換えるだけ |
 

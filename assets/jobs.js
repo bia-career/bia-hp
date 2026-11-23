@@ -35,7 +35,7 @@ function tagHtml(t, small) { return '<span class="tag"' + (small ? ' style="heig
 
 // 求人のカード（一覧・トップの新着で使う 1 つの部品）
 function jobCard(j) {
-  return '<a class="card line job-card" href="/job.html?id=' + encodeURIComponent(j.id) + '">' +
+  return '<a class="card line job-card" href="/hashtag/job.html?id=' + encodeURIComponent(j.id) + '">' +
     (j.example ? '<span class="ex">例</span>' : '') +
     '<div class="job-tags">' + j.tags.map(function (t) { return tagHtml(t, true); }).join('') + '</div>' +
     '<p class="job-title">' + escapeHtml(j.title) + '</p>' +
@@ -62,7 +62,7 @@ function renderJobDetail(el, jobs) {
     '<dt>休日・休暇</dt><dd>' + escapeHtml(j.holidays) + '</dd>' +
     '<dt>この仕事のハッシュタグ</dt><dd><div class="tag-box">' + j.tags.map(function (t) { return tagHtml(t, true); }).join('') + '</div></dd>' +
     '</dl>' +
-    '<div class="job-cta"><a class="btn btn-main" href="/booking.html?from=job" data-booking="job">この求人について相談する</a><a class="btn btn-sub" href="/jobs.html">求人一覧へ</a></div>';
+    '<div class="job-cta"><a class="btn btn-main" href="/hashtag/booking.html?from=job" data-booking="job">この求人について相談する</a><a class="btn btn-sub" href="/hashtag/jobs.html">求人一覧へ</a></div>';
 }
 
 // 例の求人が 0 件のハッシュタグ：面談でご紹介する旨と「無料でキャリア相談する」（行き先は config.js の BOOKING_URL）
@@ -82,12 +82,12 @@ function renderJobsPage(el, jobs) {
   document.querySelectorAll('.tag-btn[data-tag]').forEach(function (b) {
     var on = b.getAttribute('data-tag') === tag;
     b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    b.setAttribute('href', on ? '/jobs.html' : '/jobs.html?tag=' + encodeURIComponent(b.getAttribute('data-tag')));
+    b.setAttribute('href', on ? '/hashtag/jobs.html' : '/hashtag/jobs.html?tag=' + encodeURIComponent(b.getAttribute('data-tag')));
   });
   var now = document.getElementById('filter-now');
   if (now && tag) {
     now.hidden = false;
-    now.innerHTML = '<span>#' + escapeHtml(tag) + ' の求人（' + list.length + '件）</span><a href="/jobs.html">絞り込みを外す</a>';
+    now.innerHTML = '<span>#' + escapeHtml(tag) + ' の求人（' + list.length + '件）</span><a href="/hashtag/jobs.html">絞り込みを外す</a>';
   }
   if (!list.length) { el.innerHTML = noJobsHtml('jobs-empty'); return; }
   renderJobList(el, list);

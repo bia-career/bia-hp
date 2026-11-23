@@ -1,26 +1,31 @@
-# ハッシュタグ（#hashtag）ホームページ
+# 株式会社ビアのホームページ（会社サイト＋サービス「ハッシュタグ」）
 
 新卒・20代の転職支援サービス「ハッシュタグ」と、運営会社（株式会社ビア）のホームページ。
 Caddie（社内の CRM）とは別のリポジトリ・別の Netlify サイト。Caddie の本番・DB には触らない。
 
 | ページ | ファイル |
 |---|---|
-| トップ | `index.html` |
-| ハッシュタグとは | `about.html` |
-| 求人一覧（見本） | `jobs.html` |
-| 求人ごと（見本。`job.html?id=…`） | `job.html` |
-| よくある質問 | `faq.html` |
-| 企業の方へ（BIA） | `corp.html` |
-| 運営会社（BIA） | `company.html` |
-| 採用情報（BIA） | `recruit.html`（募集職種は `assets/recruit-jobs.js`） |
-| コラム（準備中） | `column.html` |
-| プライバシーポリシー（`/privacy` で開く。今の bia-career.com/privacy の文章のまま） | `privacy.html` |
+| **会社（株式会社ビア）** | |
+| トップ（`/`） | `index.html` |
+| 会社概要 | `company.html` |
+| 採用情報 | `recruit.html`（募集職種は `assets/recruit-jobs.js`） |
+| 企業の方へ | `corp.html` |
+| お問い合わせ | `contact.html` |
+| プライバシーポリシー（`/privacy` で開く） | `privacy.html` |
+| **ハッシュタグ（`/hashtag/` の下）** | |
+| ハッシュタグのトップ | `hashtag/index.html` |
+| ハッシュタグとは | `hashtag/about.html` |
+| 求人一覧・求人ごと（見本） | `hashtag/jobs.html`・`hashtag/job.html?id=…` |
+| よくある質問 | `hashtag/faq.html` |
+| 面談の予約（準備中） | `hashtag/booking.html` |
+| コラム（準備中） | `hashtag/column.html` |
+
+古い URL（`/about.html`・`/jobs.html`・`/job.html`・`/faq.html`・`/booking.html`・`/column.html` と拡張子なし）は `netlify.toml` で `/hashtag/…` に 301 転送（クエリはそのまま）
 
 - `assets/site.css` … 全ページの見た目（index.html と同じ部品）。`assets/site.js` … メニュー（≡・その他）
 - `assets/jobs.js` … 求人の部品。`JOBS` の配列（今はすべて例）からカードと求人ページを描く。後で Caddie から同じ形で出す
 - `assets/` … 画像（波・イラスト・アイコン・ロゴ・OGP・ファビコン）。`assets/logo/` は #hashtag のロゴの SVG（「hashtag」は JetBrains Mono 500 の輪郭）。`assets/fonts/` はロゴ用のフォント（JetBrains Mono 500・latin）とライセンス（OFL）
 - `sitemap.xml` … 切り替えたあとの住所（https://bia-career.com/…）で書いてある。`robots.txt` は仮の公開の間 Disallow のまま
-- 「無料でキャリア相談」の行き先は未定（今は `#`）
 - 今は **仮の公開**：`robots.txt` と `netlify.toml` の `X-Robots-Tag` で検索に出さない
 
 ## Netlify の新しいサイトにつなぐ（はじめの 1 回だけ）
