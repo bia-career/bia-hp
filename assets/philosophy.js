@@ -1,7 +1,7 @@
 // パーパス・ビジョン・ミッション（会社のトップ・会社概要・採用ページに出る）。直すのはここ 1 か所だけ（2026-11 廣瀬さんの決定）
 // 並びは「パーパス → ビジョン → ミッション」（なぜ → どこへ → 何を）。見出しは大きく、添える文は小さく
 // ページの中の data-philo="purpose" などの所を、ここの文に入れ替える（HTML に書いてある文は JS が動かないとき用）
-// - 文の中の改行（\n）は、そのまま改行で出す
+// - 文の中の改行（\n）は、そのまま改行で出す。文（「。」まで）は途中で改行しない（言葉の途中で切れないように）
 // - 配列（purpose-tags）は、線だけの丸長方形のハッシュタグ（.tag）で並べる
 // - data-philo-hash が付いた所は「#」をサイトのグラデーションの # にする（大見出しの決まり。DESIGN-SPEC.md 9 章の 2）
 // ※ 変えるときは、手で合わせる 3 か所も直す：会社のトップのタブの名前（title・og:title）・会社概要の meta・会社用の OGP の画像（DESIGN-SPEC.md 17 章）
@@ -21,8 +21,14 @@ window.BIA_PHILOSOPHY = {
     var v = p[el.getAttribute('data-philo')];
     if (v == null) return;
     if (Array.isArray(v)) { el.innerHTML = v.map(function (t) { return '<span class="tag">#' + esc(t) + '</span>'; }).join(''); return; }
-    var h = esc(v).replace(/\n/g, '<br>');
-    if (el.hasAttribute('data-philo-hash')) h = h.replace(/#/g, '<span class="g-hash">#</span>');
-    el.innerHTML = h;
+    // 言葉の途中で改行しないように：文（「。」まで）を 1 つずつ .philo-s で包む（文の区切りで改行。CSS は philosophy.css）
+    var hash = el.hasAttribute('data-philo-hash');
+    el.innerHTML = String(v).split('\n').map(function (line) {
+      return (line.match(/[^。]+。?/g) || ['']).map(function (s) {
+        var h = esc(s);
+        if (hash) h = h.replace(/#/g, '<span class="g-hash">#</span>');
+        return '<span class="philo-s">' + h + '</span>';
+      }).join('');
+    }).join('<br>');
   });
 })();

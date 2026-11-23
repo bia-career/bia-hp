@@ -11,3 +11,7 @@
 .philo-lg .philo-h{font-size:clamp(30px,4vw,44px)}
 .philo-lg .philo-t{font-size:16px}
 .philo-lg .philo-tags .tag{height:36px;padding:0 16px;font-size:14px}
+/* 言葉の途中で改行しない（2026-11）：文（「。」まで）を 1 かたまりにし、文の中は「、」「。」のあとでだけ改行する。
+   1 かたまりが画面より長いときだけ、はみ出さないように折り返す（横スクロールを出さない） */
+[data-philo]{word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+.philo-s{display:inline-block;max-width:100%}
