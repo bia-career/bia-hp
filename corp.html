@@ -24,10 +24,10 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/header.css">
+<link rel="stylesheet" href="/assets/corp.css">
 </head>
 <body>
 
-<img class="wave" src="/assets/wave-1200.webp" srcset="/assets/wave-1200.webp 1200w, /assets/wave-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="506" fetchpriority="high">
 <header class="hd hd-co">
   <div class="hd-bar">
     <div class="hd-in">
@@ -47,47 +47,188 @@
   </div>
 </header>
 <main>
-<div class="page-hero">
-  <div class="wrap">
-    <p class="en-big" aria-hidden="true">FOR COMPANIES</p>
-    <h1>企業の方へ</h1>
-    <p class="lead">人材紹介と、オーダーメイド型の採用コンサルティング（株式会社ビア）</p>
+<!-- アイコンで使うグラデーション（相談ボタンの系統）。1 回だけ置いて、各アイコンから url(#cpg) で使う -->
+<svg class="cp-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="cpg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE3DC"/><stop offset=".55" stop-color="#6FB6EA"/><stop offset="1" stop-color="#8A9AF2"/></linearGradient>
+  <linearGradient id="cpg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3FBFB6"/><stop offset=".55" stop-color="#3D8FD1"/><stop offset="1" stop-color="#5A6FE8"/></linearGradient>
+</defs></svg>
+
+<!-- 1. ファーストビュー -->
+<div class="cp-fv">
+  <div class="cp-fv-wave" aria-hidden="true"></div>
+  <div class="cp-fv-in">
+    <div class="cp-fv-copy">
+      <p class="cp-en" lang="en">FOR COMPANIES</p>
+      <h1 class="cp-catch">20代の採用を、<wbr>もっと確かに。</h1>
+      <p class="cp-lead">新卒・20代の人材紹介「ハッシュタグ」。<wbr>面談で一人ひとりの志向まで理解したうえで、<wbr>貴社に合う人材をご紹介します。</p>
+      <div class="cp-fv-btns"><a class="btn btn-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdxHrxVS_SncdiXlNGNjn_Nxk2ewwiHd40cv8X9rzTHxWgQIA/viewform" data-corp-contact target="_blank" rel="noopener">お問い合わせフォーム<span class="sr">（Google フォームが新しいタブで開きます）</span></a></div>
+    </div>
+    <!-- 右の飾り：ハッシュタグを中心に、企業と求職者がつながる（ゆっくり浮く） -->
+    <div class="cp-fv-art" aria-hidden="true">
+      <span class="cp-orb cp-orb1"></span><span class="cp-orb cp-orb2"></span>
+      <div class="cp-fv-core"><span class="g-hash">#</span></div>
+      <span class="tag cp-ft cp-ft1">#好きなことを仕事に</span>
+      <span class="tag cp-ft cp-ft2">#30歳で独立</span>
+      <span class="tag cp-ft cp-ft3">#世界を相手に働く</span>
+    </div>
   </div>
 </div>
+
+<!-- 2. 数字の帯（カウントアップ） -->
+<section class="cp-nums-sec" aria-label="数字で見るハッシュタグ">
+  <div class="wrap">
+    <ul class="cp-nums">
+      <li class="cp-anim"><p class="cp-num"><span class="cp-count" data-to="6">6</span><small>種類以上</small></p><p class="cp-num-cap">の集客チャネル</p></li>
+      <li class="cp-anim"><p class="cp-num"><small>最短</small><span class="cp-count" data-to="2">2</span><small>週間</small></p><p class="cp-num-cap">で内定承諾</p></li>
+      <li class="cp-anim"><p class="cp-num"><small>最短</small><span class="cp-count" data-to="2">2</span><small>営業日</small></p><p class="cp-num-cap">ご契約後、求人公開まで</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. サービスの全体図（矢印が流れる） -->
 <section id="service">
   <div class="wrap">
-    <div class="sec-head"><p class="en-big" aria-hidden="true">SERVICE</p><h2>サービス</h2></div>
-    <div class="grid g2">
-      <div class="card line"><p class="compare-label">人材紹介</p><h3>新卒・20代の人材のご紹介</h3><p>ハッシュタグで面談した、新卒・第二新卒・既卒・フリーターの方をご紹介します。</p><p class="note" style="margin:10px 0 0">有料職業紹介 許可番号 13-ユ-315626</p></div>
-      <div class="card line"><p class="compare-label">採用コンサルティング</p><h3>オーダーメイド型の採用支援</h3><p>企業向けに、オーダーメイド型の採用コンサルティングを実施しています。</p></div>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">SERVICE</p><h2>サービスの全体図</h2></div>
+    <div class="cp-map cp-anim" role="group" aria-label="サービスの全体図：採用企業から求人のご依頼を受け、ハッシュタグが求職者に求人をご紹介します。求職者が求人に応募し、ハッシュタグが採用企業に求職者をご紹介します。">
+      <div class="cp-node">
+        <svg class="cp-node-ic" viewBox="0 0 64 64" aria-hidden="true"><rect class="draw" pathLength="1" x="16" y="12" width="32" height="42" rx="3"/><path class="draw" pathLength="1" d="M24 22h4M36 22h4M24 31h4M36 31h4M24 40h4M36 40h4"/><path class="draw acc" pathLength="1" d="M28 54v-7h8v7"/></svg>
+        <p class="cp-node-name">採用企業</p>
+      </div>
+      <div class="cp-lane" aria-hidden="true">
+        <div class="cp-arw fwd"><span class="cp-arw-t">求人のご依頼</span><span class="cp-line"></span></div>
+        <div class="cp-arw back"><span class="cp-line"></span><span class="cp-arw-t">求職者のご紹介</span></div>
+      </div>
+      <div class="cp-node cp-node-ht">
+        <p class="cp-node-logo"><span class="g-hash">#</span>ハッシュタグ</p>
+        <ul class="cp-node-parts"><li>多角的な集客チャネル</li><li class="cp-plus" aria-hidden="true">＋</li><li>キャリアアドバイザー</li></ul>
+      </div>
+      <div class="cp-lane" aria-hidden="true">
+        <div class="cp-arw fwd"><span class="cp-arw-t">求人のご紹介</span><span class="cp-line"></span></div>
+        <div class="cp-arw back"><span class="cp-line"></span><span class="cp-arw-t">求人へのご応募</span></div>
+      </div>
+      <div class="cp-node">
+        <svg class="cp-node-ic" viewBox="0 0 64 64" aria-hidden="true"><circle class="draw" pathLength="1" cx="32" cy="22" r="9"/><path class="draw acc" pathLength="1" d="M14 54c2-11 9-17 18-17s16 6 18 17"/></svg>
+        <p class="cp-node-name">求職者</p>
+      </div>
+    </div>
+    <div class="cp-point card">
+      <p class="cp-point-label" lang="en">POINT</p>
+      <p class="cp-point-t">強い求職者の集客の仕組みと、<wbr>貴社に深く寄り添い、<wbr>高いマッチング精度を持つ<wbr>キャリアアドバイザーが連携し、<wbr>貴社の採用ターゲットに合う人材をご紹介します。</p>
     </div>
   </div>
 </section>
-<section id="area" class="alt">
+
+<!-- 4. サービスの特徴（動くアイコン） -->
+<section id="feature">
   <div class="wrap">
-    <div class="sec-head"><p class="en-big" aria-hidden="true">AREA</p><h2>私たちのサービス領域</h2></div>
-    <div class="grid g3">
-      <div class="card"><h3>採用マーケティング</h3><ul class="list"><li>人材紹介活用戦略立案</li><li>人材紹介会社選定</li><li>人材紹介会社コントロール</li></ul></div>
-      <div class="card"><h3>母集団形成</h3><ul class="list"><li>ダイレクトスカウト戦略立案</li><li>求人媒体・スカウトDB選定</li><li>スカウト業務代行</li></ul></div>
-      <div class="card"><h3>選考フェーズ</h3><ul class="list"><li>書類選考</li><li>一次のカジュアル面談代行</li><li>候補者フォロー</li></ul></div>
-    </div>
-  </div>
-</section>
-<section id="flow">
-  <div class="wrap">
-    <div class="sec-head"><p class="en-big" aria-hidden="true">FLOW</p><h2>ご依頼の流れ</h2></div>
-    <ol class="grid g4 steps" style="list-style:none;margin:0;padding:0">
-      <li class="card line"><p class="en step-no">01</p><h3>お問い合わせ</h3><p>下のボタンから、採用のご相談をお送りください。</p></li>
-      <li class="card line"><p class="en step-no">02</p><h3>ヒアリング</h3><p>採用の状況と、求める人物像を伺います。</p></li>
-      <li class="card line"><p class="en step-no">03</p><h3>ご提案</h3><p>人材紹介・採用コンサルティングの進め方をご提案します。</p></li>
-      <li class="card line"><p class="en step-no">04</p><h3>開始</h3><p>ご契約のうえ、ご紹介・ご支援を始めます。</p></li>
+    <div class="sec-head"><p class="en-big" aria-hidden="true">FEATURES</p><h2>サービスの特徴</h2></div>
+    <ol class="cp-feats">
+      <li class="card cp-feat cp-anim">
+        <div class="cp-ic" aria-hidden="true"><svg viewBox="0 0 64 64" class="ic-ch">
+          <path class="draw" pathLength="1" d="M32 32L52 32M32 32L42 49.3M32 32L22 49.3M32 32L12 32M32 32L22 14.7M32 32L42 14.7"/>
+          <circle class="dot" cx="52" cy="32" r="4.5"/><circle class="dot" cx="42" cy="49.3" r="4.5"/><circle class="dot" cx="22" cy="49.3" r="4.5"/><circle class="dot" cx="12" cy="32" r="4.5"/><circle class="dot" cx="22" cy="14.7" r="4.5"/><circle class="dot" cx="42" cy="14.7" r="4.5"/>
+          <circle class="core" cx="32" cy="32" r="8"/></svg></div>
+        <p class="cp-feat-no" lang="en">01</p>
+        <h3>多角的な集客チャネル</h3>
+        <p>採用ニーズの<wbr>多様化に合わせ、<wbr><span class="nw">Web 広告・SNS・</span><wbr>提携企業など<wbr><span class="nw">6種類以上</span>の<wbr>チャネルを活用。<wbr>特定の媒体に頼らず、<wbr>専門スキルを持つ人から<wbr>幅広い層まで、<wbr>安定して集客します。</p>
+      </li>
+      <li class="card cp-feat cp-anim">
+        <div class="cp-ic" aria-hidden="true"><svg viewBox="0 0 64 64" class="ic-match">
+          <circle class="c1" cx="25" cy="32" r="14"/><circle class="c2" cx="39" cy="32" r="14"/>
+          <path class="draw acc" pathLength="1" d="M27 32.5l4 4 7-8"/></svg></div>
+        <p class="cp-feat-no" lang="en">02</p>
+        <h3>高いマッチング精度</h3>
+        <p>複数回の深掘り面談で、<wbr>候補者一人ひとりと<wbr>信頼関係を築きます。<wbr>スキルだけでなく、<wbr><span class="nw">本音・価値観・</span><wbr>キャリアの志向まで<wbr>理解したうえで、<wbr>貴社の文化と<wbr>長期の成長に合う<wbr>人材をご紹介します。</p>
+      </li>
+      <li class="card cp-feat cp-anim">
+        <div class="cp-ic" aria-hidden="true"><svg viewBox="0 0 64 64" class="ic-hub">
+          <rect class="draw" pathLength="1" x="6" y="24" width="14" height="16" rx="2"/>
+          <path class="flow" d="M20 32H25"/><path class="flow" d="M38 29L51 13M39 31L54 26M39 33L54 38M38 35L51 51"/>
+          <circle class="core" cx="32" cy="32" r="7"/>
+          <circle class="dot" cx="53" cy="12" r="3.5"/><circle class="dot" cx="56" cy="26" r="3.5"/><circle class="dot" cx="56" cy="38" r="3.5"/><circle class="dot" cx="53" cy="52" r="3.5"/></svg></div>
+        <p class="cp-feat-no" lang="en">03</p>
+        <h3>パートナー企業（採用ハブ）</h3>
+        <p>私たちが貴社の<wbr>「採用ハブ」となり、<wbr>厳選した<wbr>提携エージェントの<wbr>ネットワークを<wbr>一括で動かします。<wbr>窓口を 1 つにまとめ、<wbr>募集チャネルを<wbr>ワンストップで最大化し、<wbr>採用のスピードを上げます。</p>
+      </li>
     </ol>
   </div>
 </section>
-<section id="contact" class="alt">
+
+<!-- 5. ハッシュタグならでは -->
+<section id="why">
   <div class="wrap">
-    <div class="sec-head center"><p class="en-big" aria-hidden="true">CONTACT</p><h2>採用のご相談</h2></div>
-    <p style="margin:0 0 26px;color:var(--sub)">人材紹介・採用コンサルティングのご相談は、こちらのフォームからお送りください。</p><a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSdxHrxVS_SncdiXlNGNjn_Nxk2ewwiHd40cv8X9rzTHxWgQIA/viewform" data-corp-contact target="_blank" rel="noopener">お問い合わせフォーム<span class="sr">（Google フォームが新しいタブで開きます）</span></a><p class="note" style="margin:14px 0 0">メールでも受け付けています：<a href="mailto:info@bia-career.com">info@bia-career.com</a></p>
+    <div class="cp-why cp-anim">
+      <div class="cp-why-copy">
+        <p class="cp-en" lang="en">WHY HASHTAG</p>
+        <h2 class="cp-why-h">ハッシュタグならでは</h2>
+        <p class="cp-why-t">候補者は面談で、<wbr>自分の「<span class="g-hash">#</span>」（叶えたい未来）を言葉にしています。<wbr>だから、<wbr>志向や入社後に活躍する姿が分かったうえで、<wbr>ご紹介できます。</p>
+      </div>
+      <div class="cp-why-art" aria-hidden="true">
+        <svg class="cp-why-person" viewBox="0 0 64 64"><circle class="draw" pathLength="1" cx="32" cy="22" r="9"/><path class="draw acc" pathLength="1" d="M14 54c2-11 9-17 18-17s16 6 18 17"/></svg>
+        <span class="tag cp-wt cp-wt1">#好きなことを仕事に</span>
+        <span class="tag cp-wt cp-wt2">#30歳で独立</span>
+        <span class="tag cp-wt cp-wt3">#人生の選択肢を増やす</span>
+        <span class="tag cp-wt cp-wt4">#地元に恩返し</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ご採用までの流れ（5 ステップ） -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-head"><p class="en-big" aria-hidden="true">FLOW</p><h2>ご採用までの流れ</h2></div>
+    <p class="cp-catch2">最短<span class="cp-big">2</span>週間で内定承諾</p>
+    <ol class="cp-steps cp-anim">
+      <li><div class="cp-step-ic" aria-hidden="true"><svg viewBox="0 0 64 64"><path class="draw" pathLength="1" d="M12 27h9l19-11v32L21 37h-9z"/><path class="draw" pathLength="1" d="M19 37l3 11h6l-2-9"/><path class="draw acc" pathLength="1" d="M47 25c3 4 3 10 0 14M52 20c6 7 6 17 0 24"/></svg></div>
+        <p class="cp-step-no" lang="en">01</p><h3>応募獲得</h3><p>貴社の魅力を伝える<wbr>求人票と、<wbr>多様な集客チャネルで、<wbr>質の高い母集団を<wbr>素早くつくります。</p></li>
+      <li><div class="cp-step-ic" aria-hidden="true"><svg viewBox="0 0 64 64"><path class="draw" pathLength="1" d="M18 10h20l10 10v34H18z"/><path class="draw" pathLength="1" d="M38 10v10h10M24 27h16M24 34h16"/><path class="draw acc" pathLength="1" d="M26 44l4 4 8-8"/></svg></div>
+        <p class="cp-step-no" lang="en">02</p><h3>書類推薦</h3><p>応募書類すべてに、<wbr>経験豊富な<wbr>コンサルタントが<wbr>目を通し、<wbr>貴社の現場の課題と<wbr>カルチャーに合う<wbr>候補者をご提案します。</p></li>
+      <li><div class="cp-step-ic" aria-hidden="true"><svg viewBox="0 0 64 64"><path class="draw" pathLength="1" d="M8 12h28v18H22l-7 6v-6H8z"/><path class="draw acc" pathLength="1" d="M28 34h28v16h-6v6l-7-6H28z"/></svg></div>
+        <p class="cp-step-no" lang="en">03</p><h3>面接</h3><p>素早い日程調整と、<wbr>面接後の<wbr>双方の所感の<wbr>すり合わせで、<wbr>小さな認識のズレも<wbr>見逃しません。</p></li>
+      <li><div class="cp-step-ic" aria-hidden="true"><svg viewBox="0 0 64 64"><path class="draw" pathLength="1" d="M32 12v38M20 52h24M14 20h36"/><path class="draw acc" pathLength="1" d="M14 20L7 34h14zM50 20l-7 14h14z"/></svg></div>
+        <p class="cp-step-no" lang="en">04</p><h3>内定</h3><p><span class="nw">年収・入社日</span>などの<wbr>条件交渉を代行し、<wbr>双方が納得できる<wbr>着地点をつくります。</p></li>
+      <li><div class="cp-step-ic" aria-hidden="true"><svg viewBox="0 0 64 64"><path class="draw" pathLength="1" d="M20 54V10M12 54h18"/><path class="draw acc" pathLength="1" d="M20 12h28l-7 9 7 9H20"/></svg></div>
+        <p class="cp-step-no" lang="en">05</p><h3>入社</h3><p>ゴールは採用ではなく、<wbr><span class="nw">活躍・定着</span>です。<wbr>入社後も<wbr>定期的に連絡を取り、<wbr>立ち上がりまで伴走します。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7. ご利用開始までの流れ（4 ステップ・線でつなぐ） -->
+<section id="start">
+  <div class="wrap">
+    <div class="sec-head"><p class="en-big" aria-hidden="true">START</p><h2>ご利用開始までの流れ</h2></div>
+    <p class="cp-catch2">ご契約後、最短<span class="cp-big">2</span>営業日で求人公開</p>
+    <ol class="cp-start cp-anim">
+      <li><span class="cp-start-no" lang="en">1</span><h3>契約書の締結</h3><p>お申し込み後、<wbr>最短即日</p></li>
+      <li><span class="cp-start-no" lang="en">2</span><h3>求人の作成</h3><p>20代の志向をとらえた求人票</p></li>
+      <li><span class="cp-start-no" lang="en">3</span><h3>求人の周知</h3><p>メディア・提携エージェントへ<wbr>広く届けます</p></li>
+      <li><span class="cp-start-no" lang="en">4</span><h3>求人のご紹介</h3><p>スキルとカルチャーの両方で<wbr>合う人材を厳選</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 8. 採用コンサルティング（今の「サービス領域」） -->
+<section id="consulting">
+  <div class="wrap">
+    <div class="sec-head"><p class="en-big" aria-hidden="true">CONSULTING</p><h2>採用コンサルティング</h2></div>
+    <p class="cp-sub">人材紹介のほかに、<wbr>オーダーメイド型の採用コンサルティングも行っています。</p>
+    <div class="cp-areas">
+      <div class="card cp-area"><p class="cp-area-no" lang="en">01</p><h3>採用マーケティング</h3><ul><li>人材紹介活用戦略立案</li><li>人材紹介会社選定</li><li>人材紹介会社コントロール</li></ul></div>
+      <div class="card cp-area"><p class="cp-area-no" lang="en">02</p><h3>母集団形成</h3><ul><li>ダイレクトスカウト戦略立案</li><li>求人媒体・スカウトDB選定</li><li>スカウト業務代行</li></ul></div>
+      <div class="card cp-area"><p class="cp-area-no" lang="en">03</p><h3>選考フェーズ</h3><ul><li>書類選考</li><li>一次のカジュアル面談代行</li><li>候補者フォロー</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. お問い合わせの帯 -->
+<section id="contact" class="cp-contact-sec">
+  <div class="cp-contact">
+    <p class="cp-en" lang="en">CONTACT</p>
+    <h2 class="cp-contact-h">採用のご相談はこちら</h2>
+    <a class="btn btn-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdxHrxVS_SncdiXlNGNjn_Nxk2ewwiHd40cv8X9rzTHxWgQIA/viewform" data-corp-contact target="_blank" rel="noopener">お問い合わせフォーム<span class="sr">（Google フォームが新しいタブで開きます）</span></a>
+    <p class="cp-mail">メールでも受け付けています：<a href="mailto:info@bia-career.com">info@bia-career.com</a></p>
+    <p class="cp-lic">有料職業紹介 許可番号 13-ユ-315626</p>
   </div>
 </section>
 
@@ -110,5 +251,6 @@
 
 <script src="/assets/config.js"></script>
 <script src="/assets/site.js"></script>
+<script src="/assets/corp.js"></script>
 </body>
 </html>

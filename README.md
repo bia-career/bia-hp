@@ -9,7 +9,7 @@ Caddie（社内の CRM）とは別のリポジトリ・別の Netlify サイト�
 | トップ（`/`） | `index.html` |
 | 会社概要 | `company.html` |
 | 採用情報 | `recruit.html`（募集職種は `assets/recruit-jobs.js`） |
-| 企業の方へ | `corp.html` |
+| 企業の方へ | `corp.html`（見た目は `assets/corp.css`、動きは `assets/corp.js`） |
 | お問い合わせ | `contact.html` |
 | プライバシーポリシー（`/privacy` で開く） | `privacy.html` |
 | **ハッシュタグ（`/hashtag/` の下）** | |
@@ -23,7 +23,7 @@ Caddie（社内の CRM）とは別のリポジトリ・別の Netlify サイト�
 
 - `assets/site.css` … 全ページの見た目（index.html と同じ部品）。`assets/site.js` … メニュー（≡・その他）
 - `assets/jobs.js` … 求人の部品。`JOBS` の配列（今はすべて例）からカードと求人ページを描く。後で Caddie から同じ形で出す
-- `assets/` … 画像（波・イラスト・アイコン・ロゴ・OGP・ファビコン）。`assets/logo/` は #hashtag のロゴの SVG（「hashtag」は JetBrains Mono 500 の輪郭）。`assets/fonts/` はロゴ用のフォント（JetBrains Mono 500・latin）とライセンス（OFL）
+- `assets/` … 画像（波・アイコン・ロゴ・OGP・ファビコン）。`assets/logo/` は #hashtag のロゴの SVG（「hashtag」は JetBrains Mono 500 の輪郭）。`assets/fonts/` はロゴ用のフォント（JetBrains Mono 500・latin）とライセンス（OFL）
 - `sitemap.xml` … 切り替えたあとの住所（https://bia-career.com/…）で書いてある。`robots.txt` は仮の公開の間 Disallow のまま
 - 今は **仮の公開**：`robots.txt` と `netlify.toml` の `X-Robots-Tag` で検索に出さない
 
