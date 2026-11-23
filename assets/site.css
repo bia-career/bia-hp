@@ -360,3 +360,15 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 .btn-cta:hover,.hd .hd-cta.btn-cta:hover{filter:brightness(1.07) saturate(1.05);transform:translateY(-2px);box-shadow:0 10px 26px var(--cta-shadow),inset 0 0 0 1px rgba(255,255,255,.55)}
 .btn-cta:hover::after{transform:translateX(3px)}
 @media (prefers-reduced-motion:reduce){ .btn-cta,.btn-cta::after,.hd .hd-cta.btn-cta{transition:none} .btn-cta:hover,.hd .hd-cta.btn-cta:hover{transform:none} .btn-cta:hover::after{transform:none} }
+
+/* ===== /hashtag/ の「ハッシュタグとは」（2026-11 に about.html をまとめた） ===== */
+.about-h3{margin:48px 0 16px;font-size:20px;font-weight:900}
+.about-more{margin-top:20px;border-radius:24px;background:#fff;border:1px solid var(--line);padding:0 24px}
+.about-more summary{cursor:pointer;list-style:none;position:relative;padding:20px 36px 20px 0;font-weight:700}
+.about-more summary::-webkit-details-marker{display:none}
+.about-more summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:Poppins,sans-serif;font-size:22px;font-weight:400}
+.about-more[open] summary::after{content:"−"}
+.about-more ol{padding-bottom:24px !important}
+.about-more .card{background:var(--bg)}
+.about-more h4{margin:8px 0 4px;font-size:17px;font-weight:900;line-height:1.5}
+@media (max-width:860px){ .about-more{padding:0 16px} }

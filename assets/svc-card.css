@@ -10,13 +10,18 @@
 .co-svc .co-svc-head h3 span,.co-svc .co-svc-head h4 span{display:block;margin-top:2px;font-size:14px;font-weight:700;color:#0070B8}
 .co-svc-head p{margin:0;font-size:15px;line-height:1.8;color:#4A5560}
 .co-svc-doors{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}
-.co-svc-doors a{position:relative;display:flex;flex-direction:column;gap:2px;padding:22px 56px 22px 24px;border:1.5px solid #1D262E;border-radius:20px;color:#1D262E;text-decoration:none;transition:background .2s,color .2s}
-.co-svc-doors a:hover{background:#1D262E;color:#fff}
-.co-svc-doors a:hover .co-biz-label,.co-svc-doors a:hover span{color:#fff}
+/* 入口：マウスを乗せると、相談ボタンと同じ系統の淡いグラデーションがふわっと乗る（0.3 秒）・少し浮く・矢印が右へ。濃紺の塗りつぶしはしない（2026-11） */
+.co-svc-doors a{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;gap:2px;padding:22px 56px 22px 24px;border:1.5px solid #1D262E;border-radius:20px;background:#fff;color:#1D262E;text-decoration:none;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.co-svc-doors a::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,#E5F9F8 0%,#E2F0FB 55%,#E8EBFD 100%);opacity:0;transition:opacity .3s ease}
+.co-svc-doors a:hover{transform:translateY(-3px);border-color:#6FB6EA;box-shadow:0 10px 24px rgba(90,111,232,.16)}
+.co-svc-doors a:hover::before{opacity:1}
+.co-svc-doors a:hover .co-door-arw{transform:translate(4px,-50%)}
+.co-svc-doors a:hover .co-biz-label{color:#005E98 !important} /* 淡い地の上でも 4.5:1 以上 */
 .co-svc-doors strong{font-size:20px;font-weight:900}
 .co-svc-doors span{font-size:14px;color:#4A5560}
 .co-svc .co-biz-label{margin:0;font-family:Poppins,sans-serif;font-weight:600;font-size:13px;letter-spacing:2px;color:#0070B8 !important}
-.co-svc .co-door-arw{position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:22px !important;color:inherit !important}
+.co-svc .co-door-arw{position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:22px !important;color:inherit !important;transition:transform .3s ease}
 .co-svc-doors a:focus-visible{outline:3px solid #0093E9;outline-offset:3px}
 @keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
 @media (max-width:860px){
@@ -26,4 +31,4 @@
   .co-svc-logo .hash{width:23px;height:23px}.co-svc-logo .name{font-size:23px}.co-svc-logo .caret{height:22px}
   .co-svc-doors{grid-template-columns:minmax(0,1fr)}
 }
-@media (prefers-reduced-motion:reduce){ .co-svc-doors a{transition:none} .co-svc-logo .caret{animation:none} }
+@media (prefers-reduced-motion:reduce){ .co-svc-doors a,.co-svc-doors a::before,.co-svc .co-door-arw{transition:none} .co-svc-doors a:hover{transform:none} .co-svc-doors a:hover .co-door-arw{transform:translateY(-50%)} .co-svc-logo .caret{animation:none} }
