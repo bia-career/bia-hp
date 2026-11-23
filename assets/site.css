@@ -363,50 +363,44 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 
 /* ===== /hashtag/ の「ハッシュタグとは」（2026-11 に about.html をまとめた） ===== */
 .about-h3{margin:48px 0 16px;font-size:20px;font-weight:900}
-.about-more{margin-top:20px;border-radius:24px;background:#fff;border:1px solid var(--line);padding:0 24px}
-.about-more summary{cursor:pointer;list-style:none;position:relative;padding:20px 36px 20px 0;font-weight:700}
-.about-more summary::-webkit-details-marker{display:none}
-.about-more summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:Poppins,sans-serif;font-size:22px;font-weight:400}
-.about-more[open] summary::after{content:"−"}
-.about-more ol{padding-bottom:24px !important}
-.about-more .card{background:var(--bg)}
-.about-more h4{margin:8px 0 4px;font-size:17px;font-weight:900;line-height:1.5}
-@media (max-width:860px){ .about-more{padding:0 16px} }
+/* 言葉の途中で改行しない（文の中は「、」「。」などのあとでだけ改行。はみ出すときだけ折り返す） */
+#about p{word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
 
 /* ===== 「ほかの転職支援との違い」（/hashtag/#about）2026-11 =====
-   左（よくある進め方）：薄いグレーの地・文字も少し薄め・影なし。右（ハッシュタグ）：相談ボタンと同じ系統の淡いグラデーションの地＋グラデーションの線・軽い影・少し大きく（主役）
-   中身に進み方の小さな図（矢印でつなぐ）。間は丸い →（スマホは縦に並べて ↓）。文字は 4.5:1 以上 */
-.cmp{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1.25fr);align-items:center;gap:0}
+   1 つのブロック：左（よくある進め方・求人から選ぶ）は控えめで短い 3 段、右（ハッシュタグ・未来（#）から選ぶ）は主役で 4 ステップ。開け閉めはしない
+   左：薄いグレーの地 #ECEFF2・文字 #4A5560・影なし。右：相談ボタンと同じ系統の淡いグラデーションの地＋グラデーションの線・軽い影・左より広い
+   間は丸い →（スマホは縦に並べて ↓）。文字は 5.8:1 以上。文は「、」「。」のあとでだけ改行 */
+.cmp{display:grid;grid-template-columns:minmax(0,.8fr) 64px minmax(0,1.3fr);align-items:start}
 .cmp-card{border-radius:24px;padding:28px 26px;word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
-.cmp-card h4{margin:10px 0 6px;font-size:20px;font-weight:900;line-height:1.5}
-.cmp-card > p:not(.cmp-label){margin:0;font-size:14px;line-height:1.8}
+.cmp-card h4{margin:10px 0 18px;font-size:20px;font-weight:900;line-height:1.5}
 .cmp-label{display:inline-block;margin:0;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.5px}
-.cmp-other{background:#ECEFF2;color:#4A5560}
+.cmp-other{margin-top:40px;background:#ECEFF2;color:#4A5560}
 .cmp-other h4{color:#3A4450}
 .cmp-other .cmp-label{background:#fff;color:#4A5560}
-.cmp-ht{position:relative;padding:38px 34px;color:var(--navy);
+.cmp-ht{padding:36px 34px;color:var(--navy);
   background:linear-gradient(135deg,#ECFAF9 0%,#E8F3FC 55%,#EEF0FD 100%) padding-box,linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%) border-box;
   border:2px solid transparent;box-shadow:0 16px 40px rgba(90,111,232,.16)}
 .cmp-ht h4{font-size:24px;color:var(--navy)}
-.cmp-ht > p:not(.cmp-label){color:#2E3A45}
 .cmp-ht .cmp-label{background:linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%);color:var(--navy)}
-.cmp-mid{display:grid;place-items:center}
+.cmp-mid{display:grid;place-items:center;padding-top:132px}
 .cmp-mid span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid #C9D5DE;font-family:Poppins,sans-serif;font-size:18px;color:var(--navy)}
-/* 進み方の小さな図 */
-.cmp-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 0;margin:18px 0 0;padding:0;list-style:none}
-.cmp-flow li{display:inline-flex;align-items:center;font-size:13px;font-weight:700}
-.cmp-flow li span,.cmp-flow li{white-space:nowrap}
-.cmp-flow li:not(:last-child)::after{content:"→";margin:0 8px;font-family:Poppins,sans-serif;font-weight:400}
-.cmp-other .cmp-flow li{color:#4A5560}
-.cmp-ht .cmp-flow li{color:var(--navy)}
-.cmp-other .cmp-flow li::before,.cmp-ht .cmp-flow li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%}
-.cmp-other .cmp-flow li::before{background:#9AA6B2}
-.cmp-ht .cmp-flow li::before{background:#6FB6EA}
+/* 流れ（番号付きで縦に。左は短く小さく、右は見出し＋説明で充実） */
+.cmp-steps{position:relative;display:grid;gap:18px;margin:0;padding:0;list-style:none}
+.cmp-steps li{position:relative;display:flex;gap:14px;align-items:flex-start}
+.cmp-steps li:not(:last-child)::after{content:"";position:absolute;left:15px;top:34px;bottom:-16px;width:1.5px;background:#BFD8F2}
+.cmp-no{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fff;border:1.5px solid #6FB6EA;font-family:Poppins,sans-serif;font-size:12px;font-weight:600;color:#005E98}
+.cmp-steps strong{display:block;font-size:16px;font-weight:900;line-height:1.5;padding-top:4px}
+.cmp-steps p{margin:4px 0 0;font-size:14px;line-height:1.75;color:#2E3A45}
+.cmp-steps-sm{gap:14px}
+.cmp-steps-sm li:not(:last-child)::after{background:#C9D1D8;top:30px;bottom:-12px;left:13px}
+.cmp-steps-sm .cmp-no{width:28px;height:28px;border-color:#AEB8C2;color:#4A5560;font-size:11px}
+.cmp-steps-sm strong{font-size:14px;font-weight:700;color:#4A5560;padding-top:3px}
 @media (max-width:860px){
-  .cmp{grid-template-columns:minmax(0,1fr);gap:0}
-  .cmp-mid{height:52px}
+  .cmp{grid-template-columns:minmax(0,1fr)}
+  .cmp-other{margin-top:0}
+  .cmp-mid{padding-top:0;height:56px}
   .cmp-mid span{transform:rotate(90deg)}
-  .cmp-card{padding:24px 20px}
+  .cmp-card{padding:22px 20px}
   .cmp-ht{padding:28px 22px}
   .cmp-ht h4{font-size:22px}
 }
