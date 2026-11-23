@@ -254,42 +254,6 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 @media (max-width:767px){ .intro-pill{height:72px;font-size:31.5px} }
 @media (prefers-reduced-motion:reduce){ .intro,html.intro-on body::before{display:none} }
 
-/* ===== 支援の流れのイラスト：今の 4 枚の絵の上に「動く # の吹き出し」を重ねる（DESIGN-SPEC.md 13 章） =====
-   位置は絵の大きさに対する %（スマホでも絵と一緒に動く）。.is-playing（assets/illust.js が、見えている間だけ付ける）のときだけ動く。
-   付いていないとき・動きを減らす設定では、吹き出しが出たままの止まった絵 */
-.fl-art{position:relative;display:inline-block;height:118px;aspect-ratio:200/129}
-.fl-art img{display:block;width:100%;height:100%}
-.fl-bub{position:absolute;height:auto;overflow:visible}
-.fl-bub .fl-caret,.fl-bub .fl-h2,.fl-bub .fl-sp{transform-box:fill-box;transform-origin:50% 50%}
-/* 大きさは絵の幅の 27.6%（02 は 37.2%）。2026-11 に 1.2 倍にした */
-.fl-01 .fl-bub{left:74%;top:1%;width:27.6%}
-.fl-02 .fl-bub{left:31.4%;top:3%;width:37.2%}
-.fl-03 .fl-bub{left:68%;top:8%;width:27.6%}
-.fl-04 .fl-bub{left:51%;top:1%;width:27.6%}
-.is-playing .fl-bub{transform-origin:0% 100%;animation:fl-pop 4s ease-in-out infinite backwards}
-.is-playing .fl-caret{animation:fl-caret 4s step-end infinite backwards}
-.is-playing.fl-02 .fl-h2{animation:fl-h2 4s ease-out infinite backwards}
-.is-playing.fl-03 .fl-bub{transform-origin:50% 100%;animation-name:fl-rise}
-.is-playing.fl-04 .fl-sp{animation:fl-sp 4s ease-in-out infinite backwards}
-/* 画面に入った瞬間は、吹き出しが出たまま（いったん消えない）。くり返しの途中（全部が見えている所）から始める。
-   始める所を 1 枚ずつ変えて、4 枚が同時に動かないようにする（マイナスの delay＝その分だけ進んだ所から始まる） */
-.is-playing.fl-01 .fl-bub,.is-playing.fl-01 .fl-bub *{animation-delay:-1.2s}
-.is-playing.fl-02 .fl-bub,.is-playing.fl-02 .fl-bub *{animation-delay:-1.8s}
-.is-playing.fl-03 .fl-bub,.is-playing.fl-03 .fl-bub *{animation-delay:-1.4s}
-.is-playing.fl-04 .fl-bub,.is-playing.fl-04 .fl-bub *{animation-delay:-2.2s}
-.is-playing.fl-04 .fl-sp2{animation-delay:-1.9s}
-.is-playing.fl-04 .fl-sp3{animation-delay:-1.6s}
-/* 01・02・04：ぽんと出る → カーソルが点滅 → 消える */
-@keyframes fl-pop{0%{transform:scale(0);opacity:0}8%{transform:scale(1.12);opacity:1}13%{transform:scale(1)}78%{transform:scale(1);opacity:1}88%,100%{transform:scale(.6);opacity:0}}
-@keyframes fl-caret{0%{opacity:0}13%{opacity:1}25%{opacity:0}37%{opacity:1}49%{opacity:0}61%{opacity:1}78%{opacity:0}}
-/* 02：2 つ目の # がとなりに並ぶ（2 人の # が重なる） */
-@keyframes fl-h2{0%,18%{transform:translateX(-8px);opacity:0}28%{transform:translateX(0);opacity:1}78%{opacity:1}88%,100%{opacity:0}}
-/* 03：ふわっと上へ（企業へ伝わる） */
-@keyframes fl-rise{0%{transform:translateY(8px) scale(.9);opacity:0}10%{transform:translateY(0) scale(1);opacity:1}50%{transform:translateY(0)}86%{transform:translateY(-14px);opacity:0}100%{transform:translateY(-14px);opacity:0}}
-/* 04：横の水色の点がきらきら */
-@keyframes fl-sp{0%,14%{transform:scale(0);opacity:0}22%{transform:scale(1.4);opacity:1}32%{transform:scale(.8);opacity:.7}42%{transform:scale(1.2);opacity:1}78%{opacity:1}88%,100%{transform:scale(0);opacity:0}}
-@media (prefers-reduced-motion:reduce){.fl-art *{animation:none!important}}
-
 /* ===== 6 つのポイントのアイコン：画面に入ったとき 1 回だけ「ぽん」と出る（DESIGN-SPEC.md 14 章。assets/site.js） ===== */
 .pt-wait .point img{opacity:0;transform:scale(.8)}
 /* カード自体もふわっと出る（0.6 秒）ので、0.25 秒あとから始めて「ぽん」が見えるようにする */
@@ -404,3 +368,5 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
   .cmp-ht{padding:28px 22px}
   .cmp-ht h4{font-size:22px}
 }
+/* 途中で切らない短い言い回し（例：5 年後・10 年後） */
+.nw{white-space:nowrap}
