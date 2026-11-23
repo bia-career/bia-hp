@@ -34,9 +34,8 @@
 .rc-philo{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0}
 .rc-philo dt{font-size:16px;font-weight:900}
 .rc-philo dt .en{display:block;font-weight:600;font-size:13px;letter-spacing:3px;color:#0070B8}
-.rc-philo dd{margin:10px 0 0;font-size:16px;color:var(--sub)}
-.rc-values{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.rc-values .tag{margin:0 0 12px}
+.rc-philo dd{margin:10px 0 0;font-size:16px;font-weight:700;line-height:1.7;color:var(--ink)}
+.rc-philo .rc-philo-en{display:block;margin-top:6px;font-family:Poppins,sans-serif;font-size:13px;color:var(--muted)}
 /* 働く魅力 */
 .rc-appeal{display:grid;gap:16px}
 .rc-appeal li{display:flex;gap:24px;align-items:flex-start}
@@ -46,14 +45,6 @@
 .rc-link-card{display:block;text-decoration:none;transition:box-shadow .2s}
 .rc-link-card:hover{box-shadow:0 12px 32px rgba(29,38,46,.08)}
 .rc-link-card .more{display:inline-block;margin-top:14px;font-weight:700;font-size:14px}
-/* 社員で知るビア（写真なし） */
-.rc-people{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
-.rc-face{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;margin:0 0 14px;background:linear-gradient(135deg,#9FEAE5 0%,#93C8EF 50%,#8393EE 100%);
-  font-family:Poppins,sans-serif;font-weight:600;font-size:24px;color:var(--navy)}
-.rc-people .rc-role{margin:0;font-size:17px;font-weight:900;color:var(--ink)}
-.rc-people .rc-year{margin:0 0 14px;font-size:13px;color:var(--muted)}
-.rc-people .tag{height:32px;padding:0 12px;font-size:13px}
-.rc-people .rc-word{margin:14px 0 0;font-size:14px;color:var(--sub)}
 /* こだわりのワーク＆ライフ環境 */
 .rc-env{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
 .rc-env h4{font-size:19px}
@@ -63,11 +54,12 @@
 .rc-office p{margin:8px 4px 0;font-size:14px;color:var(--sub)}
 /* 数字から見るカルチャー */
 .rc-asof{display:inline-block;margin:0 0 16px;padding:6px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}
-.rc-nums{display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.rc-nums{display:grid;gap:16px;grid-template-columns:repeat(5,minmax(0,1fr))}
 .rc-num{display:flex;align-items:baseline;gap:6px;margin:0 0 4px}
-.rc-num .en{font-weight:600;font-size:52px;line-height:1.1;color:var(--navy)}
+.rc-num .en{font-weight:600;font-size:44px;line-height:1.1;color:var(--navy)}
+.rc-num .rc-pre{font-size:15px;font-weight:700;color:var(--navy)}
 .rc-num small{font-size:14px;font-weight:700;color:var(--navy)}
-.rc-nums h3{font-size:16px !important}
+.rc-nums h3{font-size:16px !important;margin-bottom:0 !important}
 /* 募集職種 */
 .rc-jobs{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
 .rc-job{display:flex;flex-direction:column}
@@ -87,7 +79,7 @@
 .rc-job-detail dt{font-weight:700}
 .rc-job-detail dd{margin:2px 0 12px;color:var(--sub)}
 .rc-job-apply{display:grid;gap:10px;margin-top:6px}
-.rc-job-apply .btn{justify-content:center;min-height:52px;padding:0 20px;font-size:15px}
+.rc-job-apply .btn{justify-content:center;min-height:52px;padding:0 12px;font-size:13px;letter-spacing:-.2px;white-space:nowrap}
 /* 採用の流れ（新卒・中途を横に 2 つ。スマホは縦） */
 .rc-flow{display:grid;gap:16px 32px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .rc-flow .rc-h3{margin:0 0 14px;font-size:18px}
@@ -115,7 +107,7 @@
 
 /* タブレット・スマホ */
 @media (max-width:1099px){
-  .rc-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rc-nums{grid-template-columns:repeat(3,minmax(0,1fr))}
   .rc-env{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:860px){
@@ -127,11 +119,12 @@
   .rc-main > section:last-child{padding-bottom:72px}
   .rc-main > section.rc-cont{padding-top:56px}
   .rc-h3{margin-top:44px;font-size:20px}
-  .rc-people,.rc-office{grid-template-columns:minmax(0,1fr)}
+  .rc-office{grid-template-columns:minmax(0,1fr)}
   .rc-appeal li{gap:16px}
   .rc-appeal .rc-no{font-size:22px}
 }
 @media (max-width:767px){
+  .rc-nums{grid-template-columns:repeat(2,minmax(0,1fr))}
   .rc-env{grid-template-columns:minmax(0,1fr)}
   .rc-num .en{font-size:40px}
   .rc-nums .card{padding:22px 18px}

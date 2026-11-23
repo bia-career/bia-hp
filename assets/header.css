@@ -1,3 +1,7 @@
+/* ロゴの「hashtag」の文字だけ JetBrains Mono 500（自分のサイトに置く。latin だけ。ライセンスは assets/fonts/JetBrainsMono-OFL.txt）。
+   Poppins のときと横幅がそろうように、文字はカーソルの高さの 1.04 倍・字間 1px（21px のとき）。
+   「g」の右の余白が広いので、カーソルとの間は margin-right で今と同じ見え方に戻す */
+@font-face{font-family:"JetBrains Mono";src:url(/assets/fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
 /* ===== ヘッダー（ロゴとメニュー）とフッターのメニュー。全ページ共通（DESIGN-SPEC.md 10 章）=====
    - ロゴとメニューは画面に固定（position: fixed）。白い帯は敷かず、ロゴとメニューの丸長方形だけが浮く
    - 一番上では今までの見た目のまま。スクロールしたら html に .hd-scrolled が付き、ロゴの下の 1 行を消す・ロゴを小さく・影を付ける
@@ -13,7 +17,7 @@
 .hd-logo{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--hd-navy);color:#fff;text-decoration:none;
   transition:height var(--hd-speed) ease,padding var(--hd-speed) ease,box-shadow var(--hd-speed) ease}
 .hd-logo .hash{width:22px;height:22px;flex:none;transition:width var(--hd-speed) ease,height var(--hd-speed) ease}
-.hd-logo .name{font-family:Poppins,sans-serif;font-weight:400;font-size:21px;letter-spacing:1px;line-height:1;transition:font-size var(--hd-speed) ease}
+.hd-logo .name{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;font-size:21.84px;letter-spacing:1px;margin-right:-.228em;line-height:1;transition:font-size var(--hd-speed) ease}
 .hd-logo .caret{display:inline-block;width:2.4px;height:21px;border-radius:2px;background:#6FD6E6;transition:height var(--hd-speed) ease}
 .hd-desc{margin:6px 0 0 6px;max-height:24px;overflow:hidden;font-size:12px;font-weight:700;letter-spacing:1px;line-height:1.8;color:var(--hd-navy);white-space:nowrap;
   transition:opacity var(--hd-speed) ease,max-height var(--hd-speed) ease,margin var(--hd-speed) ease}
@@ -58,7 +62,7 @@
 .hd-scrolled .hd-desc{opacity:0;max-height:0;margin-top:0}
 .hd-scrolled .hd-logo{height:40px;padding:0 18px;box-shadow:var(--hd-shadow),0 0 0 1.5px rgba(255,255,255,.85)}
 .hd-scrolled .hd-logo .hash{width:19px;height:19px}
-.hd-scrolled .hd-logo .name{font-size:18px}
+.hd-scrolled .hd-logo .name{font-size:18.72px}
 .hd-scrolled .hd-logo .caret{height:18px}
 .hd-scrolled .hd-nav{margin-top:-8px;box-shadow:var(--hd-shadow)}
 
@@ -78,12 +82,12 @@
   .hd-in{padding:12px 16px 0;align-items:flex-start}
   .hd-logo{height:40px;padding:0 16px;gap:6px}
   .hd-logo .hash{width:18px;height:18px}
-  .hd-logo .name{font-size:17px}
+  .hd-logo .name{font-size:17.68px}
   .hd-logo .caret{height:17px}
   .hd-desc{font-size:11px;margin:4px 0 0 4px}
   .hd-scrolled .hd-logo{height:36px;padding:0 14px}
   .hd-scrolled .hd-logo .hash{width:16px;height:16px}
-  .hd-scrolled .hd-logo .name{font-size:15px}
+  .hd-scrolled .hd-logo .name{font-size:15.6px}
   .hd-scrolled .hd-logo .caret{height:15px}
   .hd-scrolled .hd-in{padding-top:10px}
   .hd-bia img{width:92px}
