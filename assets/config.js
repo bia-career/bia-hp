@@ -19,5 +19,8 @@ window.HASHTAG_CONFIG = {
   // 'type'  … 空の入力欄に「hashtag」を打ち込み、左上のロゴになって入れ替わる（約 3 秒）
   // 'empty' … 空の入力欄でカーソルが点滅して、画面ごと消える（約 2.2 秒）
   // 'off'   … オープニングを出さない
-  INTRO_MODE: 'type'
+  INTRO_MODE: 'type',
+
+  // 会社のトップ（/）のオープニング（DESIGN-SPEC.md 16 章）：'type'＝BIA のロゴ → ビジョンを打ち込む → 見出しへ（約 3 秒）／'off'＝出さない
+  BIA_INTRO: 'type'
 };

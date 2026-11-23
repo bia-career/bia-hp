@@ -12,7 +12,7 @@
 <meta property="og:title" content="株式会社ビア｜若者のポテンシャルを解放する">
 <meta property="og:description" content="株式会社ビアは、新卒・20代の転職支援サービス「ハッシュタグ」と、企業向けの人材紹介・採用支援を行っています。">
 <meta property="og:url" content="https://bia-career.com/">
-<meta property="og:image" content="https://bia-career.com/assets/ogp.png">
+<meta property="og:image" content="https://bia-career.com/assets/ogp-bia.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/hashtag-icon.svg" type="image/svg+xml">
@@ -25,6 +25,9 @@
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/header.css">
 <link rel="stylesheet" href="/assets/bia.css">
+<!-- オープニング（DESIGN-SPEC.md 16 章）。描く前に覆うため <head> で読む -->
+<script src="/assets/config.js"></script>
+<script src="/assets/intro-bia.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "株式会社ビア", "url": "https://bia-career.com/", "logo": "https://bia-career.com/assets/apple-touch-icon.png", "email": "info@bia-career.com", "foundingDate": "2021-08-10", "address": {"@type": "PostalAddress", "postalCode": "160-0023", "addressRegion": "東京都", "addressLocality": "新宿区", "streetAddress": "西新宿3-9-7 フロンティア新宿タワーオフィス3F", "addressCountry": "JP"}}</script>
 </head>
 <body>
@@ -70,9 +73,19 @@
 <section id="business">
   <div class="wrap">
     <div class="sec-head"><p class="en-big" aria-hidden="true">BUSINESS</p><h2>事業紹介</h2></div>
-    <div class="co-biz">
-      <a class="card line" href="/hashtag/"><p class="co-biz-label" lang="en">FOR JOB SEEKERS</p><h3>ハッシュタグ</h3><p>キャリア設計から始める、新卒・20代のための転職支援サービスです。</p><span class="more">ハッシュタグを見る →</span></a>
-      <a class="card line" href="/corp.html"><p class="co-biz-label" lang="en">FOR BUSINESS</p><h3>企業の方へ（採用支援）</h3><p>人材紹介と、オーダーメイド型の採用コンサルティングを行います。</p><span class="more">企業の方へ →</span></a>
+    <!-- 事業は「ハッシュタグ」1 つ（求職者向け・企業向けの両方を持つ）。大きなカード 1 枚に、入口を 2 つ -->
+    <div class="co-svc card">
+      <div class="co-svc-head">
+        <span class="logo co-svc-logo" role="img" aria-label="hashtag"><svg class="hash" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true"><g stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"><line x1="17" y1="6" x2="13" y2="34"/><line x1="28" y1="6" x2="24" y2="34"/><line x1="8" y1="15" x2="34" y2="15"/><line x1="6" y1="25" x2="32" y2="25"/></g></svg><span class="name">hashtag</span><span class="caret" aria-hidden="true"></span></span>
+        <div>
+          <h3>ハッシュタグ<span>新卒・20代の転職支援・人材紹介</span></h3>
+          <p>求職者の「叶えたい未来」と、企業の採用をつなぐサービスです。求職者にはキャリア設計から始める転職支援を、企業には人材紹介と採用支援を行います。</p>
+        </div>
+      </div>
+      <div class="co-svc-doors">
+        <a href="/hashtag/"><span class="co-biz-label" lang="en">FOR JOB SEEKERS</span><strong>求職者の方</strong><span>新卒・20代の転職支援</span><span class="co-door-arw" aria-hidden="true">→</span></a>
+        <a href="/corp.html"><span class="co-biz-label" lang="en">FOR BUSINESS</span><strong>企業の方</strong><span>人材紹介・採用支援</span><span class="co-door-arw" aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
 </section>
