@@ -20,7 +20,7 @@ a{color:inherit}
 
 /* ロゴ（E：#hashtag） */
 .logo{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none}
-.logo .name{font-family:Poppins,sans-serif;font-weight:400;font-size:21px;letter-spacing:1px;line-height:1}
+.logo .name{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;font-size:21.84px;letter-spacing:1px;line-height:1;margin-right:-.228em}
 .logo .caret{height:21px}
 .logo-desc{font-size:12px;font-weight:700;letter-spacing:1px;margin:6px 0 0 6px}
 .logo-desc span{font-family:Poppins,sans-serif;font-weight:400;color:var(--muted)}
@@ -243,7 +243,7 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
   font-size:42px;transition:opacity .4s ease,transform .4s ease}
 .intro-in .intro-pill{opacity:1;transform:translate(-50%,-50%)}
 .intro-pill .hash{width:1.0476em;height:1.0476em;flex:none}
-.intro-name{font-family:Poppins,sans-serif;font-weight:400;font-size:1em;letter-spacing:.0476em;line-height:1;white-space:nowrap}
+.intro-name{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;font-size:1.04em;letter-spacing:.0476em;margin-right:-.228em;line-height:1;white-space:nowrap}
 .intro-name:empty{display:none}
 .intro-caret{display:inline-block;flex:none;width:.114em;height:1em;border-radius:2px;background:#6FD6E6}
 /* カーソルが約 1 秒で 2 回点滅 */

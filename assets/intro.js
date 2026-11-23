@@ -98,7 +98,7 @@
       var logo = document.querySelector('.hd-logo');
       if (!logo) { finish(300); return; }
       var r = logo.getBoundingClientRect(), s = getComputedStyle(logo);
-      var fs = parseFloat(getComputedStyle(logo.querySelector('.name')).fontSize) || r.height * 0.4375;
+      var fs = logo.querySelector('.caret').getBoundingClientRect().height || r.height * 0.4375; // 丸長方形の大きさの基準＝ロゴのカーソルの高さ（文字はその 1.04 倍）
       var p = pill.getBoundingClientRect();
       // 今の場所に固定してから（動きなしで）、ロゴの場所・大きさへ
       pill.style.transition = 'none';
