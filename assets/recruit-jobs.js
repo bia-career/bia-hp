@@ -21,7 +21,9 @@ var RECRUIT_COMMON = {
   hours: '9:30〜18:30（休憩 60 分）',
   holidays: '完全週休 2 日（土日祝）、年末年始、夏季休暇など（年間休日 125 日）',
   want: '未経験歓迎。20 代のメンバーが中心に活躍中。成長意欲のある方',
-  benefits: '社会保険完備、交通費支給、産前産後・育児休業、慶弔休暇、定期健康診断、フリードリンク、ワーケーション手当'
+  benefits: '社会保険完備、交通費支給、産前産後・育児休業、慶弔休暇、定期健康診断、フリードリンク、ワーケーション手当、書籍購入手当',
+  // 選考は 3 職種とも同じ（ページの「採用の流れ」と同じ書き方）
+  selection: ['新卒：エントリー → 会社説明会 → 書類選考 → 一次面接 → 現場体験（ワーク）→ 最終面接 → 内定', '中途：書類選考 → 一次面接 → 最終面接 → 内定']
 };
 
 var RECRUIT_JOBS = [
@@ -43,8 +45,8 @@ var RECRUIT_JOBS = [
       ['勤務地', RECRUIT_COMMON.place],
       ['勤務時間', RECRUIT_COMMON.hours],
       ['休日', RECRUIT_COMMON.holidays],
-      ['福利厚生', RECRUIT_COMMON.benefits + '、書籍購入手当'],
-      ['選考', '一次面接（Web）→ 最終面接（対面）'],
+      ['福利厚生', RECRUIT_COMMON.benefits],
+      ['選考', RECRUIT_COMMON.selection],
       ['募集人数', '2〜8 名']
     ]
   },
@@ -66,8 +68,8 @@ var RECRUIT_JOBS = [
       ['勤務地', RECRUIT_COMMON.place],
       ['勤務時間', RECRUIT_COMMON.hours],
       ['休日', RECRUIT_COMMON.holidays],
-      ['福利厚生', RECRUIT_COMMON.benefits + '、書籍購入手当'],
-      ['選考', '一次面接（Web）→ 最終面接（対面）'],
+      ['福利厚生', RECRUIT_COMMON.benefits],
+      ['選考', RECRUIT_COMMON.selection],
       ['募集人数', '若干名']
     ]
   },
@@ -95,7 +97,7 @@ var RECRUIT_JOBS = [
       ['勤務時間', RECRUIT_COMMON.hours],
       ['休日', RECRUIT_COMMON.holidays],
       ['福利厚生', RECRUIT_COMMON.benefits],
-      ['選考', '面接 1〜2 回'],
+      ['選考', RECRUIT_COMMON.selection],
       ['募集人数', '1〜2 名']
     ]
   }
