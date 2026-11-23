@@ -372,3 +372,41 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 .about-more .card{background:var(--bg)}
 .about-more h4{margin:8px 0 4px;font-size:17px;font-weight:900;line-height:1.5}
 @media (max-width:860px){ .about-more{padding:0 16px} }
+
+/* ===== 「ほかの転職支援との違い」（/hashtag/#about）2026-11 =====
+   左（よくある進め方）：薄いグレーの地・文字も少し薄め・影なし。右（ハッシュタグ）：相談ボタンと同じ系統の淡いグラデーションの地＋グラデーションの線・軽い影・少し大きく（主役）
+   中身に進み方の小さな図（矢印でつなぐ）。間は丸い →（スマホは縦に並べて ↓）。文字は 4.5:1 以上 */
+.cmp{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1.25fr);align-items:center;gap:0}
+.cmp-card{border-radius:24px;padding:28px 26px;word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+.cmp-card h4{margin:10px 0 6px;font-size:20px;font-weight:900;line-height:1.5}
+.cmp-card > p:not(.cmp-label){margin:0;font-size:14px;line-height:1.8}
+.cmp-label{display:inline-block;margin:0;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.5px}
+.cmp-other{background:#ECEFF2;color:#4A5560}
+.cmp-other h4{color:#3A4450}
+.cmp-other .cmp-label{background:#fff;color:#4A5560}
+.cmp-ht{position:relative;padding:38px 34px;color:var(--navy);
+  background:linear-gradient(135deg,#ECFAF9 0%,#E8F3FC 55%,#EEF0FD 100%) padding-box,linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%) border-box;
+  border:2px solid transparent;box-shadow:0 16px 40px rgba(90,111,232,.16)}
+.cmp-ht h4{font-size:24px;color:var(--navy)}
+.cmp-ht > p:not(.cmp-label){color:#2E3A45}
+.cmp-ht .cmp-label{background:linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%);color:var(--navy)}
+.cmp-mid{display:grid;place-items:center}
+.cmp-mid span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid #C9D5DE;font-family:Poppins,sans-serif;font-size:18px;color:var(--navy)}
+/* 進み方の小さな図 */
+.cmp-flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 0;margin:18px 0 0;padding:0;list-style:none}
+.cmp-flow li{display:inline-flex;align-items:center;font-size:13px;font-weight:700}
+.cmp-flow li span,.cmp-flow li{white-space:nowrap}
+.cmp-flow li:not(:last-child)::after{content:"→";margin:0 8px;font-family:Poppins,sans-serif;font-weight:400}
+.cmp-other .cmp-flow li{color:#4A5560}
+.cmp-ht .cmp-flow li{color:var(--navy)}
+.cmp-other .cmp-flow li::before,.cmp-ht .cmp-flow li::before{content:"";display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%}
+.cmp-other .cmp-flow li::before{background:#9AA6B2}
+.cmp-ht .cmp-flow li::before{background:#6FB6EA}
+@media (max-width:860px){
+  .cmp{grid-template-columns:minmax(0,1fr);gap:0}
+  .cmp-mid{height:52px}
+  .cmp-mid span{transform:rotate(90deg)}
+  .cmp-card{padding:24px 20px}
+  .cmp-ht{padding:28px 22px}
+  .cmp-ht h4{font-size:22px}
+}
