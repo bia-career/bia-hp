@@ -1,4 +1,4 @@
-# 引き継ぎ（ハッシュタグのホームページ bia-hp。2026-11-22 更新）
+# 引き継ぎ（株式会社ビアのホームページ bia-hp。2026-11-23 更新）
 
 このリポジトリ（bia-career/bia-hp）の作業は、ここから **新しいセッション** で続けます。Caddie（bia-career/caddie）は別のセッションの担当です。
 
@@ -16,7 +16,8 @@
 
 ## 2. 作り（どこを直すか）
 
-- 各ページは HTML を直接直す（前に使っていた生成スクリプトはリポジトリに無い。ヘッダー・フッターは各ページに同じ HTML が入っているので、直すときは全ページそろえる）
+- ページの置き場所：会社のページはルート（index・company・recruit・corp・contact・privacy・404）、ハッシュタグのページは `hashtag/`（index・about・jobs・job・faq・booking・column）
+- 各ページは HTML を直接直す（前に使っていた生成スクリプトはリポジトリに無い。ヘッダー・フッターは 2 種類（会社のページ／ハッシュタグのページ）。同じ種類のページには同じ HTML が入っているので、直すときはそろえる）
 - 共通の見た目：`assets/site.css`（地・部品）・`assets/header.css`（ヘッダーとフッターのメニュー・固定・スクロールの変化）
 - 共通の動き：`assets/site.js`（ヘッダー・SERVICE ▼・≡・出てくる動き・下の相談ボタン・予約の行き先）
 - 設定：`assets/config.js`（`window.HASHTAG_CONFIG`）：`BOOKING_URL`・`LINE_URL`・`RECRUIT_ENTRY_URL`・`INTRO_MODE`
@@ -82,6 +83,12 @@
 - **オフィスの写真 4 枚**を「ワーク＆ライフ環境」の下にギャラリーで（`assets/img/office/` の office-entrance・office-lounge・office-cafe・office-table。webp・長辺 1,600px 以内。パソコンは 2 列、スマホは横にすべらせる）。元はドライブのフォルダ「HP採用ページ オフィス写真」。**写真の使用許可は確認中**
 - 選考は 3 職種とも同じ（ページの「採用の流れ」と同じ書き方）。書籍購入手当は全員が対象（3 職種とも同じ福利厚生）。Web マーケも新卒で募集する
 
+### サイトの組み替え（PR #9。骨組み。マージ待ち）
+- **トップ（`/`）は株式会社ビアの会社サイト、ハッシュタグは `/hashtag/` の下のサービスページ**（DESIGN-SPEC.md 16 章）
+- 新しく：会社のトップ（index.html）・お問い合わせ（contact.html）・`assets/bia.css`・`assets/philosophy.js`（パーパス・ミッション・ビジョンの 1 か所）
+- ヘッダー・フッターを 2 種類に（会社のページ／ハッシュタグのページ）。古い URL は `netlify.toml` で 301 転送
+- **Caddie の求人の読み口（`/api/public/hp-jobs`）を使う予定の画面は `/hashtag/jobs.html`・`/hashtag/job.html`**（`assets/jobs.js`）
+
 ## 4. まだのこと
 
 1. **採用ページの仮のもの**（入っているが、あとで調整するかもしれない。【仮】の印は付けていない）
@@ -102,7 +109,7 @@
 |---|---|---|---|
 | 「無料でキャリア相談」の行き先 | `assets/config.js` の `BOOKING_URL: '/booking.html'`（準備中のページ）。各ボタンに `data-booking`（header・hero・contact・sticky・job・takeaway・pick・jobs-empty）、`site.js` が `?from=` を付ける | 予約のページ **/book**（PR 2 で作成中・練習モード）。`?from=` は予約の記録だけに残す。同意のチェックは「プライバシーポリシーに同意する」（リンク先 /privacy） | 予約のページが本番になったら、`BOOKING_URL` を Caddie の `/book` の URL（のちに book.bia-career.com）に書き換えるだけ。URL に個人情報は入れない |
 | LINE の相談 | `assets/config.js` の `LINE_URL`（https://lin.ee/qq1v7gG。ホームページ専用の経路）。リンクに `data-line` | — | 経路を変えるときは書き換えるだけ |
-| 求人（トップの新着・求人一覧・求人） | `assets/jobs.js` の配列 `JOBS`（今は見本。1 件の形はファイルの先頭のコメント） | 自社求人（Caddie の「企業」→ 求人。Caddie の掲載＝掲載中のもの） | あとで Caddie が同じ形の配列（JSON）を出し、`jobs.js` を置き換える（形は変えない）。報酬・手数料・選考難易度・NG・求人DB の URL は載せない |
+| 求人（ハッシュタグのトップの新着・`/hashtag/jobs.html`・`/hashtag/job.html`） | `assets/jobs.js` の配列 `JOBS`（今は見本。1 件の形はファイルの先頭のコメント） | 自社求人（Caddie の「企業」→ 求人。Caddie の掲載＝掲載中のもの） | あとで Caddie の読み口（`/api/public/hp-jobs`）から同じ形の配列（JSON）を出し、`jobs.js` を置き換える（形は変えない。使う画面は `/hashtag/jobs.html`・`/hashtag/job.html`）。報酬・手数料・選考難易度・NG・求人DB の URL は載せない |
 | 採用ページの募集職種（RECRUIT の JOBS） | `assets/recruit-jobs.js` の配列 `RECRUIT_JOBS` 1 か所（今は【仮】2 件。1 件の形はファイルの先頭のコメント） | まだ無い（あとで Caddie から自動） | `jobs.js` と同じく、配列を置き換える形にしておく |
 | エントリー（応募） | `assets/config.js` の `RECRUIT_ENTRY_URL`（`new`・`career`。今は Google フォーム https://forms.gle/y8prBTsdwqu2tVwK9、持ち主は a.h@bia-career.com。新しいタブで開く） | まだ無い。**あとで社内システム（人事の機能）に作り替える予定** | できたら `RECRUIT_ENTRY_URL` を書き換えるだけ |
 

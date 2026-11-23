@@ -8,7 +8,8 @@
   // スクロールしたら html に .hd-scrolled（ロゴの下の 1 行を消す・ロゴを小さく・影）。一番上に戻ったら外す
   var ticking = false;
   // 運営会社のページの BIA のロゴは、紺のフッターに重なっている間だけ白にする（html に .hd-on-dark）
-  var bia = hd.querySelector('.hd-bia img'), foot = document.querySelector('footer');
+  // 見出しとの重なりを見るロゴ：会社のページは BIA のロゴ、ハッシュタグのページは #hashtag のロゴ
+  var bia = hd.querySelector('.hd-bia img') || hd.querySelector('.hd-logo'), foot = document.querySelector('footer');
   // BIA のロゴが見出し（h1〜h3・大きな英字の見出し）の文字に重なっている間だけ、ロゴをうすくする（html に .hd-on-head）。本文・カード・表では変えない
   var heads = bia ? [].slice.call(document.querySelectorAll('h1, h2, h3, .en-big')).filter(function (h) { return !h.closest('.hd, footer'); }) : [];
   var range = document.createRange();
@@ -30,7 +31,7 @@
     root.classList.toggle('hd-scrolled', window.scrollY > 4);
     if (bia && foot) {
       var l = bia.getBoundingClientRect(), f = foot.getBoundingClientRect(), mid = l.top + l.height / 2;
-      root.classList.toggle('hd-on-dark', f.top <= mid && f.bottom >= mid);
+      root.classList.toggle('hd-on-dark', f.top <= mid && f.bottom >= mid); // 白くするのは BIA のロゴだけ（CSS）
       // 一番上（スクロールしていないとき）はうすくしない。スクロールし始めてから重なりを見る
       root.classList.toggle('hd-on-head', window.scrollY > 4 && onHead(l));
     }

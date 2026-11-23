@@ -131,3 +131,26 @@
 .ft-h{font-family:Poppins,sans-serif;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#fff !important;margin:0 0 2px;font-size:13px}
 .ft-h small{display:block;margin-top:2px;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:0;text-transform:none;color:#D5DDE4}
 @media (max-width:959px){ .ft-nav{gap:20px 32px} }
+
+/* ===== 2 種類のヘッダー（2026-11 のサイトの組み替え。DESIGN-SPEC.md 16 章） =====
+   会社のページ（.hd-co）：BIA のロゴ・SERVICE ▼（ハッシュタグ・企業の方へ）・ABOUT US・RECRUIT・お問い合わせ
+   ハッシュタグのページ（.hd-ht）：#hashtag のロゴ・日本語のメニュー 4 つ・無料でキャリア相談・「運営：株式会社ビア」 */
+.hd-top.hd-ja{font-family:"Noto Sans JP",sans-serif;font-weight:700;letter-spacing:0;text-transform:none}
+.hd-desc a{color:inherit;font-family:Poppins,sans-serif;font-weight:400;color:#3D4B57;text-decoration:none;pointer-events:auto}
+.hd-desc a:hover{text-decoration:underline}
+.hd-op{display:none}
+@media (max-width:959px){
+  .hd-op{display:block;margin:10px 4px 2px;padding:10px;text-align:center;font-size:13px;font-weight:700;color:var(--hd-navy);text-decoration:none}
+}
+/* 見出しの文字に重なっている間だけロゴをうすく（BIA のロゴ・#hashtag のロゴの両方。site.js が html に .hd-on-head） */
+.hd-logo{transition:height var(--hd-speed) ease,padding var(--hd-speed) ease,box-shadow var(--hd-speed) ease,opacity var(--hd-speed) ease}
+.hd-on-head .hd-logo{opacity:.15}
+
+/* 会社のページのフッター（BIA） */
+.ft-co .ft-bia{display:inline-block}
+.ft-co .ft-bia img{display:block;width:110px;height:auto;filter:brightness(0) invert(1)}
+.ft-co .ft-name{margin:14px 0 0;font-size:14px;font-weight:700;color:#fff}
+.ft-co .ft-lic{margin:2px 0 0;font-size:13px;color:#D5DDE4}
+@media (prefers-reduced-motion:reduce){ .hd-logo{transition:none} }
+/* 今いるページの青（nav a[aria-current]）を紺のボタンには使わない（お問い合わせのページで白い文字のまま） */
+.hd .hd-cta[aria-current]{color:#fff}

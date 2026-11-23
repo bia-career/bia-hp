@@ -35,7 +35,7 @@ function tagHtml(t, small) { return '<span class="tag"' + (small ? ' style="heig
 
 // 求人のカード（一覧・トップの新着で使う 1 つの部品）
 function jobCard(j) {
-  return '<a class="card line job-card" href="/job.html?id=' + encodeURIComponent(j.id) + '">' +
+  return '<a class="card line job-card" href="/hashtag/job.html?id=' + encodeURIComponent(j.id) + '">' +
     (j.example ? '<span class="ex">例</span>' : '') +
     '<div class="job-tags">' + j.tags.map(function (t) { return tagHtml(t, true); }).join('') + '</div>' +
     '<p class="job-title">' + escapeHtml(j.title) + '</p>' +
