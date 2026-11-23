@@ -14,13 +14,12 @@ Caddie（社内の CRM）とは別のリポジトリ・別の Netlify サイト�
 | プライバシーポリシー（`/privacy` で開く） | `privacy.html` |
 | **ハッシュタグ（`/hashtag/` の下）** | |
 | ハッシュタグのトップ | `hashtag/index.html` |
-| ハッシュタグとは | `hashtag/about.html` |
 | 求人一覧・求人ごと（見本） | `hashtag/jobs.html`・`hashtag/job.html?id=…` |
 | よくある質問 | `hashtag/faq.html` |
 | 面談の予約（準備中） | `hashtag/booking.html` |
 | コラム（準備中） | `hashtag/column.html` |
 
-古い URL（`/about.html`・`/jobs.html`・`/job.html`・`/faq.html`・`/booking.html`・`/column.html` と拡張子なし）は `netlify.toml` で `/hashtag/…` に 301 転送（クエリはそのまま）
+古い URL（`/about.html`・`/hashtag/about.html`（ハッシュタグとは → `/hashtag/#about`）・`/jobs.html`・`/job.html`・`/faq.html`・`/booking.html`・`/column.html` と拡張子なし）は `netlify.toml` で `/hashtag/…` に 301 転送（クエリはそのまま）
 
 - `assets/site.css` … 全ページの見た目（index.html と同じ部品）。`assets/site.js` … メニュー（≡・その他）
 - `assets/jobs.js` … 求人の部品。`JOBS` の配列（今はすべて例）からカードと求人ページを描く。後で Caddie から同じ形で出す

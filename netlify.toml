@@ -41,18 +41,18 @@
   status = 404
   force = true
 
-# 2026-11 のサイトの組み替え：ハッシュタグのページは /hashtag/ の下へ。古い URL は 301 で新しい URL へ
+# 2026-11 のサイトの組み替え（ハッシュタグとは は /hashtag/ の #about にまとめた）：ハッシュタグのページは /hashtag/ の下へ。古い URL は 301 で新しい URL へ
 # （?from= などのクエリは Netlify がそのまま新しい URL に付けて渡す）。トップの / は会社のトップなので転送しない
 
 [[redirects]]
   from = "/about.html"
-  to = "/hashtag/about.html"
+  to = "/hashtag/#about"
   status = 301
   force = true
 
 [[redirects]]
   from = "/about"
-  to = "/hashtag/about.html"
+  to = "/hashtag/#about"
   status = 301
   force = true
 
@@ -113,5 +113,18 @@
 [[redirects]]
   from = "/column"
   to = "/hashtag/column.html"
+  status = 301
+  force = true
+
+# 2026-11：「ハッシュタグとは」のページを /hashtag/ のトップにまとめた
+[[redirects]]
+  from = "/hashtag/about.html"
+  to = "/hashtag/#about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hashtag/about"
+  to = "/hashtag/#about"
   status = 301
   force = true

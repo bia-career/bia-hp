@@ -22,8 +22,6 @@ a{color:inherit}
 .logo{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none}
 .logo .name{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;font-size:21.84px;letter-spacing:1px;line-height:1;margin-right:-.228em}
 .logo .caret{height:21px}
-.logo-desc{font-size:12px;font-weight:700;letter-spacing:1px;margin:6px 0 0 6px}
-.logo-desc span{font-family:Poppins,sans-serif;font-weight:400;color:var(--muted)}
 
 /* 本人のハッシュタグ（例）：線だけの丸長方形 */
 .tag{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:999px;border:1.5px solid var(--navy);font-size:14px;font-weight:700;background:#fff}
@@ -41,7 +39,6 @@ nav .btn{min-height:44px;padding:0 22px;font-size:14px}
 
 /* ファーストビュー：BIA の波を背景のモチーフとして残す */
 .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F3F9FC 0%,#FFFFFF 70%)}
-.hero .waves{position:absolute;left:0;right:0;top:0;height:220px;opacity:.55;pointer-events:none}
 .hero .wrap{position:relative;display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-top:96px;padding-bottom:112px}
 .hero h1{margin:0;font-size:clamp(36px,4.6vw,56px);font-weight:900;line-height:1.35;letter-spacing:1px}
 .hero .lead{margin:16px 0 0;font-size:18px;font-weight:700;color:#0070B8}
@@ -60,7 +57,6 @@ section{padding:104px 0}
 .g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .card{background:#fff;border-radius:24px;padding:28px 24px}
 .card.line{border:1px solid var(--line)}
-.step-img{height:150px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border-radius:18px;color:var(--muted);font-size:12px}
 footer{background:var(--navy);color:#D5DDE4;padding:56px 0}
 footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
 .logo-white{background:#fff;color:var(--navy)}
@@ -75,7 +71,6 @@ body{position:relative}
 .wave{height:300px}
 
 /* ===== ここから見本に足したもの ===== */
-.step-img img{height:118px;width:auto}
 .point{display:flex;gap:18px;align-items:center}
 .point img{width:56px;height:56px;flex:none}
 .faq{display:grid;gap:12px}
@@ -102,24 +97,18 @@ nav a[aria-current="page"]{color:var(--caret-on-white)}
 /* 下のページの見出し（波の下の白い地から） */
 .page-hero{position:relative;z-index:1}
 .page-hero .wrap{padding-top:150px;padding-bottom:24px}
-.page-hero .eyebrow{margin:0 0 6px;font-weight:500;font-size:14px;letter-spacing:3px;color:var(--muted)}
 .page-hero h1{margin:0;font-size:clamp(32px,4vw,48px);font-weight:900;line-height:1.35;letter-spacing:1px}
 .page-hero .lead{margin:12px 0 0;font-size:18px;font-weight:700;color:#0070B8}
 .page-hero + section{padding-top:64px}
 .sec-head.center{justify-content:center;text-align:center}
 section:has(.sec-head.center) .wrap{text-align:center}
 .g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.split{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
-.split > :first-child{flex:999 1 520px;min-width:0}
-.split > :last-child{flex:1 1 300px;min-width:0}
-.big-copy{margin:0 0 16px;font-size:clamp(28px,3.4vw,40px);font-weight:900;line-height:1.4}
 .text{margin:0 0 16px;font-size:17px;color:var(--sub)}
 .tag-box{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
 .steps h3,.card h3{margin:8px 0 4px;font-size:19px;font-weight:900;line-height:1.5}
 .steps p,.card p{margin:0;font-size:14px;color:var(--sub)}
 .step-no{margin:0;font-size:13px;color:var(--muted);letter-spacing:2px}
 .compare-label{margin:0 0 2px;font-size:13px;font-weight:700;color:var(--muted)}
-.compare .strong{border:1.5px solid var(--navy)}
 .list{margin:8px 0 0;padding-left:1.2em;font-size:14px;color:var(--sub)}
 .empty{text-align:center;padding:48px 24px}
 /* 求人 */
@@ -190,7 +179,6 @@ body{background:var(--bg)}
 .band .sec-head .en-big,.band .sec-head h2,.band h3,.band .card p{color:var(--navy)}
 .band .card{background:rgba(255,255,255,.9);border:1px solid #FFFFFF}
 .band .card .en{color:#0070B8 !important;font-weight:600}
-.band .step-img{background:#fff}
 /* 支援の流れのカードは 1,100px 以上で 4 枚 1 列、それより狭いと 2 枚×2 段、スマホは 1 列（3＋1 にしない） */
 .band ol.grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width: 1099px){ .band ol.grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
@@ -253,42 +241,6 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
   font-size .6s cubic-bezier(.4,0,.2,1),padding .6s cubic-bezier(.4,0,.2,1)}
 @media (max-width:767px){ .intro-pill{height:72px;font-size:31.5px} }
 @media (prefers-reduced-motion:reduce){ .intro,html.intro-on body::before{display:none} }
-
-/* ===== 支援の流れのイラスト：今の 4 枚の絵の上に「動く # の吹き出し」を重ねる（DESIGN-SPEC.md 13 章） =====
-   位置は絵の大きさに対する %（スマホでも絵と一緒に動く）。.is-playing（assets/illust.js が、見えている間だけ付ける）のときだけ動く。
-   付いていないとき・動きを減らす設定では、吹き出しが出たままの止まった絵 */
-.fl-art{position:relative;display:inline-block;height:118px;aspect-ratio:200/129}
-.fl-art img{display:block;width:100%;height:100%}
-.fl-bub{position:absolute;height:auto;overflow:visible}
-.fl-bub .fl-caret,.fl-bub .fl-h2,.fl-bub .fl-sp{transform-box:fill-box;transform-origin:50% 50%}
-/* 大きさは絵の幅の 27.6%（02 は 37.2%）。2026-11 に 1.2 倍にした */
-.fl-01 .fl-bub{left:74%;top:1%;width:27.6%}
-.fl-02 .fl-bub{left:31.4%;top:3%;width:37.2%}
-.fl-03 .fl-bub{left:68%;top:8%;width:27.6%}
-.fl-04 .fl-bub{left:51%;top:1%;width:27.6%}
-.is-playing .fl-bub{transform-origin:0% 100%;animation:fl-pop 4s ease-in-out infinite backwards}
-.is-playing .fl-caret{animation:fl-caret 4s step-end infinite backwards}
-.is-playing.fl-02 .fl-h2{animation:fl-h2 4s ease-out infinite backwards}
-.is-playing.fl-03 .fl-bub{transform-origin:50% 100%;animation-name:fl-rise}
-.is-playing.fl-04 .fl-sp{animation:fl-sp 4s ease-in-out infinite backwards}
-/* 画面に入った瞬間は、吹き出しが出たまま（いったん消えない）。くり返しの途中（全部が見えている所）から始める。
-   始める所を 1 枚ずつ変えて、4 枚が同時に動かないようにする（マイナスの delay＝その分だけ進んだ所から始まる） */
-.is-playing.fl-01 .fl-bub,.is-playing.fl-01 .fl-bub *{animation-delay:-1.2s}
-.is-playing.fl-02 .fl-bub,.is-playing.fl-02 .fl-bub *{animation-delay:-1.8s}
-.is-playing.fl-03 .fl-bub,.is-playing.fl-03 .fl-bub *{animation-delay:-1.4s}
-.is-playing.fl-04 .fl-bub,.is-playing.fl-04 .fl-bub *{animation-delay:-2.2s}
-.is-playing.fl-04 .fl-sp2{animation-delay:-1.9s}
-.is-playing.fl-04 .fl-sp3{animation-delay:-1.6s}
-/* 01・02・04：ぽんと出る → カーソルが点滅 → 消える */
-@keyframes fl-pop{0%{transform:scale(0);opacity:0}8%{transform:scale(1.12);opacity:1}13%{transform:scale(1)}78%{transform:scale(1);opacity:1}88%,100%{transform:scale(.6);opacity:0}}
-@keyframes fl-caret{0%{opacity:0}13%{opacity:1}25%{opacity:0}37%{opacity:1}49%{opacity:0}61%{opacity:1}78%{opacity:0}}
-/* 02：2 つ目の # がとなりに並ぶ（2 人の # が重なる） */
-@keyframes fl-h2{0%,18%{transform:translateX(-8px);opacity:0}28%{transform:translateX(0);opacity:1}78%{opacity:1}88%,100%{opacity:0}}
-/* 03：ふわっと上へ（企業へ伝わる） */
-@keyframes fl-rise{0%{transform:translateY(8px) scale(.9);opacity:0}10%{transform:translateY(0) scale(1);opacity:1}50%{transform:translateY(0)}86%{transform:translateY(-14px);opacity:0}100%{transform:translateY(-14px);opacity:0}}
-/* 04：横の水色の点がきらきら */
-@keyframes fl-sp{0%,14%{transform:scale(0);opacity:0}22%{transform:scale(1.4);opacity:1}32%{transform:scale(.8);opacity:.7}42%{transform:scale(1.2);opacity:1}78%{opacity:1}88%,100%{transform:scale(0);opacity:0}}
-@media (prefers-reduced-motion:reduce){.fl-art *{animation:none!important}}
 
 /* ===== 6 つのポイントのアイコン：画面に入ったとき 1 回だけ「ぽん」と出る（DESIGN-SPEC.md 14 章。assets/site.js） ===== */
 .pt-wait .point img{opacity:0;transform:scale(.8)}
@@ -360,3 +312,49 @@ html.intro-on body::before{content:"";position:fixed;inset:0;z-index:1000;backgr
 .btn-cta:hover,.hd .hd-cta.btn-cta:hover{filter:brightness(1.07) saturate(1.05);transform:translateY(-2px);box-shadow:0 10px 26px var(--cta-shadow),inset 0 0 0 1px rgba(255,255,255,.55)}
 .btn-cta:hover::after{transform:translateX(3px)}
 @media (prefers-reduced-motion:reduce){ .btn-cta,.btn-cta::after,.hd .hd-cta.btn-cta{transition:none} .btn-cta:hover,.hd .hd-cta.btn-cta:hover{transform:none} .btn-cta:hover::after{transform:none} }
+
+/* ===== /hashtag/ の「ハッシュタグとは」（2026-11 に about.html をまとめた） ===== */
+.about-h3{margin:48px 0 16px;font-size:20px;font-weight:900}
+/* 言葉の途中で改行しない（文の中は「、」「。」などのあとでだけ改行。はみ出すときだけ折り返す） */
+#about p{word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+
+/* ===== 「ほかの転職支援との違い」（/hashtag/#about）2026-11 =====
+   1 つのブロック：左（よくある進め方・求人から選ぶ）は控えめで短い 3 段、右（ハッシュタグ・未来（#）から選ぶ）は主役で 4 ステップ。開け閉めはしない
+   左：薄いグレーの地 #ECEFF2・文字 #4A5560・影なし。右：相談ボタンと同じ系統の淡いグラデーションの地＋グラデーションの線・軽い影・左より広い
+   間は丸い →（スマホは縦に並べて ↓）。文字は 5.8:1 以上。文は「、」「。」のあとでだけ改行 */
+.cmp{display:grid;grid-template-columns:minmax(0,.8fr) 64px minmax(0,1.3fr);align-items:start}
+.cmp-card{border-radius:24px;padding:28px 26px;word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+.cmp-card h4{margin:10px 0 18px;font-size:20px;font-weight:900;line-height:1.5}
+.cmp-label{display:inline-block;margin:0;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.5px}
+.cmp-other{margin-top:40px;background:#ECEFF2;color:#4A5560}
+.cmp-other h4{color:#3A4450}
+.cmp-other .cmp-label{background:#fff;color:#4A5560}
+.cmp-ht{padding:36px 34px;color:var(--navy);
+  background:linear-gradient(135deg,#ECFAF9 0%,#E8F3FC 55%,#EEF0FD 100%) padding-box,linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%) border-box;
+  border:2px solid transparent;box-shadow:0 16px 40px rgba(90,111,232,.16)}
+.cmp-ht h4{font-size:24px;color:var(--navy)}
+.cmp-ht .cmp-label{background:linear-gradient(100deg,#7FE3DC 0%,#6FB6EA 55%,#8A9AF2 100%);color:var(--navy)}
+.cmp-mid{display:grid;place-items:center;padding-top:132px}
+.cmp-mid span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid #C9D5DE;font-family:Poppins,sans-serif;font-size:18px;color:var(--navy)}
+/* 流れ（番号付きで縦に。左は短く小さく、右は見出し＋説明で充実） */
+.cmp-steps{position:relative;display:grid;gap:18px;margin:0;padding:0;list-style:none}
+.cmp-steps li{position:relative;display:flex;gap:14px;align-items:flex-start}
+.cmp-steps li:not(:last-child)::after{content:"";position:absolute;left:15px;top:34px;bottom:-16px;width:1.5px;background:#BFD8F2}
+.cmp-no{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fff;border:1.5px solid #6FB6EA;font-family:Poppins,sans-serif;font-size:12px;font-weight:600;color:#005E98}
+.cmp-steps strong{display:block;font-size:16px;font-weight:900;line-height:1.5;padding-top:4px}
+.cmp-steps p{margin:4px 0 0;font-size:14px;line-height:1.75;color:#2E3A45}
+.cmp-steps-sm{gap:14px}
+.cmp-steps-sm li:not(:last-child)::after{background:#C9D1D8;top:30px;bottom:-12px;left:13px}
+.cmp-steps-sm .cmp-no{width:28px;height:28px;border-color:#AEB8C2;color:#4A5560;font-size:11px}
+.cmp-steps-sm strong{font-size:14px;font-weight:700;color:#4A5560;padding-top:3px}
+@media (max-width:860px){
+  .cmp{grid-template-columns:minmax(0,1fr)}
+  .cmp-other{margin-top:0}
+  .cmp-mid{padding-top:0;height:56px}
+  .cmp-mid span{transform:rotate(90deg)}
+  .cmp-card{padding:22px 20px}
+  .cmp-ht{padding:28px 22px}
+  .cmp-ht h4{font-size:22px}
+}
+/* 途中で切らない短い言い回し（例：5 年後・10 年後） */
+.nw{white-space:nowrap}

@@ -8,7 +8,7 @@
 <meta name="description" content="株式会社ビアの採用情報（新卒・中途）。私たちの考え方、働き方、募集職種、エントリーのご案内です。">
 <link rel="canonical" href="https://bia-career.com/recruit.html">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="ハッシュタグ｜新卒・20代の転職支援">
+<meta property="og:site_name" content="株式会社ビア">
 <meta property="og:title" content="採用情報｜株式会社ビア">
 <meta property="og:description" content="株式会社ビアの採用情報（新卒・中途）。私たちの考え方、働き方、募集職種、エントリーのご案内です。">
 <meta property="og:url" content="https://bia-career.com/recruit.html">
@@ -25,6 +25,8 @@
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/header.css">
 <link rel="stylesheet" href="/assets/recruit.css">
+<link rel="stylesheet" href="/assets/svc-card.css">
+<link rel="stylesheet" href="/assets/philosophy.css">
 </head>
 <body>
 <!-- 採用ページ（BIA のページ）。決まりは docs/DESIGN-SPEC.md 12 章。【仮】の所は、決まったら文を差し替える -->
@@ -39,7 +41,7 @@
       <nav class="hd-nav" id="gnav" aria-label="メインメニュー">
         <ul class="hd-list">
           <li class="hd-sv"><button class="hd-top hd-sv-btn" type="button" aria-expanded="false" aria-controls="hd-sv-list"><span lang="en">SERVICE</span><span class="sr">（事業）</span><span class="hd-arw" aria-hidden="true"></span></button>
-            <ul class="hd-drop" id="hd-sv-list"><li><a href="/hashtag/">ハッシュタグ（新卒・20代の転職支援）</a></li><li><a href="/corp.html">企業の方へ（採用支援）</a></li></ul></li>
+            <ul class="hd-drop" id="hd-sv-list"><li><a href="/hashtag/">ハッシュタグ（新卒・20代の就職・転職支援）</a></li><li><a href="/corp.html">企業の方へ（人材紹介・採用コンサルティング）</a></li></ul></li>
           <li><a class="hd-top" href="/company.html"><span lang="en">ABOUT US</span><span class="sr">（会社概要）</span></a></li><li><a class="hd-top" href="/recruit.html" aria-current="page"><span lang="en">RECRUIT</span><span class="sr">（採用情報）</span></a></li>
         </ul>
         <a class="hd-cta" href="https://forms.gle/y8prBTsdwqu2tVwK9" data-entry="new" target="_blank" rel="noopener">エントリー<span class="sr">（応募フォームが新しいタブで開きます）</span></a>
@@ -57,7 +59,7 @@
 
 <main>
 <nav class="rc-pnav" aria-label="このページの中のメニュー">
-  <a href="#about"><span lang="en">ABOUT US</span><span class="sr">（私たちについて）</span></a>
+  <a href="#philosophy"><span lang="en">PHILOSOPHY</span><span class="sr">（私たちの考え方）</span></a>
   <a href="#workstyle"><span lang="en">WORK STYLE</span><span class="sr">（働き方）</span></a>
   <a href="#jobs"><span lang="en">JOBS</span><span class="sr">（募集職種）</span></a>
   <a href="#entry"><span lang="en">ENTRY</span><span class="sr">（エントリー）</span></a>
@@ -66,34 +68,43 @@
 <div class="rc-layout">
 <div class="rc-main">
 
-<!-- ===== ABOUT US ===== -->
-<section id="about" data-toc="about">
-  <div class="sec-head"><p class="en-big" aria-hidden="true">ABOUT US</p><h2>私たちについて</h2></div>
-
-  <h3 class="rc-h3">私たちの考え方</h3>
+<!-- ===== PHILOSOPHY（私たちの考え方） ===== -->
+<section id="philosophy" data-toc="philosophy">
+  <div class="sec-head"><p class="en-big" aria-hidden="true">PHILOSOPHY</p><h2>私たちの考え方</h2></div>
   <dl class="rc-philo">
-    <div class="card"><dt><span class="en" lang="en">PURPOSE</span>パーパス</dt><dd><span data-philo="purpose">若者のポテンシャルを解放する。</span><span class="rc-philo-en" lang="en" data-philo="purpose-en">Unleash the potential of youth.</span></dd></div>
-    <div class="card"><dt><span class="en" lang="en">MISSION</span>ミッション</dt><dd data-philo="mission">一人ひとりの「叶えたい未来」を言葉にし、そこへ近づくキャリアを一緒につくる。</dd></div>
-    <div class="card"><dt><span class="en" lang="en">VISION</span>ビジョン</dt><dd data-philo="vision">20 代が「自分の #」で仕事を選ぶのが、当たり前の社会へ。</dd></div>
+    <div class="card"><dt><span class="en" lang="en">PURPOSE</span>パーパス</dt><dd><p class="philo-h" data-philo="purpose" data-philo-hash>人生に、<span class="g-hash">#</span>を。</p><p class="philo-tags" data-philo="purpose-tags"><span class="tag">#家族と過ごす夕方</span><span class="tag">#仲間と笑う月曜日</span><span class="tag">#旅するように働く</span></p><p class="philo-t" data-philo="purpose-text">人生に#があると、働くことは物語になる。</p></dd></div>
+    <div class="card"><dt><span class="en" lang="en">VISION</span>ビジョン</dt><dd><p class="philo-h" lang="en" data-philo="vision">Open market, open you.</p><p class="philo-t" data-philo="vision-text">知らないから、選べなかった。見えないから、あきらめていた。<br>市場がひらけば、あなたはもっと遠くへ行ける。</p></dd></div>
+    <div class="card"><dt><span class="en" lang="en">MISSION</span>ミッション</dt><dd><p class="philo-h" data-philo="mission">地図は渡す。背中も押す。旅は、あなたが選ぶ。</p><p class="philo-t" data-philo="mission-text">求人の裏側も、自分の市場価値も、全部伝える。そのうえで決めるのは、いつもあなた。</p></dd></div>
   </dl>
+
 </section>
 
 <!-- ===== 働く魅力（私たちの考え方のあと） ===== -->
 <section id="appeal" data-toc="appeal">
   <div class="sec-head"><p class="en-big" aria-hidden="true">WHY BIA</p><h2>働く魅力</h2></div>
   <ol class="rc-appeal">
-    <li class="card"><p class="en rc-no">01</p><div><h3>20 代から裁量が大きい</h3><p>年齢や入社歴に関係なく、成果を出した人に大きな仕事を任せます。</p></div></li>
-    <li class="card"><p class="en rc-no">02</p><div><h3>会社の成長を一緒につくれる</h3><p>設立 5 年目のいまだからこそ、仕組みや文化を自分の手でつくれます。</p></div></li>
+    <li class="card"><p class="en rc-no">01</p><div><h3>20代から裁量が大きい</h3><p>年齢や入社歴に関係なく、成果を出した人に大きな仕事を任せます。</p></div></li>
+    <li class="card"><p class="en rc-no">02</p><div><h3>会社の成長を一緒につくれる</h3><p>設立 6 年目のいまだからこそ、仕組みや文化を自分の手でつくれます。</p></div></li>
     <li class="card"><p class="en rc-no">03</p><div><h3>人の人生に深く関われる</h3><p>一人ひとりの「叶えたい未来」に向き合い、人生の分岐点を支える仕事です。</p></div></li>
   </ol>
 </section>
 
-<!-- ===== ABOUT US の続き：事業内容 ===== -->
-<section id="business" class="rc-cont" data-toc="about">
+<!-- ===== PHILOSOPHY の続き：事業内容 ===== -->
+<section id="business" class="rc-cont" data-toc="philosophy">
   <h3 class="rc-h3">事業内容</h3>
-  <div class="grid g2">
-    <a class="card line rc-link-card" href="/hashtag/about.html"><h4>ハッシュタグ（新卒・20代の転職支援）</h4><p>新卒・第二新卒・既卒・フリーターの方に、オーダーメイド型の就業サポートを行います。</p><span class="more">ハッシュタグとは →</span></a>
-    <a class="card line rc-link-card" href="/corp.html"><h4>採用コンサルティング（企業の方へ）</h4><p>企業向けに、オーダーメイド型の採用コンサルティングを行います。母集団形成から選考フェーズまで支援します。</p><span class="more">企業の方へ →</span></a>
+  <!-- 事業は「ハッシュタグ」1 つ（求職者向け・企業向けの両方を持つ）。大きなカード 1 枚に、入口を 2 つ -->
+  <div class="co-svc card">
+    <div class="co-svc-head">
+      <span class="co-svc-logo" role="img" aria-label="hashtag"><svg class="hash" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true"><g stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"><line x1="17" y1="6" x2="13" y2="34"/><line x1="28" y1="6" x2="24" y2="34"/><line x1="8" y1="15" x2="34" y2="15"/><line x1="6" y1="25" x2="32" y2="25"/></g></svg><span class="name">hashtag</span><span class="caret" aria-hidden="true"></span></span>
+      <div>
+        <h4>ハッシュタグ<span>新卒・20代の就職・転職支援／人材紹介・採用コンサルティング</span></h4>
+        <p>求職者の「叶えたい未来」と、企業の採用をつなぐサービスです。新卒・第二新卒・既卒・フリーターの方にはキャリア設計から始める就職・転職支援を、企業には人材紹介・採用コンサルティングを行います。</p>
+      </div>
+    </div>
+    <div class="co-svc-doors">
+      <a href="/hashtag/"><span class="co-biz-label" lang="en">FOR JOB SEEKERS</span><strong>求職者の方</strong><span>新卒・20代の就職・転職支援</span><span class="co-door-arw" aria-hidden="true">→</span></a>
+      <a href="/corp.html"><span class="co-biz-label" lang="en">FOR BUSINESS</span><strong>企業の方</strong><span>人材紹介・採用コンサルティング</span><span class="co-door-arw" aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -124,11 +135,11 @@
 <!-- ===== 数字から見るカルチャー（5 つ。数字は廣瀬さんの決定。作らない） ===== -->
 <section id="culture" data-toc="culture">
   <div class="sec-head"><p class="en-big" aria-hidden="true">CULTURE</p><h2>数字から見るカルチャー</h2></div>
-  <p class="rc-asof">※2026 年 11 月時点</p>
+  <p class="rc-asof">2026 年 11 月時点</p>
   <ul class="rc-nums">
     <li class="card"><p class="rc-num"><span class="en">2021</span><small>年</small></p><h3>設立</h3></li>
     <li class="card"><p class="rc-num"><span class="rc-pre">約</span><span class="en">27</span><small>歳</small></p><h3>平均年齢</h3></li>
-    <li class="card"><p class="rc-num"><span class="rc-pre">約</span><span class="en">60</span><small>%</small></p><h3>20 代の割合</h3></li>
+    <li class="card"><p class="rc-num"><span class="rc-pre">約</span><span class="en">60</span><small>%</small></p><h3>20代の割合</h3></li>
     <li class="card"><p class="rc-num"><span class="en">125</span><small>日</small></p><h3>年間休日</h3></li>
     <li class="card"><p class="rc-num"><span class="rc-pre">月</span><span class="en">1</span><small>回</small></p><h3>上司との 1on1</h3></li>
   </ul>
@@ -158,7 +169,7 @@
     <details><summary>新卒・若手でも、大きな仕事を任せてもらえますか？</summary><p>任せます。年功序列はなく、役職や入社歴に関係なく抜擢するカルチャーです。新卒でもインターンでも、成果を出している人にボールを渡します。</p></details>
     <details><summary>少人数の会社で、どんな働き方をしていますか？</summary><p>社内の業務の多くを AI で自動化し、手間を減らしています。そのぶん、求職者や企業と向き合う時間と、成果を出すための時間に集中できます。</p></details>
     <details><summary>目標や評価はどう決まりますか？</summary><p>高い目標を本気で目指すメンバーが集まっています。楽な環境ではありませんが、出した成果は評価とインセンティブでしっかり返ります。</p></details>
-    <details><summary>どんな人が向いていますか？</summary><p>高い目標に本気で挑み、自分で考えて動ける人。20 代のうちに圧倒的に成長したい人です。</p></details>
+    <details><summary>どんな人が向いていますか？</summary><p>高い目標に本気で挑み、自分で考えて動ける人。20代のうちに圧倒的に成長したい人です。</p></details>
     <details><summary>その先のキャリアはどうなりますか？</summary><p>成果を出せば、入社歴に関係なく、マネジメントや新しい事業を任せます。会社の成長が、そのままあなたの挑戦の場になります。</p></details>
   </div>
 </section>
@@ -171,7 +182,6 @@
     <a class="btn btn-main" href="https://forms.gle/y8prBTsdwqu2tVwK9" data-entry="new" target="_blank" rel="noopener">新卒の方<span class="sr">（応募フォームが新しいタブで開きます）</span></a>
     <a class="btn btn-main" href="https://forms.gle/y8prBTsdwqu2tVwK9" data-entry="career" target="_blank" rel="noopener">中途の方<span class="sr">（応募フォームが新しいタブで開きます）</span></a>
   </div>
-  <p class="note" style="margin:14px 0 0">お問い合わせ：info@bia-career.com</p>
 </section>
 
 </div>
@@ -179,7 +189,7 @@
 <!-- パソコン（1,100px 以上）だけ右に固定の目次。今読んでいる区画を青に -->
 <aside class="rc-toc" aria-label="このページの目次">
   <ul>
-    <li><a href="#about">ABOUT US</a></li>
+    <li><a href="#philosophy">PHILOSOPHY</a></li>
     <li><a href="#appeal">働く魅力</a></li>
     <li><a href="#workstyle">WORK STYLE</a></li>
     <li><a href="#culture">数字から見るカルチャー</a></li>
@@ -201,7 +211,7 @@
       <p class="ft-lic">有料職業紹介 許可番号 13-ユ-315626</p>
     </div>
     <nav class="ft-nav" aria-label="フッター">
-      <div class="ft-col"><p class="ft-h" lang="en">SERVICE</p><a href="/hashtag/">ハッシュタグ（新卒・20代の転職支援）</a><a href="/corp.html">企業の方へ（採用支援）</a></div>
+      <div class="ft-col"><p class="ft-h" lang="en">SERVICE</p><a href="/hashtag/">ハッシュタグ（新卒・20代の就職・転職支援）</a><a href="/corp.html">企業の方へ（人材紹介・採用コンサルティング）</a></div>
       <div class="ft-col"><a class="ft-h" href="/company.html"><span lang="en">ABOUT US</span><small>会社概要</small></a><a class="ft-h" href="/recruit.html"><span lang="en">RECRUIT</span><small>採用情報</small></a><a class="ft-h" href="/contact.html"><span lang="en">CONTACT</span><small>お問い合わせ</small></a></div>
       <div class="ft-col"><a href="/privacy">プライバシーポリシー</a></div>
     </nav>
