@@ -28,34 +28,27 @@
 </head>
 <body>
 
-<header class="hd hd-co">
-  <div class="hd-bar">
-    <div class="hd-in">
-      <div class="hd-brand">
-        <a class="hd-bia" href="/" aria-label="株式会社ビア（トップへ）"><img src="/assets/logo.svg" alt="株式会社ビア" width="130" height="52"></a>
-      </div>
-      <nav class="hd-nav" id="gnav" aria-label="メインメニュー">
-        <ul class="hd-list">
-          <li class="hd-sv"><button class="hd-top hd-sv-btn is-current" type="button" aria-expanded="false" aria-controls="hd-sv-list"><span lang="en">SERVICE</span><span class="sr">（事業）</span><span class="hd-arw" aria-hidden="true"></span></button>
-            <ul class="hd-drop" id="hd-sv-list"><li><a href="/hashtag/">ハッシュタグ（新卒・20代の就職・転職支援）</a></li><li><a href="/corp.html" aria-current="page">企業の方へ（人材紹介・採用コンサルティング）</a></li></ul></li>
-          <li><a class="hd-top" href="/company.html"><span lang="en">ABOUT US</span><span class="sr">（会社概要）</span></a></li><li><a class="hd-top" href="/recruit.html"><span lang="en">RECRUIT</span><span class="sr">（採用情報）</span></a></li>
-        </ul>
-        <a class="hd-cta" href="/contact.html">お問い合わせ</a>
-      </nav>
-      <button class="hd-menu" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span></button>
-    </div>
-  </div>
-</header>
-<main>
-<!-- アイコンで使うグラデーション（相談ボタンの系統）。1 回だけ置いて、各アイコンから url(#cpg) で使う -->
-<svg class="cp-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
-  <linearGradient id="cpg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE3DC"/><stop offset=".55" stop-color="#6FB6EA"/><stop offset="1" stop-color="#8A9AF2"/></linearGradient>
-  <linearGradient id="cpg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3FBFB6"/><stop offset=".55" stop-color="#3D8FD1"/><stop offset="1" stop-color="#5A6FE8"/></linearGradient>
-</defs></svg>
-
 <!-- 1. ファーストビュー -->
 <div class="cp-fv">
   <div class="cp-fv-wave" aria-hidden="true"></div>
+  <header class="hd hd-co">
+    <div class="hd-bar">
+      <div class="hd-in">
+        <div class="hd-brand">
+          <a class="hd-bia" href="/" aria-label="株式会社ビア（トップへ）"><img src="/assets/logo.svg" alt="株式会社ビア" width="130" height="52"></a>
+        </div>
+        <nav class="hd-nav" id="gnav" aria-label="メインメニュー">
+          <ul class="hd-list">
+            <li class="hd-sv"><button class="hd-top hd-sv-btn is-current" type="button" aria-expanded="false" aria-controls="hd-sv-list"><span lang="en">SERVICE</span><span class="sr">（事業）</span><span class="hd-arw" aria-hidden="true"></span></button>
+              <ul class="hd-drop" id="hd-sv-list"><li><a href="/hashtag/">ハッシュタグ（新卒・20代の就職・転職支援）</a></li><li><a href="/corp.html" aria-current="page">企業の方へ（人材紹介・採用コンサルティング）</a></li></ul></li>
+            <li><a class="hd-top" href="/company.html"><span lang="en">ABOUT US</span><span class="sr">（会社概要）</span></a></li><li><a class="hd-top" href="/recruit.html"><span lang="en">RECRUIT</span><span class="sr">（採用情報）</span></a></li>
+          </ul>
+          <a class="hd-cta" href="/contact.html">お問い合わせ</a>
+        </nav>
+        <button class="hd-menu" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span></button>
+      </div>
+    </div>
+  </header>
   <div class="cp-fv-in">
     <div class="cp-fv-copy">
       <p class="cp-en" lang="en">FOR COMPANIES</p>
@@ -73,6 +66,13 @@
     </div>
   </div>
 </div>
+
+<main>
+<!-- アイコンで使うグラデーション（相談ボタンの系統）。1 回だけ置いて、各アイコンから url(#cpg) で使う -->
+<svg class="cp-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="cpg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE3DC"/><stop offset=".55" stop-color="#6FB6EA"/><stop offset="1" stop-color="#8A9AF2"/></linearGradient>
+  <linearGradient id="cpg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3FBFB6"/><stop offset=".55" stop-color="#3D8FD1"/><stop offset="1" stop-color="#5A6FE8"/></linearGradient>
+</defs></svg>
 
 <!-- 2. 数字の帯（カウントアップ） -->
 <section class="cp-nums-sec" aria-label="数字で見るハッシュタグ">
